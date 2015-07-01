@@ -1,0 +1,7 @@
+{% if msgs %}
+    {% for msg in msgs %}
+        {% include 'partials/msg.html' %}
+    {% endfor %}
+{% else %}
+    <h3 style="text-align: center; font-size: 20px; margin-top: 10px;">No messages</h3>
+{% endif %}

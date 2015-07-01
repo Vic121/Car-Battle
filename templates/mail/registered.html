@@ -1,0 +1,13 @@
+{% extends "mail/base.html" %}
+
+{% block hello %}{{ receiver }}{% endblock %}
+
+{% block content %}
+    we're glad you decided to <b>join our community</b>, give us a chance and you'll see how unique and exciting this
+    game is.<br/>
+    <b>We love cars</b> and work hard to give you as fun as possible, let us know later how do you like it!<br/>
+
+    <p>Want to learn more? Our tutorial is just a <a href="{{ profile.domain }}tutorial/">click away</a>.</p><br/>
+
+    <p>Wroom wroom...</p>
+{% endblock %}

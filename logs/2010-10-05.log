@@ -1,0 +1,116 @@
+2010-10-05 00:38:20,885 | DEBUG  | Stat yezooz. fight, win_today=1.
+2010-10-05 00:38:20,885 | DEBUG  | Stat yezooz. fight, win_today=1.
+2010-10-05 00:38:20,909 | DEBUG  | Stat yezooz. fight, win=1.
+2010-10-05 00:38:20,909 | DEBUG  | Stat yezooz. fight, win=1.
+2010-10-05 00:40:00,559 | ERROR  | Error saving profile Column 'job_next_day_at' cannot be null
+2010-10-05 00:40:00,559 | ERROR  | Error saving profile Column 'job_next_day_at' cannot be null
+2010-10-05 00:40:02,588 | DEBUG  | Stat yezooz. fight, win_today=2.
+2010-10-05 00:40:02,588 | DEBUG  | Stat yezooz. fight, win_today=2.
+2010-10-05 00:40:02,598 | DEBUG  | Stat yezooz. fight, win=2.
+2010-10-05 00:40:02,598 | DEBUG  | Stat yezooz. fight, win=2.
+2010-10-05 00:40:02,607 | DEBUG  | Stat tier_2. fight, lost_today=1.
+2010-10-05 00:40:02,607 | DEBUG  | Stat tier_2. fight, lost_today=1.
+2010-10-05 00:40:02,644 | DEBUG  | Stat tier_2. fight, lost=1.
+2010-10-05 00:40:02,644 | DEBUG  | Stat tier_2. fight, lost=1.
+2010-10-05 00:40:02,646 | INFO   | yezooz just earned 18 exp
+2010-10-05 00:40:02,646 | INFO   | yezooz just earned 18 exp
+2010-10-05 00:40:02,653 | DEBUG  | Stat yezooz. exp, earn_exp=18.
+2010-10-05 00:40:02,653 | DEBUG  | Stat yezooz. exp, earn_exp=18.
+2010-10-05 00:40:02,660 | DEBUG  | Stat yezooz. exp, earn_exp=48.
+2010-10-05 00:40:02,660 | DEBUG  | Stat yezooz. exp, earn_exp=48.
+2010-10-05 00:40:02,661 | INFO   | tier_2 just earned 2 exp
+2010-10-05 00:40:02,661 | INFO   | tier_2 just earned 2 exp
+2010-10-05 00:40:02,668 | DEBUG  | Stat tier_2. exp, earn_exp=2.
+2010-10-05 00:40:02,668 | DEBUG  | Stat tier_2. exp, earn_exp=2.
+2010-10-05 00:40:02,675 | DEBUG  | Stat tier_2. exp, earn_exp=2.
+2010-10-05 00:40:02,675 | DEBUG  | Stat tier_2. exp, earn_exp=2.
+2010-10-05 00:40:02,685 | ERROR  | Error saving profile Column 'job_next_day_at' cannot be null
+2010-10-05 00:40:02,685 | ERROR  | Error saving profile Column 'job_next_day_at' cannot be null
+2010-10-05 00:41:57,690 | DEBUG  | Stat yezooz. fight, lost_today=1.
+2010-10-05 00:41:57,690 | DEBUG  | Stat yezooz. fight, lost_today=1.
+2010-10-05 00:41:57,698 | DEBUG  | Stat yezooz. fight, lost=1.
+2010-10-05 00:41:57,698 | DEBUG  | Stat yezooz. fight, lost=1.
+2010-10-05 00:41:57,709 | DEBUG  | Stat getedoi. fight, win_today=1.
+2010-10-05 00:41:57,709 | DEBUG  | Stat getedoi. fight, win_today=1.
+2010-10-05 00:41:57,718 | DEBUG  | Stat getedoi. fight, win=1.
+2010-10-05 00:41:57,718 | DEBUG  | Stat getedoi. fight, win=1.
+2010-10-05 00:41:57,720 | INFO   | yezooz just earned 5 exp
+2010-10-05 00:41:57,720 | INFO   | yezooz just earned 5 exp
+2010-10-05 00:41:57,728 | DEBUG  | Stat yezooz. exp, earn_exp=23.
+2010-10-05 00:41:57,728 | DEBUG  | Stat yezooz. exp, earn_exp=23.
+2010-10-05 00:41:57,736 | DEBUG  | Stat yezooz. exp, earn_exp=53.
+2010-10-05 00:41:57,736 | DEBUG  | Stat yezooz. exp, earn_exp=53.
+2010-10-05 00:41:57,737 | INFO   | getedoi just earned 8 exp
+2010-10-05 00:41:57,737 | INFO   | getedoi just earned 8 exp
+2010-10-05 00:41:57,743 | DEBUG  | Stat getedoi. exp, earn_exp=8.
+2010-10-05 00:41:57,743 | DEBUG  | Stat getedoi. exp, earn_exp=8.
+2010-10-05 00:41:57,750 | DEBUG  | Stat getedoi. exp, earn_exp=8.
+2010-10-05 00:41:57,750 | DEBUG  | Stat getedoi. exp, earn_exp=8.
+2010-10-05 00:41:57,758 | DEBUG  | Stat yezooz. fight, lost_today=2.
+2010-10-05 00:41:57,758 | DEBUG  | Stat yezooz. fight, lost_today=2.
+2010-10-05 00:41:57,768 | DEBUG  | Stat yezooz. fight, lost=2.
+2010-10-05 00:41:57,768 | DEBUG  | Stat yezooz. fight, lost=2.
+2010-10-05 00:41:57,778 | DEBUG  | Stat getedoi. fight, win_today=2.
+2010-10-05 00:41:57,778 | DEBUG  | Stat getedoi. fight, win_today=2.
+2010-10-05 00:41:57,787 | DEBUG  | Stat getedoi. fight, win=2.
+2010-10-05 00:41:57,787 | DEBUG  | Stat getedoi. fight, win=2.
+2010-10-05 00:41:57,789 | INFO   | yezooz just earned 5 exp
+2010-10-05 00:41:57,789 | INFO   | yezooz just earned 5 exp
+2010-10-05 00:41:57,797 | DEBUG  | Stat yezooz. exp, earn_exp=28.
+2010-10-05 00:41:57,797 | DEBUG  | Stat yezooz. exp, earn_exp=28.
+2010-10-05 00:41:57,805 | DEBUG  | Stat yezooz. exp, earn_exp=58.
+2010-10-05 00:41:57,805 | DEBUG  | Stat yezooz. exp, earn_exp=58.
+2010-10-05 00:41:57,806 | INFO   | getedoi just earned 8 exp
+2010-10-05 00:41:57,806 | INFO   | getedoi just earned 8 exp
+2010-10-05 00:41:57,813 | DEBUG  | Stat getedoi. exp, earn_exp=16.
+2010-10-05 00:41:57,813 | DEBUG  | Stat getedoi. exp, earn_exp=16.
+2010-10-05 00:41:57,821 | DEBUG  | Stat getedoi. exp, earn_exp=16.
+2010-10-05 00:41:57,821 | DEBUG  | Stat getedoi. exp, earn_exp=16.
+2010-10-05 00:41:57,831 | DEBUG  | Stat yezooz. fight, lost_today=3.
+2010-10-05 00:41:57,831 | DEBUG  | Stat yezooz. fight, lost_today=3.
+2010-10-05 00:41:57,840 | DEBUG  | Stat yezooz. fight, lost=3.
+2010-10-05 00:41:57,840 | DEBUG  | Stat yezooz. fight, lost=3.
+2010-10-05 00:41:57,849 | DEBUG  | Stat getedoi. fight, win_today=3.
+2010-10-05 00:41:57,849 | DEBUG  | Stat getedoi. fight, win_today=3.
+2010-10-05 00:41:57,859 | DEBUG  | Stat getedoi. fight, win=3.
+2010-10-05 00:41:57,859 | DEBUG  | Stat getedoi. fight, win=3.
+2010-10-05 00:41:57,861 | INFO   | yezooz just earned 5 exp
+2010-10-05 00:41:57,861 | INFO   | yezooz just earned 5 exp
+2010-10-05 00:41:57,868 | DEBUG  | Stat yezooz. exp, earn_exp=33.
+2010-10-05 00:41:57,868 | DEBUG  | Stat yezooz. exp, earn_exp=33.
+2010-10-05 00:41:57,876 | DEBUG  | Stat yezooz. exp, earn_exp=63.
+2010-10-05 00:41:57,876 | DEBUG  | Stat yezooz. exp, earn_exp=63.
+2010-10-05 00:41:57,876 | INFO   | getedoi just earned 8 exp
+2010-10-05 00:41:57,876 | INFO   | getedoi just earned 8 exp
+2010-10-05 00:41:57,884 | DEBUG  | Stat getedoi. exp, earn_exp=24.
+2010-10-05 00:41:57,884 | DEBUG  | Stat getedoi. exp, earn_exp=24.
+2010-10-05 00:41:57,892 | DEBUG  | Stat getedoi. exp, earn_exp=24.
+2010-10-05 00:41:57,892 | DEBUG  | Stat getedoi. exp, earn_exp=24.
+2010-10-05 00:53:14,962 | DEBUG  | Stat yezooz. garage, cars_remove=1.
+2010-10-05 00:53:14,962 | DEBUG  | Stat yezooz. garage, cars_remove=1.
+2010-10-05 00:53:14,970 | DEBUG  | Stat yezooz. car_manuf, Renault=3.
+2010-10-05 00:53:14,970 | DEBUG  | Stat yezooz. car_manuf, Renault=3.
+2010-10-05 00:53:14,979 | DEBUG  | Stat yezooz. car_country, France=3.
+2010-10-05 00:53:14,979 | DEBUG  | Stat yezooz. car_country, France=3.
+2010-10-05 00:53:14,987 | DEBUG  | Stat yezooz. car_tier, 1=5.
+2010-10-05 00:53:14,987 | DEBUG  | Stat yezooz. car_tier, 1=5.
+2010-10-05 00:53:14,991 | INFO   | yezooz just earned 2500 cash
+2010-10-05 00:53:14,991 | INFO   | yezooz just earned 2500 cash
+2010-10-05 00:53:14,998 | DEBUG  | Stat yezooz. cash, earn_cash=2500.
+2010-10-05 00:53:14,998 | DEBUG  | Stat yezooz. cash, earn_cash=2500.
+2010-10-05 00:53:15,007 | DEBUG  | Stat yezooz. cash, earn_cash=5500.
+2010-10-05 00:53:15,007 | DEBUG  | Stat yezooz. cash, earn_cash=5500.
+2010-10-05 01:17:33,429 | INFO   | yezooz just spent 30 credit
+2010-10-05 01:17:33,429 | INFO   | yezooz just spent 30 credit
+2010-10-05 01:17:33,437 | DEBUG  | Stat yezooz. cash, spend_credit=30.
+2010-10-05 01:17:33,437 | DEBUG  | Stat yezooz. cash, spend_credit=30.
+2010-10-05 01:17:33,548 | WARNING | yezooz upgraded to premium
+2010-10-05 01:17:33,548 | WARNING | yezooz upgraded to premium
+2010-10-05 01:19:35,875 | DEBUG  | Stat yezooz. garage, cars_remove=0.
+2010-10-05 01:19:35,875 | DEBUG  | Stat yezooz. garage, cars_remove=0.
+2010-10-05 01:19:35,887 | DEBUG  | Stat yezooz. car_manuf, Renault=2.
+2010-10-05 01:19:35,887 | DEBUG  | Stat yezooz. car_manuf, Renault=2.
+2010-10-05 01:19:35,903 | DEBUG  | Stat yezooz. car_country, France=2.
+2010-10-05 01:19:35,903 | DEBUG  | Stat yezooz. car_country, France=2.
+2010-10-05 01:19:35,915 | DEBUG  | Stat yezooz. car_tier, 1=4.
+2010-10-05 01:19:35,915 | DEBUG  | Stat yezooz. car_tier, 1=4.

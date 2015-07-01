@@ -1,0 +1,783 @@
+/* =========================================================== */
+/* definicje globalne */
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+.floatNone {
+    float: none;
+}
+
+.alignLeft {
+    text-align: left;
+}
+
+.alignRight {
+    text-align: right
+}
+
+.alignCenter {
+    text-align: center
+}
+
+.clear {
+    clear: both;
+}
+
+.noClear {
+    clear: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible, .block {
+    display: block;
+}
+
+img {
+    border: none;
+}
+
+div, p, h1, h2, h3, h4, h5, ul, ol, dl, li, dd, dt, form {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+body div {
+    text-align: left;
+}
+
+a {
+    color: #52861E;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.modul a:visited {
+    color: #6F7887;
+}
+
+.black {
+    color: #000;
+}
+
+p .aktywny, .aktywny {
+    font-weight: bold;
+}
+
+.wiecej {
+    clear: both;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: right;
+    font-size: 92%;
+    font-weight: normal;
+}
+
+/* =========================================================== */
+/* modul  */
+.modul {
+    clear: both;
+}
+
+.modul .half {
+    width: 50%;
+}
+
+.modul .tytul {
+    margin-bottom: 3px;
+    padding: 2px 6px 2px;
+    border-top: 3px solid #52861E;
+    border-bottom: 1px solid #52861E;
+    font-size: 100%;
+}
+
+.modul .tytul a {
+    display: block;
+    background: transparent url(http://static.pickscore.net/images/ikona_wiecej.gif) right center no-repeat;
+    color: #000;
+    text-decoration: none;
+}
+
+.modul .tytul a:hover {
+    color: #52861E;
+}
+
+.modul .headlight {
+    margin: 0px 0px 0px 0px;
+    padding: 1px 6px 3px;
+    font-size: 115%;
+    text-align: center;
+}
+
+.modul .headlight a {
+    background: red;
+    color: white;
+}
+
+.modul .headlight a:hover {
+    background: white;
+    color: red;
+    text-decoration: none;
+}
+
+.modul p {
+    margin: 3px 6px;
+}
+
+.modul .lista {
+    font-size: 92%;
+}
+
+.modul .lista li {
+    border-bottom: 1px solid #FFF;
+}
+
+.modul .lista li.aktywny {
+    background: #E7F5D8;
+}
+
+.modul .lista li a {
+    display: block;
+    padding: 0 6px;
+}
+
+.modul .lista li a:hover,
+.ligi li a:hover {
+    background-color: #FFFFCC;
+    text-decoration: none;
+}
+
+/* =========================================================== */
+/* narzedzia  */
+#kontent-tresc .narzedzia {
+    margin: 18px 0;
+    padding: 0 6px;
+    text-align: right;
+    font-size: 92%;
+    font-weight: bold;
+}
+
+#kontent-tresc .narzedzia a:visited {
+    color: #52861E;
+}
+
+a.dodajKomentarz {
+    padding-left: 16px;
+    margin-left: 6px;
+    background: transparent url(http://static.pickscore.net/images/ikona_komentarz.gif) left center no-repeat;
+}
+
+a.dodajAnalize {
+    padding-left: 14px;
+    margin-left: 6px;
+    background: transparent url(http://static.pickscore.net/images/ikona_analiza.gif) left center no-repeat;
+}
+
+a.druk {
+    padding-left: 19px;
+    margin-left: 6px;
+    background: transparent url(http://static.pickscore.net/images/ikona_druk.gif) left center no-repeat;
+}
+
+a.wyslij {
+    padding-left: 19px;
+    margin-left: 6px;
+    background: transparent url(http://static.pickscore.net/images/ikona_nieprzeczytane.gif) left center no-repeat;
+}
+
+/* =========================================================== */
+/* stronicowanie  */
+ul.stronicowanie {
+    margin: 12px 0 0;
+    padding: 6px 0 0;
+    text-align: center;
+    border-top: 1px solid #DDD;
+    font-weight: bold;
+    list-style-position: inside;
+}
+
+ul.stronicowanie li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    font-size: 92%;
+    text-align: center;
+}
+
+ul.stronicowanie li a,
+ul.stronicowanie li span {
+    display: inline;
+    padding: 0 3px;
+}
+
+ul.stronicowanie li a:hover {
+    text-decoration: underline;
+}
+
+ul.stronicowanie li a:visited {
+    color: #6F7887;
+}
+
+ul.stronicowanie li.aktywny a {
+    color: #000;
+}
+
+ul.stronicowanie li span {
+    color: #DDD;
+}
+
+ul.stronicowanie li a:hover,
+ul.stronicowanie li.aktywny {
+    background: transparent;
+}
+
+ul.stronicowanie li.nastepna a:visited,
+ul.stronicowanie li.poprzednia a:visited {
+    color: #52861E;
+}
+
+/* =========================================================== */
+/* zakladki */
+/* zakladki */
+.zakladki {
+    position: relative;
+    clear: both;
+    float: left;
+    width: 100%;
+    bottom: -1px;
+    z-index: 100;
+}
+
+.zakladki li {
+    float: left;
+    margin-right: 1px;
+    background-color: #DDD;
+    background-image: url(http://static.pickscore.net/images/zakladka_rog2.gif);
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
+.zakladki li.aktywny {
+    background-color: #FFF;
+}
+
+.zakladki li a,
+.zakladki li a:visited {
+    float: left;
+    padding: 3px 6px;
+    background: transparent url(http://static.pickscore.net/images/zakladka_rog1.gif) left top no-repeat;
+    font-weight: bold;
+    color: #000;
+    outline: none;
+}
+
+.zakladki li a:hover {
+    color: #52861E;
+    text-decoration: none;
+}
+
+/*.ui-tabs-nav {
+  position: relative;
+  clear: both;
+  float: left;
+  width: 100%;
+  bottom: -1px;
+  z-index: 100;
+}
+.ui-tabs-nav li {
+  float: left;
+  margin-right: 1px;
+  background-color: #DDD;
+  background-image: url(http://static.pickscore.net/images/zakladka_rog2.gif);
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+ul.ui-tabs-nav li.ui-tabs-selected {
+  background-color:#FFFFFF;
+}
+.ui-tabs-nav li a,
+.ui-tabs-nav li a:visited,
+.ui-tabs-nav li.ui-tabs-selected a,
+.ui-tabs-nav li.ui-tabs-selected a:visited {
+  float: left;
+  padding: 3px 6px;
+  background: transparent url(http://static.pickscore.net/images/zakladka_rog1.gif) left top no-repeat;
+  font-weight: bold;
+  color: #000;
+  outline: none;
+}
+.ui-tabs-nav li a:hover {
+  color: #52861E; 
+  text-decoration: none;
+}
+.ui-tabs-hide {
+  display: none;
+}*/
+
+/* =========================================================== */
+/* tabele */
+table {
+    position: relative;
+    clear: both;
+    border: 1px solid #DDD;
+    border-collapse: separate;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    empty-cells: show;
+}
+
+thead th {
+    border: none;
+    padding: 3px 6px;
+    text-align: left;
+}
+
+td,
+tbody th {
+    /*  font-size: 95%;*/
+    border: none;
+    border-top: 1px solid #FFF;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: left;
+}
+
+td,
+tbody th,
+tr.rozwiniety table td {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+tr.wiersz1,
+tr.wiersz1.rozwiniety:hover {
+    background-color: #EFEFEF;
+}
+
+tr.wiersz2,
+tr.wiersz2.rozwiniety:hover {
+    background-color: #F7F7F7;
+}
+
+tr.aktywny,
+tr.wiersz1.rozwiniety.aktywny:hover,
+tr.wiersz2.rozwiniety.aktywny:hover {
+    background-color: #E7F5D8;
+}
+
+table tr:hover {
+    background: #FFFFCC;
+}
+
+tr.rozwiniety td {
+    padding: 0 0 3px 0;
+    border-top: none;
+    background-image: url(http://static.pickscore.net/images/bgrd_tr.png);
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    text-align: left;
+}
+
+tr.rozwiniety table {
+    border-collapse: collapse;
+    border: none;
+    width: auto;
+    color: #666;
+}
+
+tr.rozwiniety table td {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+tr.rozwiniety table tr,
+tr.rozwiniety table td,
+tr.rozwiniety table tr:hover,
+thead tr:hover,
+tfoot tr:hover {
+    background: none;
+}
+
+tr.rozwiniety img {
+    margin: 3px 0;
+    vertical-align: middle;
+}
+
+.druzyna1,
+tr.rozwiniety .druzyna1 {
+    padding-left: 12px;
+    padding-right: 0;
+    width: 120px;
+    text-align: right;
+}
+
+.wynik,
+tr.rozwiniety .wynik {
+    text-align: center;
+    font-weight: bold;
+    width: 50px;
+}
+
+.druzyna2,
+tr.rozwiniety .druzyna2 {
+    text-align: left;
+    padding-left: 0;
+    padding-right: 12px;
+    width: 120px;
+}
+
+.typowanie {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.typowanie input {
+    font-size: 100%;
+    width: 14px;
+    height: 12px;
+    margin: 0 3px;
+    padding: 0 3px;
+    border: 1px solid #999;
+    background: #FFF;
+}
+
+.typowanie input.typ1 {
+    text-align: right;
+}
+
+.typowanie input.typ2 {
+    text-align: left;
+}
+
+.typowanie input.button {
+    margin: 6px 0;
+    padding: 2px 0;
+    width: 53px;
+    height: auto;
+}
+
+.opcje {
+    text-align: right;
+}
+
+.opcje img {
+    margin-left: 6px;
+}
+
+.border th {
+    border-bottom: 1px solid #DDD;
+}
+
+tr.przeczytana a {
+    color: #6F7887;
+}
+
+tr.przeczytana img,
+tr.nieprzeczytana img {
+    display: block;
+}
+
+/* =========================================================== */
+/* reklama */
+.adBlok {
+    padding: 13px 0;
+    text-align: center;
+}
+
+.adBlok.billboard {
+    padding: 0 0 0px;
+}
+
+.adBlok.billboard img,
+.adBlok.button img {
+    display: block;
+    margin: 0 auto;
+}
+
+.adBlok.button img {
+    margin: 0 auto 12px;
+}
+
+/* =========================================================== */
+/* formularze */
+#kontent-tresc form legend {
+    margin: 0 3px;
+    padding: 6px 3px;
+    color: #000;
+    font-weight: bold;
+}
+
+#kontent-tresc form fieldset {
+    margin: 9px 0 0;
+    padding: 0 1px 15px;
+    border: 1px solid #DDD;
+    background: #DCF1C8 url(http://static.pickscore.net/images/bgrd_form.jpg) left top repeat-x;
+}
+
+#kontent-tresc form p {
+    clear: both;
+    float: left;
+    margin: 0;
+    padding: 6px 0;
+    width: 100%;
+    border: none;
+}
+
+form .blad,
+form .blad em {
+    color: #CC0000;
+}
+
+#kontent-tresc form em,
+#kontent-tresc form label {
+    float: left;
+    margin: 0 6px;
+    padding-top: 4px;
+    line-height: 1;
+}
+
+#kontent-tresc form em {
+    color: #666;
+    font-style: normal;
+}
+
+#kontent-tresc form label {
+    width: 160px;
+    font-weight: bold;
+    text-align: right;
+}
+
+#partner label {
+    text-align: left !important;
+}
+
+#kontent-tresc form input.text,
+#kontent-tresc form input.password,
+#kontent-tresc form select {
+    float: left;
+    display: block;
+    padding: 0;
+}
+
+#kontent-tresc form select {
+    width: 164px;
+}
+
+#kontent-tresc form textarea {
+    margin: 6px 0 0;
+    padding: 0;
+    width: 99.28%;
+    overflow: auto;
+}
+
+#kontent-tresc form div.k3 {
+    width: 32.3%;
+}
+
+#kontent-tresc form div.k2 {
+    width: 49%;
+}
+
+#kontent-tresc form p.checkboks input,
+#kontent-tresc form p.radio input {
+    float: left;
+}
+
+#kontent-tresc form p.checkboks label,
+#kontent-tresc form p.radio label {
+    font-weight: normal;
+}
+
+#kontent-tresc form input.button, #kontent-kolumna1 input.button {
+    margin: 6px 0;
+    padding: 2px 6px;
+    background: #52861E;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#kontent-tresc .boks form {
+    margin: 0 6px;
+    border-top: 1px solid #DDD;
+}
+
+#kontent-tresc .boks form label {
+    width: auto;
+    margin: 0;
+    color: #000;
+}
+
+#kontent-tresc .boks form p {
+    padding: 0;
+    border: none;
+}
+
+#kontent-tresc form.forms fieldset {
+    padding: 0 6px 0;
+}
+
+#kontent-tresc form.forms legend {
+    margin-left: -3px;
+}
+
+#kontent-tresc form.forms p {
+    margin: 0;
+    padding: 3px 0;
+}
+
+#kontent-tresc form.forms label,
+#kontent-tresc form.forms input.text,
+#kontent-tresc form.forms select {
+    float: left;
+    margin: 3px 0;
+    padding: 0;
+    width: auto;
+    text-align: left;
+}
+
+#kontent-tresc form.forms input.text {
+    padding: 1px 0;
+}
+
+#kontent-tresc form.forms input.szer100 {
+    width: 99%;
+}
+
+#kontent-tresc form.forms select.szer100 {
+    width: 100%;
+}
+
+#kontent-tresc form.forms textarea {
+    margin: 3px 0;
+    width: 99.28%;
+}
+
+/* =========================================================== */
+/* zabawy z hoverbox pod uzytkownikiem */
+span.username-hover {
+    padding-left: 15px;
+    cursor: pointer;
+    background: transparent url(http://static.pickscore.net/images/ikona_plus.gif) right center no-repeat;
+}
+
+span.username-hover-box {
+    font-family: "Lucida Grande", sans-serif;
+    padding: 3px 3px 3px 3px;
+    /*  margin: 10px 10px 10px 10px;*/
+    position: absolute;
+    cursor: text;
+    display: block;
+    width: 200px;
+    border: 6px solid #CDEB8B;
+    background: #dbebee;
+    /*  background: transparent url(http://static.pickscore.net/images/page-back.png) repeat scroll 0% 50%;*/
+    z-index: 999;
+}
+
+/** PAGINATOR **/
+.paginator {
+    padding: .5em .75em;
+    float: left;
+    font: normal 1.1em arial;
+}
+
+.paginator .prev-na,
+.paginator .next-na {
+    padding: .3em;
+    font: bold .875em arial;
+}
+
+.paginator .prev-na,
+.paginator .next-na {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    color: #aaa;
+    font-weight: normal;
+}
+
+.paginator .prev a, .paginator .prev a:visited,
+.paginator .next a, .paginator .next a:visited {
+    border: 1px solid #c2ee62;
+    background-color: #edfdd0;
+    color: #234f32;
+    padding: .3em;
+    font: bold .875em arial;
+}
+
+.paginator .prev, .paginator .prev-na {
+    margin-right: .5em;
+}
+
+.paginator .next, .paginator .next-na {
+    margin-left: .5em;
+}
+
+.paginator .page a, .paginator .page a:visited, .paginator .curr {
+    padding: .25em;
+    font: normal .875em verdana;
+    border: 1px solid #C2EE62;
+    background-color: #EDFDD0;
+    margin: 0em .25em;
+    color: #006000;
+}
+
+.paginator .curr {
+    background-color: #234f32;
+    color: #fff;
+    border: 1px solid #234f32;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.paginator .page a:hover,
+.paginator .curr a:hover,
+.paginator .prev a:hover,
+.paginator .next a:hover {
+    color: #fff;
+    background-color: #234f32;
+    border: 1px solid #234f32;
+}
+
+.black {
+    color: #000;
+}
+
+.addlink {
+    padding-left: 12px;
+    background: url(http://static.pickscore.net/admin/img/admin/icon_addlink.gif) 0 .2em no-repeat;
+}
+
+.changelink {
+    padding-left: 12px;
+    background: url(http://static.pickscore.net/admin/img/admin/icon_changelink.gif) 0 .2em no-repeat;
+}
+
+.deletelink {
+    padding-left: 12px;
+    background: url(http://static.pickscore.net/admin/img/admin/icon_deletelink.gif) 0 .25em no-repeat;
+}
+
+a.deletelink:link, a.deletelink:visited {
+    color: #CC3434;
+}
+
+a.deletelink:hover {
+    color: #993333;
+}

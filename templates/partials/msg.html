@@ -1,0 +1,22 @@
+{# <li> #}
+{# 	<span class="msg"> #}
+{# 		<strong><a href="{% url "profile" msg.sender.username %}">{{ msg.sender }}</a></strong>: #}
+{# 		<span class="msg_content">{{ msg.content|striptags|parse_msg_links|safe }}</span> #}
+{# 		<span class="msg_details">{{ msg.sent_at|timestr }}</span> #}
+{# 	</span> #}
+{# 	<span class="msg_actions"><a href="javascript:void(0);" onclick="Engine.msg_box_toggle('{{ msg.sender }}'); return false;" class="reply">&nbsp;</a></span> #}
+{# </li> #}
+<div class="dev_application app_show">
+    <div class="dev_application_header clearfix">
+        <a href="{% url "profile" msg.sender.username %}"><img src="{{ MEDIA_URL }}{{ msg.sender.id|avatar }}"
+                                                               style="height: 50px; width: 50px;"></a>
+
+        <h3><a href="{% url "profile" msg.sender.username %}">{{ msg.sender }}</a></h3>
+
+        <h3 style="font-weight: normal; font-size: 15px; {% if request.engine.IS_FB %}width: 300px;{% else %}width: 500px;{% endif %}">{{ msg.content|striptags|parse_msg_links|safe }}<br/><span
+                style="font-size: 12px;">{{ msg.sent_at|timestr }}{% if request.engine.user.user != msg.sender %},
+            <a href="javascript:void(0);"
+               onclick="Engine.msg_box_toggle('{{ msg.sender }}'); return false;"><b>reply</b></a>{% endif %}</span>
+        </h3>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+{% extends base %}
+
+{% block title %}Partners{% endblock %}
+
+{% block master_header %}{% endblock %}
+
+{% block breadcrumbs %}
+    <strong>Partners</strong>
+{% endblock %}
+
+{% block head %}
+
+    <style type="text/css" media="screen">
+
+        table.partner, table.partner th, table.partner td {
+            border: 1px solid black;
+        }
+
+        table.partner th, table.partner td {
+            width: 100px;
+        }
+    </style>
+
+{% endblock %}
+
+{% block content %}
+    <br class="clear"/>
+
+    {% if partners %}
+        <table class="partner" cellspacing="0">
+            <thead>
+            <tr>
+                <th class="name_left" nowrap="nowrap" style="width: 150px;">Name</th>
+                <th nowrap="nowrap">Secret Code</th>
+                <th nowrap="nowrap" style="width: 150px;">Contact</th>
+                <th nowrap="nowrap" style="width: 200px;">Website</th>
+                <th nowrap="nowrap" style="width: 40px;">Status</th>
+                <th nowrap="nowrap" style="width: 50px;">Income</th>
+                <th style="width: 40px;">&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in partners %}
+                <tr class="{% cycle '' 'odd' %}">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.secret_code }}</td>
+                    <td>{{ item.contact }}</td>
+                    <td>{{ item.website }}</td>
+                    <td style="width: 40px;">{% if item.is_active %}<span class="color: green">active</span>{% else %}
+                        <span class="color: red">inactive</span>{% endif %}</td>
+                    <td nowrap="nowrap" style="width: 50px;"><a href="{% url "partner_stat" item.id %}">
+                        {{ income|KEY:item.name|intcomma }} USD</a></td>
+                    <td style="width: 40px;"><a href="{% url "partner_edit" item.id %}">edit &raquo;</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h2><a href="{% url "partner_add" %}">create first partner &raquo;</a></h2>
+    {% endif %}
+
+    <br class="clear"/>
+    <h2><a href="{% url "partner_add" %}">Create new partner &raquo;</a></h2>
+
+    <br class="clear"/>
+
+{% endblock %}

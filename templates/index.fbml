@@ -1,0 +1,23 @@
+{% extends base %}
+
+{% block master_header %}{% endblock %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div style="width: 360px; float: right;">
+{% include 'partials/home/wishlist.html' %}
+
+{% include 'partials/home/gift.html' %}
+
+{% include 'partials/home/album.html' %}
+</div>
+
+<div style="width: 360px; float: left;">
+{% include 'partials/home/daily_promo.html' %}
+
+{% include 'partials/home/news.html' %}
+</div>
+
+{% endblock %}

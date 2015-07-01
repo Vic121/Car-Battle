@@ -1,0 +1,30 @@
+{% extends base %}
+{% load modules %}
+
+{% block title %}
+    List of Achievements - {{ achievement_desc.title }}
+{% endblock %}
+
+{% block content %}
+
+    <h1>{{ achievement_desc.title }}</h1>
+    <h2 class="desc">{{ achievement_desc.desc }}</h2>
+
+    <ul>
+        {% for a in achievements %}
+            <li>
+                <a name="{{ a.name|slugify }}">&nbsp;</a>
+
+                <h3>{{ a.name }} {% if a.level > 0 %}(level {{ a.level }}){% endif %}</h3>
+
+                <p>need {{ a.value }} {{ achievement_desc.currency }} to complete achievement</p>
+
+                <p>When done:</p>
+                {% if a.exp %}<p>+ {{ a.exp|intcomma }} EXP</p>{% endif %}
+                {% if a.cash %}<p>+ ${{ a.cash|intcomma }}</p>{% endif %}
+                {% if a.credit %}<p>+ {{ a.credit|intcomma }} credits</p>{% endif %}
+                {% if a.car_id %}<p>{% show_card a.car_id %}</p>{% endif %}
+            </li>
+        {% endfor %}
+
+{% endblock %}

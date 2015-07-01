@@ -1,0 +1,40 @@
+2010-11-01 16:21:47,341 | DEBUG  | Stat yezooz. garage, cars_add=1.
+2010-11-01 16:21:47,341 | DEBUG  | Stat yezooz. garage, cars_add=1.
+2010-11-01 16:21:47,438 | DEBUG  | Stat yezooz. garage, cars=110.
+2010-11-01 16:21:47,438 | DEBUG  | Stat yezooz. garage, cars=110.
+2010-11-01 16:21:47,462 | DEBUG  | Stat yezooz. car_manuf, Renault=49.
+2010-11-01 16:21:47,462 | DEBUG  | Stat yezooz. car_manuf, Renault=49.
+2010-11-01 16:21:47,472 | DEBUG  | Stat yezooz. car_country, France=57.
+2010-11-01 16:21:47,472 | DEBUG  | Stat yezooz. car_country, France=57.
+2010-11-01 16:21:47,483 | DEBUG  | Stat yezooz. car_tier, 1=153.
+2010-11-01 16:21:47,483 | DEBUG  | Stat yezooz. car_tier, 1=153.
+2010-11-01 16:21:47,495 | DEBUG  | Stat yezooz. car_manuf, Renault=50.
+2010-11-01 16:21:47,495 | DEBUG  | Stat yezooz. car_manuf, Renault=50.
+2010-11-01 16:21:47,504 | DEBUG  | Stat yezooz. car_country, France=58.
+2010-11-01 16:21:47,504 | DEBUG  | Stat yezooz. car_country, France=58.
+2010-11-01 16:21:47,515 | DEBUG  | Stat yezooz. car_tier, 1=154.
+2010-11-01 16:21:47,515 | DEBUG  | Stat yezooz. car_tier, 1=154.
+2010-11-01 16:21:47,527 | DEBUG  | Stat yezooz. car_year, 2000=66.
+2010-11-01 16:21:47,527 | DEBUG  | Stat yezooz. car_year, 2000=66.
+2010-11-01 16:21:47,538 | DEBUG  | Stat yezooz. car_bhp, 69=6.
+2010-11-01 16:21:47,538 | DEBUG  | Stat yezooz. car_bhp, 69=6.
+2010-11-01 16:21:47,553 | DEBUG  | Stat yezooz. car_speed, 160=38.
+2010-11-01 16:21:47,553 | DEBUG  | Stat yezooz. car_speed, 160=38.
+2010-11-01 16:21:47,573 | DEBUG  | Stat yezooz. car_weight, 1100=6.
+2010-11-01 16:21:47,573 | DEBUG  | Stat yezooz. car_weight, 1100=6.
+2010-11-01 16:21:47,593 | INFO   | yezooz just earned 1000 cash
+2010-11-01 16:21:47,593 | INFO   | yezooz just earned 1000 cash
+2010-11-01 16:21:47,605 | DEBUG  | Stat yezooz. cash, earn=1000.
+2010-11-01 16:21:47,605 | DEBUG  | Stat yezooz. cash, earn=1000.
+2010-11-01 16:21:47,614 | DEBUG  | Stat yezooz. cash, earn=76000.
+2010-11-01 16:21:47,614 | DEBUG  | Stat yezooz. cash, earn=76000.
+2010-11-01 16:21:47,614 | INFO   | yezooz just earned 10 exp
+2010-11-01 16:21:47,614 | INFO   | yezooz just earned 10 exp
+2010-11-01 16:21:47,622 | DEBUG  | Stat yezooz. exp, earn=10.
+2010-11-01 16:21:47,622 | DEBUG  | Stat yezooz. exp, earn=10.
+2010-11-01 16:21:47,630 | DEBUG  | Stat yezooz. exp, earn=760.
+2010-11-01 16:21:47,630 | DEBUG  | Stat yezooz. exp, earn=760.
+2010-11-01 16:21:47,649 | DEBUG  | Stat yezooz. job, done=1.
+2010-11-01 16:21:47,649 | DEBUG  | Stat yezooz. job, done=1.
+2010-11-01 16:21:47,660 | DEBUG  | Stat yezooz. job, done=75.
+2010-11-01 16:21:47,660 | DEBUG  | Stat yezooz. job, done=75.

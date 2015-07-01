@@ -1,0 +1,100 @@
+{% extends base %}
+
+{% block title %}Car Auction of {{ item.auction.title }}.{% endblock %}
+{% block description %}{{ item.auction.seller_name }} currently selling {{ item.auction.title }}. Auctions are great source of cars you actually need for battles or albums, so check them regularly.{% endblock %}
+
+{% block breadcrumbs %}
+	<strong>Auctions</strong>
+	<a href="{% url "auction" %}">Listing</a>
+	<span class="final">{{ item.auction.title }}</span>
+{% endblock %}
+
+{% block header %}Auction of {{ item.auction.title }}{% endblock %}
+
+{% block content %}
+<div>
+<div style="width: 70%; float: left;">
+	<div class="battle">
+		<table style="width: 250px; margin-top: 15px;">
+		<tbody>
+			<tr>
+				<th class="name_heading">Ends:</th>
+				<td>{{ item.auction.end_at|timestr }}</td>
+			</tr>
+			<tr>
+				<th class="name_heading">Seller:</th>
+				<td>
+					{{ item.seller_name }}
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+	
+	{% if item.details.tier == 'P' or item.details.tier == 'U' or item.details.tier == 'N' or item.details.tier == 'X' %}
+		{% show_card item.details 'small' %}
+	{% else %}
+		{% show_card item.details %}
+	{% endif %}
+</div>
+
+<div style="width: 25%; margin-top: 40px; float: right;">
+	<table width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+	<td style="border-top: 1px solid rgb(119, 144, 182); border-bottom: 1px solid rgb(119, 144, 182); background: rgb(214, 224, 248) none repeat scroll 0% 0%; text-align: center; padding-top: 2px; padding-bottom: 2px; height: 18px; font-size: 10.5pt; font-weight: bold; white-space: nowrap; color: rgb(77, 77, 77);">Bid</td>	</tr>
+		<tr>
+			<td style="border-bottom: 1px solid rgb(68, 112, 185); padding: 4px; background: rgb(242, 242, 242) none repeat scroll 0% 0%; text-align: center;">
+			<form action="{% url "auction_bid" %}" method="post">
+				<span class="small">Your maximium offer<br/>(more than: $<b>{{ item.auction.current_price|intcomma }}</b>):</span><br/>
+				<span class="small">$</span>
+				<input type="text" name="amount" size="7" value="0"/></span>
+				<input type="hidden" name="slug" value="{{ item.title|slugify }}"/>
+				<input type="hidden" value="{{ item.auction.id }}" name="item_id"/><br/><br/>
+				<input type="submit" value="Bid&nbsp;&raquo;"/>
+			</form>
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+
+{% if item.auction.buy_it_now_price > 0 %}
+<div style="width: 25%; margin-top: 40px; float: right;">
+	<table width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+	<td style="border-top: 1px solid rgb(119, 144, 182); border-bottom: 1px solid rgb(119, 144, 182); background: rgb(214, 224, 248) none repeat scroll 0% 0%; text-align: center; padding-top: 2px; padding-bottom: 2px; height: 18px; font-size: 10.5pt; font-weight: bold; white-space: nowrap; color: rgb(77, 77, 77);">Buy it now</td>	</tr>
+		<tr>
+			<td style="border-bottom: 1px solid rgb(68, 112, 185); padding: 4px; background: rgb(242, 242, 242) none repeat scroll 0% 0%; text-align: center;">
+			<form action="{% url "auction_buy" %}" method="post">
+				<input type="hidden" name="slug" value="{{ item.title|slugify }}"/>
+				<input type="hidden" value="{{ item.auction.id }}" name="item_id"/>
+				<input type="submit" value="Buy for ${{ item.auction.buy_it_now_price }}&nbsp;&raquo;"/>
+			</form>
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+{% endif %}
+
+</div>
+<br class="clear"/>
+{% if item.bids %}
+<div class="battle">
+	<table style="width: 500px;">
+	<thead>
+		<th colspan="3" style="font-size: 14px;">Bids</th>
+	</thead>
+	<tbody>
+	{% for bid in item.bids %}
+	<tr class="{% cycle '' 'odd' %}">
+		<th style="width: 30%" class="name_heading"><b>
+			{{ bid.buyer }}
+		</b></th>
+		<td style="width: 30%" class="name">$<b>{{ bid.price|intcomma }}</b></td>
+		<td>{{ bid.updated_at|timestr }}</td>
+	</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+hi {% block hello %}{% endblock %},
+<p>
+    {% block content %}
+
+    {% endblock %}
+</p>
+
+<br/>
+<p>PS. If you find a bug, have questions or feedback, please let me know (links below).</p>
+<p>
+    <small>Don't want to receive such emails from us? Change your <a
+            href="{{ profile.domain }}{{ profile.login_link }}#notify">notification settings</a>.
+    </small>
+</p>
+
+{% block footer %}
+    <p>
+        greetings,<br/>
+        Car Battle - <a href="{{ profile.domain }}">{{ profile.domain }}</a><br/>
+        <br/>
+        Facebook - <a href="http://goo.gl/rHrI">http://goo.gl/rHrI</a><br/>
+        Twitter - <a href="http://twitter.com/carbattle">http://twitter.com/carbattle</a><br/>
+        Email - <a href="mailto:help@car-battle.com">help@car-battle.com</a>
+    </p>
+{% endblock %}

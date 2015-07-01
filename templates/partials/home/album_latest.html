@@ -1,0 +1,17 @@
+{% if albums %}
+    <div class="heading right">
+        <h1>Latest Albums ({{ albums|length }})</h1>
+    </div>
+    {% for album in albums %}
+        <div class="feature maxi-resource left">
+            <a href="{% url "encyclopedia_album" album.name|slugify album.id %}" class="mask"></a>
+            <img alt="{{ album.name }}" src="{{ MEDIA_URL }}images/albums/{{ album.id }}_s.jpg" class="avatar left">
+            <strong class="name left"><a
+                    href="{% url "encyclopedia_album" album.name|slugify album.id %}">{{ album.name }}</a></strong>
+            {% if album.desc %}<span class="bio serif left">{{ album.desc }}</span>{% endif %}
+            {# <span class="bio serif left"> #}
+            {# 		{% if album.price > 0 %}Buy this album for <strong>${{ album.price }}</strong> #}
+            {# 		{% else %}Take this album <strong>for free</strong>{% endif %} and get <strong>{{ album.exp }} exp</strong> after completing all {{ album.cars|length }} cars. #}
+        </div>
+    {% endfor %}
+{% endif %}

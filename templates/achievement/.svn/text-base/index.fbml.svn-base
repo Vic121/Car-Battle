@@ -1,0 +1,6 @@
+{% extends base %}
+{% load common modules %}
+
+{% block content %}
+
+{% endblock %}

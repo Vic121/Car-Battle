@@ -1,0 +1,20 @@
+{% if wish_list %}
+    <div class="heading left">
+        <h1>Wish List ({{ wish_list|length }} of {{ settings.MAX_WISHLIST_SIZE }})</h1>
+    </div>
+    {% for car in wish_list %}
+        <div class="car-feature left">
+            <h2><a href="{% url "wishlist_remove" car.id %}" class="right"><span class="icon cross right">&nbsp;</span></a>
+            </h2>
+            <img src="{{ settings.BASE_MEDIA_URL }}{{ car.img|img_replace:'_s.jpg' }}">
+
+            <h1>
+                <a href="{% url "encyclopedia_car" car.manuf|slugify car.name|slugify car.id %}">{{ car.display_short_name }}</a>
+            </h1>
+        </div>
+    {% endfor %}
+{% endif %}
+
+{# {% if car.id|STR in request.engine.user.garage.car_ids %} #}
+{# 	<a href="{% url "wishlist_gift" wishlist.user.id car.id %}">give item</a> #}
+{# {% endif %} #}

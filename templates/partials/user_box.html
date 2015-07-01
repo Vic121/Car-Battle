@@ -1,0 +1,51 @@
+{% if request.engine.user %}
+    <div id="user_box">
+        <h1><a href="{% url "profile" %}">{{ request.engine.user.profile }}</a>
+            {% if request.engine.msg.unread_messages > 0 %}(
+                <a href="{% url "msg_inbox" %}">{{ request.engine.msg.unread_messages }}</a>){% endif %}&nbsp;
+            {% if not request.engine.IS_FB %}(<a href="{% url "auth_logout" %}">logout</a>){% endif %}</h1>
+
+        <div id="avatar"><a href="{% url "profile_edit" %}"><img
+                src="{{ MEDIA_URL }}{{ request.engine.user.user.id|avatar }}"/></a></div>
+        <div id="user_lvl" title="
+                {{ request.engine.user.profile.next_level_exp|MINUS:request.engine.user.profile.exp }} to next level">
+            {{ request.engine.user.profile.level }}
+        </div>
+        <div><a href="javascript:void(0);" onclick="Engine.msg_box_toggle(); return false;">
+            <div style="float: right; top: 86px; left: 254px; position: absolute; width: 32px; height: 32px; background: url(http://static.crimecorp.com/images/icons/email_32.png);"></div>
+        </a></div>
+        <p>Exp: {{ request.engine.user.profile.exp|intcomma }}
+            / {{ request.engine.user.profile.next_level_exp|intcomma }}</p>
+
+        <p title="{{ request.engine.user.profile.prev_level_exp }} - {{ request.engine.user.profile.next_level_exp }} ({% exp_meter request.engine.user.profile %}%)">
+            <span style="width: 150px; height: 5px; border: 1px solid grey; display: block; padding: 0; margin: 0;"><span
+                    style="display: block; background-color: red; width: {% exp_meter request.engine.user.profile %}%; height: 5px;">&nbsp;</span></span>
+        </p>
+
+        <p>Cash: ${{ request.engine.user.profile.cash|intcomma }}</p>
+
+        <p>Energy: {{ request.engine.user.profile.energy }} / 100</p>
+
+        <p title="{% percent_meter 0 request.engine.user.profile.energy 100 %}%"><span
+                style="width: 150px; height: 5px; border: 1px solid grey; display: block; padding: 0; margin: 0;"><span
+                style="display: block; background-color: red; width: {% percent_meter 0 request.engine.user.profile.energy 100 %}%; height: 5px;">&nbsp;</span></span>
+        </p>
+    </div>
+{% else %}
+    <div id="user_box" class="lower_user_box">
+        <h1><a href="{% url "auth_login" %}">Register</a> or Sign In below</h1>
+
+        <form action="{% url "auth_login" %}" method="post">
+            <p><label for="username">login:</label>&nbsp;<input type="text" name="username" id="username"
+                                                                style="width: 126px;"/></p>
+
+            <p><label for="password">password:</label>&nbsp;<input type="password" name="password" id="password"
+                                                                   style="width: 100px;"/></p>
+
+            <p>
+                <input type="submit" value="Sign In"/>
+                <input type="hidden" name="action_type" value="login"/>
+            </p>
+        </form>
+    </div>
+{% endif %}

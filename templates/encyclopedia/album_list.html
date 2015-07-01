@@ -1,0 +1,57 @@
+{% extends base_page %}
+
+{% block title %}Albums in Car Battle's Car Encyclopedia - Page {{ page_no }}{% endblock %}
+{% block description %}Car Encyclopedia page for {{ manuf }} models.{% endblock %}
+{% block keywords %}Car Encyclopedia, {{ manuf }}, BMW, Ford, Audi, Mercedes, Dodge, Porsche, Volkswagen,
+    VW{% endblock %}
+
+{% block breadcrumbs %}
+    <strong>Encyclopedia</strong>
+    <span class="final">Albums</span>
+{% endblock %}
+
+{% block header %}Albums{% endblock %}
+
+{% block content %}
+
+<div class="box-4">
+
+    {% for album in albums %}
+        <div class="feature maxi-resource left">
+            <a href="{% url "encyclopedia_album" album.name|slugify album.id %}" class="mask"></a>
+            <img alt="{{ album.name }}" src="{{ MEDIA_URL }}images/albums/{{ album.id }}_s.jpg" class="avatar left">
+            <strong class="name left"><a
+                    href="{% url "encyclopedia_album" album.name|slugify album.id %}">{{ album.name }}</a></strong>
+            {% if album.desc %}<span class="bio serif left">{{ album.desc }}</span>{% endif %}
+            {# <span class="bio serif left"> #}
+            {# 		{% if album.price > 0 %}Buy this album for <strong>${{ album.price }}</strong> #}
+            {# 		{% else %}Take this album <strong>for free</strong>{% endif %} and get <strong>{{ album.exp }} exp</strong> after completing all {{ album.cars|length }} cars. #}
+        </div>
+    {% endfor %}
+
+    <br class="clear"/>
+
+    <div class="box">
+        {% if total > settings.DEFAULT_CARS_PER_ENCYCLOPEDIA_PAGE %}
+        <p style="font-size: 18px;">Page:
+            {% for num in page.page_range %}
+            {% if not num %} ...
+            {% else %}
+            {% ifequal num page_no %}
+            <b>{{ num }}</b>
+            {% else %}
+            <a href="{% url "encyclopedia_albums" num %}">{{ num }}</a>
+            {% endifequal %}
+            {% endif %}
+            {% endfor %}
+        </p>
+        {% endif %}
+    </div>
+
+    <br class="clear"/>
+
+    {% endblock %}
+
+    {% block slogan %}
+        Click for a <a href="{% url "encyclopedia" %}">list of cars</a> available on Car Battle
+    {% endblock %}

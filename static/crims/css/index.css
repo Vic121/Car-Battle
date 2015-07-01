@@ -1,0 +1,320 @@
+html {
+    padding: 0;
+    margin: 0;
+}
+
+a, a:visited, a:active {
+    color: #3B5998;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3B5998;
+    text-decoration: underline;
+}
+
+.nounder:hover {
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+}
+
+body {
+    background: url(http://static.crimecorp.com/images/city-back.png) no-repeat;
+    background-position: 0px 15px;
+    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+    font-size: 11px;
+    width: 700px;
+    padding-top: 65px;
+    padding-left: 50px;
+}
+
+div#notify {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 50px;
+    padding: 10px 10px 10px 10px;
+    font-size: 40px;
+    z-index: 100;
+    background-color: #d3d3d3;
+    text-align: center;
+}
+
+div#top {
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding-bottom: 8px;
+    padding-left: 50px;
+    position: absolute;
+    background-color: #000;
+    width: 710px;
+    height: 8px;
+    color: #fff;
+}
+
+div#top a {
+    color: #fff;
+}
+
+div#header {
+    height: 100px;
+    /*	background: red;*/
+    width: 700px;
+}
+
+div#header div.logo {
+    float: left;
+}
+
+div#header div.right_box {
+    float: right;
+    margin-right: 20px;
+    padding-left: 10px;
+    width: 450px;
+    height: 100px;
+    max-height: 100px;
+    /*	background: url(http://static.crimecorp.com/images/half_white.png) repeat;*/
+    background-color: #FFFFFF;
+}
+
+div#header span.right_box span {
+    float: left;
+    font-size: 12px;
+}
+
+div#container {
+}
+
+div#footer {
+    margin-left: -50px;
+    height: 110px;
+    width: 758px;
+    background: url(http://static.crimecorp.com/images/city-low-3.png) no-repeat;
+    background-position: top left;
+    clear: both;
+}
+
+p.user_box {
+    position: absolute;
+    left: 765px;
+    top: 55px;
+    background: #556677;
+    width: 350px;
+    height: 400px;
+    padding: 10px 10px 10px 10px;
+}
+
+div.plus_btn {
+    width: 93px;
+    height: 25px;
+    background: url(http://static.crimecorp.com/images/new/plus_btn_m.png) no-repeat 0;
+    padding-top: 12px;
+    padding-left: 25px;
+    color: black;
+    letter-spacing: 0.2em;
+}
+
+div.plus_btn:hover {
+    width: 93px;
+    height: 25px;
+    background: url(http://static.crimecorp.com/images/new/plus_btn_m.png) no-repeat -117px;
+    padding-top: 12px;
+    padding-left: 25px;
+    color: white;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+}
+
+a.delete, a.delete:hover {
+    background: url(http://static.crimecorp.com/images/new/x.png) no-repeat 0 1px;
+    padding-left: 10px;
+    margin-left: 3px;
+}
+
+/* MSG BOX */
+.msg_link {
+    background: url(http://static.crimecorp.com/images/icons/email_16.png) no-repeat 0 -2px;
+    padding-left: 16px;
+}
+
+div.msg_box {
+    width: 95%;
+    height: 100px;
+    border: solid 2px grey;
+    padding: 5px 0 10px 10px;
+    font-size: 16px;
+    background-color: #ececec;
+    display: none;
+}
+
+div.msg_box #status {
+    width: 100%;
+    height: 52px;
+    font-size: 16px;
+}
+
+div.msg_box div.status_btn {
+
+}
+
+div.status_btn #status_btn {
+
+}
+
+ul.msg {
+    list-style-type: none;
+    list-style-position: outside;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+}
+
+ul.msg li {
+    line-height: 1.1em;
+    padding: 0.7em 0 0.6em 0.8em;
+    border-bottom: 1px dashed #D2DADA;
+    position: relative;
+    width: 500px;
+}
+
+ul.msg li:hover {
+    background-color: #F7F7F7;
+}
+
+.msg {
+    display: block;
+    /*margin-left:56px;*/
+    min-height: 50px;
+    width: 450px;
+}
+
+.msg_content a, .msg_content a:visited {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.msg_content a:hover, .msg_content a:active {
+    text-decoration: underline;
+}
+
+.msg_details {
+    color: #999999;
+    display: block;
+    font-size: 0.764em;
+    margin: 3px 0 0;
+}
+
+.msg_actions {
+    border-width: 0;
+    line-height: 1.8em;
+    position: absolute;
+    right: 5px;
+    top: 1.4em;
+    width: 32px;
+}
+
+.msg_actions a {
+    color: #2276BB;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+    outline-color: -moz-use-text-color;
+    outline-style: none;
+    outline-width: medium;
+    padding: 3px 8px;
+    text-decoration: none;
+}
+
+.reply {
+    background-image: url(http://static.crimecorp.com/images/icons/email_reply_32.png);
+}
+
+.reply_m {
+    background-image: url(http://static.crimecorp.com/images/icons/email_reply_16.png);
+}
+
+.send {
+    background-image: url(http://static.crimecorp.com/images/icons/email_32.png);
+}
+
+.send_m {
+    background-image: url(http://static.crimecorp.com/images/icons/email_16.png);
+}
+
+/* TABS */
+.tabs_container {
+    width: 100%;
+}
+
+.tabs {
+    width: 18%;
+    float: left;
+}
+
+.tab ul {
+
+}
+
+.tab {
+    border: 1px solid white;
+    display: block;
+    height: 23px;
+    overflow: hidden;
+    padding: 0 2px;
+    position: relative;
+    margin-left: -30px;
+    padding-left: 20px;
+    padding-top: 9px;
+    font-size: 11px;
+    border-bottom: 1px solid #D6D9DE;
+}
+
+.tab:hover {
+    background-color: #ECEEF4;
+    border-color: #ECEEF4;
+    text-decoration: none;
+}
+
+.tab_selected, .tab_selected:hover {
+    background-color: #6D84B4;
+    border-color: #3B5998;
+    height: 24px;
+    margin-top: -1px;
+    padding-left: 20px;
+    padding-top: 9px;
+    font-size: 11px;
+}
+
+.tab a {
+    color: #3B5998;
+    cursor: pointer;
+    outline-style: none;
+    text-decoration: none;
+    width: 70px;
+    display: block;
+    float: left;
+}
+
+.tab_selected a {
+    color: #fff;
+}
+
+.tabs_content {
+    width: 80%;
+    float: left;
+}
+
+.tab_indicator {
+    padding-left: 15px;
+    background: url(/static/images/indicator_fb.gif) no-repeat;
+    display: none;
+    float: left;
+}

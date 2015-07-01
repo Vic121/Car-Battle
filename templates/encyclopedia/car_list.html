@@ -1,0 +1,58 @@
+{% extends base_page %}
+{# {% load modules %} #}
+
+{% block title %}{{ manuf }} models in Car Battle's Car Encyclopedia - Page {{ page_no }}{% endblock %}
+{% block description %}Car Encyclopedia page for {{ manuf }} models.{% endblock %}
+{% block keywords %}Car Encyclopedia, {{ manuf }}, BMW, Ford, Audi, Mercedes, Dodge, Porsche, Volkswagen,
+    VW{% endblock %}
+
+{% block breadcrumbs %}
+    <strong>Encyclopedia</strong>
+    <a href="{% url "encyclopedia" %}">Manufacturers</a>
+    <span class="final">{{ manuf }}</span>
+{% endblock %}
+
+{% block header %}{{ manuf }} cars{% endblock %}
+
+{% block content %}
+{% for car in cars %}
+    <div class="album_item narrow">
+        <h2>
+            <a href="{% url "encyclopedia_car" car.manuf|slugify car.name|slugify car.id %}">{{ car.year }} {{ car.name }}</a>
+        </h2>
+
+        <div class="subtitle">&nbsp;{% if request.engine.user %}
+            <a href="{% url "wishlist_add" car.id %}">add to wish list</a>{% endif %}</div>
+        <a href="{% url "encyclopedia_car" car.manuf|slugify car.name|slugify car.id %}"><img
+                src="{{ settings.BASE_MEDIA_URL }}{{ car.img|img_replace:'_m.jpg' }}"
+                alt="{{ car.manuf }} {{ car.year }} {{ car.name }} {{ car.power_bhp }} BHP"/></a>
+    </div>
+{% endfor %}
+
+<br class="clear"/>
+
+<div class="box">
+    {% if total > settings.DEFAULT_CARS_PER_ENCYCLOPEDIA_PAGE %}
+    <p style="font-size: 18px;">Page:
+        {% for num in page.page_range %}
+        {% if not num %} ...
+        {% else %}
+        {% ifequal num page_no %}
+        <b>{{ num }}</b>
+        {% else %}
+        <a href="{% url "encyclopedia_cars" short_manuf num %}">{{ num }}</a>
+        {% endifequal %}
+        {% endif %}
+        {% endfor %}
+    </p>
+    {% endif %}
+</div>
+
+<br class="clear"/>
+
+{% endblock %}
+
+{% block slogan %}
+    Love {{ manuf }} model not listed here? <a href="mailto:cars@car-battle.com">Let me know</a> and maybe I can do
+    something about it.
+{% endblock %}

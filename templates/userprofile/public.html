@@ -1,0 +1,137 @@
+{% extends base_page %}
+{% load achievement %}
+
+{% block master_header %}{% endblock %}
+
+{% block title %}
+    {{ profile }}'s public profile
+{% endblock %}
+
+{% block description %}
+    See collection of {{ profile }}. Why don't you try building your own? Play now!
+{% endblock %}
+
+{% block head %}
+    <link type="text/css" rel="stylesheet" media="screen"
+          href="http://static.ak.fbcdn.net/rsrc.php/v1/pkg/77/118975/css/common.css.pkg.php"/>
+
+    <meta property="og:title" content="Profile of {{ profile.user }}"/>
+    <meta property="og:site_name" content="Car Battle - must play if you love cars"/>
+    <!-- <meta property="og:image" content="http://ia.media-imdb.com/rock.jpg"/> -->
+{% endblock %}
+
+{% block content %}
+    <div class="box-2">
+
+        <div style="width: 100%">
+            <div class="feature mini-resource left" style="width: 50px;">
+                <a class="mask" href="{% url "profile" profile.username|slugify %}"></a>
+                <img class="avatar left" src="{{ MEDIA_URL }}{{ profile.user_id|avatar }}" alt="{{ profile }}"/>
+            </div>
+            <div style="float: left; margin-top: 10px;">
+                <h2>{{ profile }}</h2>
+                <h4>Level: {{ profile.level }}</h4>
+                {% comment %}
+                    {% if profile.user_id|STR not in request.engine.user.get_friends.friends %}
+                        <p class="ok"><a href="{% url "profile" profile.username|slugify %}" style="margin-left: 22px;">add
+                            as a friend</a></p>
+                    {% else %}
+                        {% if profile.user_id|STR in request.engine.user.get_friends.pendings %}
+                            <p class="q left"><span style="margin-left: 22px;"><i>awaiting reply</i></span></p>
+                        {% else %}
+                            <p><i>{{ profile.username }} is you friend</i></p>
+                        {% endif %}
+                    {% endif %}
+                {% endcomment %}
+            </div>
+        </div>
+
+        <p>
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcar-battle.com%2Fprofile%2F{{ profile.user }}%2F&amp;layout=standard&amp;show_faces=false&amp;width=350&amp;action=like&amp;colorscheme=light&amp;height=35"
+                    scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:350px; height:35px;"
+                    allowTransparency="true"></iframe>
+        </p>
+
+    </div>
+    <br class="clear"/>
+    <div style="width: 49%; float: left;">
+
+        {% if wish_list %}
+            <div class="heading left">
+                <h1>Wish List ({{ wish_list|length }} of {{ settings.MAX_WISHLIST_SIZE }})</h1>
+            </div>
+            <div class="box-3">
+                {% for car in wish_list %}
+                    <div class="car-feature left">
+                        <h2>&nbsp;</h2>
+                        <img src="{{ settings.BASE_MEDIA_URL }}{{ car.img|img_replace:'_s.jpg' }}">
+
+                        <h1>
+                            <a href="{% url "encyclopedia_car" car.manuf|slugify car.name|slugify car.id %}">{{ car.year }} {{ car.manuf }}</a>
+                        </h1>
+
+                        <h1>
+                            <a href="{% url "encyclopedia_car" car.manuf|slugify car.name|slugify car.id %}">{{ car.short_name }}</a>
+                        </h1>
+                    </div>
+                {% endfor %}
+            </div>
+            <br class="clear"/><br class="clear"/>
+        {% endif %}
+
+        <div class="heading left">
+            <h1>Albums</h1>
+        </div>
+        <div class="box-2">
+            {% if has_albums > 0 %}
+                {% for name, items in albums.iteritems %}
+                    {% if items %}
+                        {% for ua in items %}
+                            <div class="feature maxi-resource left">
+                                <a href="{% url "albums" %}" class="mask"></a>
+                                <img alt="{{ ua.album.name }}"
+                                     src="{{ MEDIA_URL }}images/albums/{{ ua.album.id }}_s.jpg" class="avatar left">
+                                <strong class="name left"><a
+                                        href="{% url "public_album" profile.username ua.id ua.album.name|slugify %}">{{ ua.album.name }}</a></strong>
+                                {% if ua.album.desc %}<span class="bio serif left">{{ ua.album.desc }}</span>{% endif %}
+                            </div>
+                        {% endfor %}
+                        <br class="clear"/>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <h4>no albums to see right now</h4>
+            {% endif %}
+        </div>
+
+        <br class="clear"/>
+
+        <div class="heading left">
+            <h1>Achievements</h1>
+        </div>
+        {% if achievements.done %}
+            <ul class="achievement">
+                {% for k,v in achievements.dones.iteritems %}
+                    {% for kk, vv in v.iteritems %}
+                        <li>{% render_done_achievement request.engine k kk vv %}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h4>no achievements so far</h4>
+        {% endif %}
+
+    </div>
+
+    <div style="width: 49%; float: right;">
+
+        {% if wall %}
+            <div class="heading left">
+                <h1>Wall</h1>
+            </div>
+            {% include 'partials/wall.html' %}
+        {% endif %}
+
+    </div>
+
+{% endblock %}

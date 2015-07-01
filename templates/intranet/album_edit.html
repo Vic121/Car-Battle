@@ -1,0 +1,34 @@
+{% extends "admin/base_site.html" %}
+{% load adminmedia admin_list common humanize %}
+
+{% if not is_popup %}{% block breadcrumbs %}
+    <div class="breadcrumbs"><a href="{% url "home" %}">Home</a> &rsaquo; <a href="/intranet/">Intranet</a> &raquo;
+        Albumy
+    </div>{% endblock %}{% endif %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <script src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript" charset="utf-8">google.load("jquery", "1.4.0");</script>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/changelists.css"/>
+{% endblock %}
+
+{% block content %}
+
+    <h1>Album</h1>
+    <form action="{% url "intranet_album_edit" item.id %}" method="post">
+        <input type="text" name="name" value="{{ item.name }}" size="40"/>
+        <input type="text" name="short_name" value="{{ item.short_name }}" size="25"/>
+        <input type="submit" name="update" value="Aktualizuj"/>
+        <input type="submit" name="remove" value="Usuń"/><br/>
+        Desc: <input type="text" name="desc" value="{{ item.desc }}" size="84"/><br/>
+        Search: <input type="text" name="search" value="{{ item.search }}" size="82"/><br/>
+        EXP: <input type="text" name="exp" value="{{ item.exp }}" size="25"/><br/>
+        MIN LVL: <input type="text" name="min_lvl" value="{{ item.min_lvl }}" size="25"/>
+        PRICE: <input type="text" name="price" value="{{ item.price }}" size="25"/><br/>
+        LOCKED? <input type="checkbox" name="is_locked" {% if item.is_locked %}checked="checked"{% endif %}/>
+        ACTIVE? <input type="checkbox" name="is_active" {% if item.is_active %}checked="checked"{% endif %}/>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends base_page %}
+
+{% block title %}Album - {{ album.name }} in Car Battle's Car Encyclopedia - technical description, photo{% endblock %}
+{% block description %}Car Encyclopedia page for Album {{ album.name }} - technical description, photo,
+    comments{% endblock %}
+
+{% block breadcrumbs %}
+    <strong>Encyclopedia</strong>
+    <a href="{% url "encyclopedia_albums" %}">Albums</a>
+    <span class="final">{{ album.name }}</span>
+{% endblock %}
+
+{% block content %}
+
+    <div class="box-4">
+        {% for car in cars %}
+            <div class="album_item narrow">
+                <h2><a href="{% url "encyclopedia_car" car.manuf|slugify car.name|slugify car.id %}"
+                       title="{{ car.manuf }} {{ car.name }}">{{ car.manuf }} {{ car.short_name }}</a></h2>
+
+                <div class="subtitle">
+                    {% if request.engine.user %}<a href="{% url "wishlist_add" car.id %}"
+                                                   title="add {{ car.manuf }} {{ car.name }} to wish list">add to wish
+                        list</a>{% else %}&nbsp;{% endif %}
+                </div>
+                <img src="{{ settings.BASE_MEDIA_URL }}{{ car.img|img_replace:'_m.jpg' }}"
+                     alt="{{ car.manuf }} {{ car.name }}"/>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block slogan %}
+    Found a mistake, missing image or just got tips for me? <a href="mailto:cars@car-battle.com">Let me know</a>
+{% endblock %}

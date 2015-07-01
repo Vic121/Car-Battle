@@ -1,0 +1,14 @@
+<div class="heading right">
+    <h1>Friends ({{ friends_count }})</h1>
+</div>
+{% if friends %}
+    {% for user in friends %}
+        <div class="feature left">
+            <a class="mask" href="{% url "profile" user.username|slugify %}"
+               title="{{ user }}, level {{ user.level|intcomma }}"></a>
+            <img class="avatar left" src="{{ MEDIA_URL }}{{ user.user_id|avatar }}"
+                 alt="{{ user }}, level {{ user.level|intcomma }}"/>
+        </div>
+    {% endfor %}
+{% endif %}
+<br class="clear"/>

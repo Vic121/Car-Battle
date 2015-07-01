@@ -1,0 +1,59 @@
+{% extends "admin/base_site.html" %}
+{% load adminmedia admin_list i18n common %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <script src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript" charset="utf-8">google.load("jquery", "1.4.0");</script>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css"/>
+{% endblock %}
+
+{% if not is_popup %}{% block breadcrumbs %}
+    <div class="breadcrumbs"><a href="{% url "home" %}">{% trans "Home" %}</a> &rsaquo; Intranet</div>
+{% endblock %}{% endif %}
+
+{% block content %}
+
+    <div id="content-main">
+        <h1>Intranet</h1>
+
+        <br/>
+
+        <div class="module" style="width: 400px; float: left;">
+            <h2>Akcje</h2>
+            <pre><b><a href="{% url "intranet_albums" %}">albumy</a></b></pre>
+            <pre><b><a href="{% url "intranet_merge" %}">łącz auta</a></b></pre>
+        </div>
+
+        {# <div class="module"> #}
+        {# 	<h2>Social</h2> #}
+        {# 	<script type="text/javascript" charset="utf-8"> #}
+        {# 		var tweetCounter = function(t) { #}
+        {# 			$('#counter').text(t.value.length); #}
+        {# 			if(t.value.length > 130) #}
+        {# 				$('#counter').css('color', 'red'); #}
+        {# 			else #}
+        {# 				$('#counter').css('color', 'black'); #}
+        {# 		}; #}
+        {# 	</script> #}
+        {# 	<form action="{% url "admin_social" %}" method="post"> #}
+        {# 	<pre><input type="text" name="msg" size="110" value="" onkeyup="tweetCounter(this);"/>&nbsp;<input type="submit" value="Wyślij &raquo;"/>&nbsp;<span id="counter"></span></pre> #}
+        {# 	<pre><input type="checkbox" name="to_twitter"/> twitter &raquo; <input type="checkbox" name="to_blip" value=""/> blip</pre> #}
+        {# </div> #}
+        {# <br/> #}
+        {# <div class="module"> #}
+        {# 	<h2>Kody</h2> #}
+        {# 	{% if last_generated_codes %} #}
+        {# 	 <pre>{{ last_generated_codes|safe }}</pre> #}
+        {# 	{% endif %} #}
+        {# 	<p><form action="/admin/stats/gen_promo_code/" method="post"> #}
+        {# 		<pre><label for="how_many">How many?</label> <input type="text" name="how_many" value="0" size="2"/></pre> #}
+        {# 		<pre><label for="value">Value?</label> <input type="text" name="value" value="0" size="2"/></pre> #}
+        {# 		<pre><label for="valid_for_days">Valid for?</label> <input type="text" name="valid_for_days" value="0" size="2"/></pre> #}
+        {# 		<pre><input type="submit" value="Generate"></pre> #}
+        {# 	</form></p> #}
+        {# </div> #}
+        {# <br/> #}
+
+    </div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends base %}
+
+{% block head %}
+    {# <link type="text/css" rel="stylesheet" media="screen" href="http://static.ak.fbcdn.net/rsrc.php/v1/pkg/77/118975/css/common.css.pkg.php"/> #}
+    <link href="{{ MEDIA_URL }}css/fb_flag_nav.css" rel="stylesheet" type="text/css" media="screen"/>
+    <script type="text/javascript" charset="utf-8">
+        var switch_tab = function (v) {
+            $('#tab_inbox').css('display', 'none');
+            $('#inbox_li').removeClass('flag_nav_item_selected');
+            $('#tab_outbox').css('display', 'none');
+            $('#outbox_li').removeClass('flag_nav_item_selected');
+            $('#' + v + '_li').addClass('flag_nav_item_selected');
+
+            if (v == 'inbox')
+                var url = '{% url "msg_inbox" %}?ajax=1';
+            else if (v == 'outbox')
+                var url = '{% url "msg_outbox" %}?ajax=1';
+
+            $.get(url, function (data) {
+                $('#tab_content').html(data);
+            });
+        };
+    </script>
+{% endblock %}
+
+{% block title %}Messages{% endblock %}
+
+{% block content %}
+
+    <div id="content" class="mywidth clearfix">
+        {# <div class="dashboard_header"> #}
+        {# <div class="dh_titlebar clearfix">Garage</div> #}
+        {# </div> #}
+        <div class="content_no_sidebar">
+            <div class="dev_applications clearfix">
+                <div class="flag_nav flag_nav_has_icon dev_app_list" id="dev_app_list">
+                    <div class="flag_nav_container">
+                        <div class="flag_nav_item {% if selected_tab == 'inbox' %}flag_nav_item_selected{% endif %}"
+                             id="inbox_li">
+                            <a href="#" onclick="switch_tab('inbox'); return false;" class="clearfix">
+                                {# <div class="flag_nav_li_icon" style="background-image: url(http://www.facebook.com/images/icons/fbfile.gif);"></div> #}
+                                <div class="flag_nav_li_title">Inbox {% if request.engine.msg.unread_messages > 0 %}(
+                                    {{ request.engine.msg.unread_messages }}){% endif %}</div>
+                                <div class="flag_nav_top_mask"></div>
+                            </a>
+                            <span class="flag_nav_border_hack"> </span>
+                        </div>
+
+                        <div class="flag_nav_item {% if selected_tab == 'outbox' %}flag_nav_item_selected{% endif %}"
+                             id="outbox_li">
+                            <a href="#" onclick="switch_tab('outbox'); return false;" class="clearfix">
+                                {# <div class="flag_nav_li_icon" style="background-image: url(http://www.facebook.com/images/icons/fbfile.gif);"></div> #}
+                                <div class="flag_nav_li_title">Outbox</div>
+                                <div class="flag_nav_top_mask"></div>
+                            </a>
+                            <span class="flag_nav_border_hack"> </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dev_app_infos_shadow">
+                    <div class="dev_app_infos" id="dev_app_infos">
+
+                        <div id="tab_">
+                            <div class="dev_application app_show" id="tab_content"
+                                 style="padding-bottom: 10px; border-bottom: 1px solid #D8DFEA;">
+                                {% if msgs %}
+                                    {% for msg in msgs %}
+                                        {% include 'partials/msg.html' %}
+                                    {% endfor %}
+                                {% else %}
+                                    <h3 style="text-align: center; font-size: 20px; margin-top: 10px;">No messages</h3>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="dev_app_footer">
+                            {# <a href="www.facebook.com/">Action1</a> | <a href="www.facebook.com/">Action2</a> #}
+                        </div>
+                    </div>
+                    <!-- End Of Active Page. Other pages go here. -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

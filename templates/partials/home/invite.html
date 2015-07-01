@@ -1,0 +1,4 @@
+<p style="margin-left: 30px; margin-top: 15px;">invite {% if friends|length > 0 %}more friends{% else %}
+    someone{% endif %} by sending them link: <input type="text"
+                                                    value="{% if request.engine.IS_FB %}http://apps.facebook.com/car_battle/{% else %}http://www.car-battle.com/{% endif %}add_me/?link={{ request.engine.user.profile.invite_key }}"
+                                                    size="50"/></p>

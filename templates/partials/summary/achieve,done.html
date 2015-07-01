@@ -1,0 +1,10 @@
+<h2>Achievements done!</h2>
+{% for item in items %}
+    <h3><a href="{% url "achievement" item.typekey %}#{{ item.name|slugify }}">{{ item.name }} {% if item.level > 0 %}
+        (Level {{ item.level }}){% endif %}</a></h3>
+    Bonus:
+    {% if item.cash %}<p><strong>${{ item.cash|intcomma }}</strong></p>{% endif %}
+    {% if item.exp %}<p><strong>{{ item.exp|intcomma }}</strong> EXP</p>{% endif %}
+    {% if item.credit %}<p><strong>{{ item.credit|intcomma }}</strong> credits</p>{% endif %}
+    {% if item.car_id %}{% show_card item.car_id %}{% endif %}
+{% endfor %}		

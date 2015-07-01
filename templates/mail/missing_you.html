@@ -1,0 +1,21 @@
+{% extends "mail/base.html" %}
+
+{% block hello %}{{ receiver }}{% endblock %}
+
+{% block content %}
+    It's been a while since you last visited, if you have not found Car Battle interesting then, maybe you'll like it
+    this time as we constantly improving it, add new cars and albums and so on.<br/>
+    <br/>
+
+    {% if news %}
+        What happened since you last visited us? Here's a brief list:<br/>
+        <ul>
+            {% for n in news %}
+                <li>{{ n.title }}</li>
+            {% endfor %}
+        </ul>
+        <br/>
+    {% endif %}
+
+    <p>Hope you'll come back to us...</p>
+{% endblock %}

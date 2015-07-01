@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    {% include 'partials/_head.html' %}
+    <title>{% block title %}{% endblock %} - Car Battle</title>
+    {% block head %}{% endblock %}
+</head>
+<body>
+<div id="fb-root"></div>
+<div id="short">
+    <div id="short_header">
+
+        {% include 'partials/_menu_mini.html' %}
+
+        <div id="takeaway_short">
+
+            <a href="/" id="logo">Car Battle</a>
+
+            <div id="grab">
+                <a href="{% url "tutorial" %}" class="cta tutorial">Visit tutorial</a>
+                <a href="{% url "store" %}" class="cta shop">Visit shop</a>
+            </div>
+
+            <div class="rounded_top" id="feature" style="height: 140px; width: 300px;">
+                {% include 'partials/user_box.html' %}
+            </div>
+        </div>
+
+        <div id="infobar">
+            <div class="ellipsis left" id="breadcrumbs">
+                {% block breadcrumbs %}{% endblock %}
+                {# <strong>You are here</strong> #}
+                {# <span class="final">Home</span> #}
+            </div>
+
+            {# <div class="right" id="contactinfo"> #}
+            {# 	<a href="mailto:q@car-battle.com" class="email left"> #}
+            {# 		<span class="icon left">Email us:</span> #}
+            {# 		<span class="left">q@car-battle.com</span> #}
+            {# 	</a> #}
+            {# </div> #}
+        </div>
+    </div>
+
+    {% include 'partials/msg_box.html' %}
+
+    <div class="clearfix nobase" id="content">
+        {% block master_header %}
+            <div class="heading clearfix full">
+
+                <h1 class="ellipsis ">
+                    {% block header %}{% endblock %}
+                </h1>
+
+                {% block filters %}{% endblock %}
+            </div>
+        {% endblock %}
+
+        {% if messages %}
+            <br class="clear"/>
+            <div class="fbinfobox">
+                {% for message in messages %}
+                    <p>{{ message|safe }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if message %}
+            <br class="clear"/>
+            <div class="fbinfobox">
+                <p>{{ message|safe }}</p>
+            </div>
+        {% endif %}
+
+        {% if request.engine.summary %}
+            <br class="clear"/>
+            <div class="fbinfobox">
+                {% for section, items in request.engine.get_summary.iteritems %}
+                    <div style="margin-bottom: 10px;">
+                        {{ items|safe }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% block content %}
+
+        {% endblock %}
+
+        <br class="clear"/><br class="clear"/>
+
+        <div id="calltoaction">
+            <p class="message serif">
+                {% block slogan %}
+                    {# Like what you see? <a href="http://www.nuvographics.com/contact/">Let's work together.</a> #}
+                    {# <a href="http://www.nuvographics.com/work/" class="cta design">View Selected Design Work</a> #}
+                {% endblock %}
+                {# <a href="{% url "auth_login" %}" class="cta notebook">Register now</a> #}
+            </p>
+        </div>
+
+        {% include 'partials/_foot_mini.html' %}
+</body>
+</html>

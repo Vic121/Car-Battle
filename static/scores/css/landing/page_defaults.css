@@ -1,0 +1,463 @@
+/* reset defaults*/
+html {
+    color: #000;
+    background: #FFF;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: none
+}
+
+/* IE extra padding on buttons fix */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var, optgroup {
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+del, ins {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+abbr, acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+sup {
+    vertical-align: baseline;
+}
+
+sub {
+    vertical-align: baseline;
+}
+
+legend {
+    color: #000;
+}
+
+input, button, textarea, select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+/*input,button,textarea,select{*font-size:100%;}*/
+
+/* additional defaults */
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+/* clearfix */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+html, body, .lp-pom-body {
+    height: 100%
+}
+
+/* stop text getting resized on iPhone Safari */
+* {
+    -webkit-text-size-adjust: none;
+}
+
+#lp-pom-root {
+    min-height: 100%;
+    position: relative;
+}
+
+#lp-pom-root {
+    font-family: 'helvetica', 'arial', 'sans serif';
+    font-size: 14px;
+}
+
+#lp-positioned-content {
+    position: absolute;
+    left: 50%;
+    height: 0px;
+    z-index: 1;
+}
+
+.lp-pom-block-content {
+    position: relative;
+    height: 100%;
+}
+
+#lp-pom-root .lp-pom-form-field {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin-bottom: 12px;
+}
+
+#lp-pom-root .lp-pom-form-field label {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#lp-pom-root .lp-pom-form-field select {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    padding: 0;
+    margin: 0;
+    font-family: 'helvetica', 'arial', 'sans serif';
+    border: 1px solid #607880;
+    vertical-align: center;
+}
+
+#lp-pom-root .lp-pom-form-field select option {
+    padding: 0.2em;
+}
+
+#lp-pom-root .lp-pom-form-field input[type=text] {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #607880;
+    font-family: 'helvetica', 'arial', 'sans serif';
+}
+
+#lp-pom-root .lp-pom-form-field input[type=text]::-moz-focus-inner {
+    padding: 0;
+    border: none;
+}
+
+#lp-pom-root .lp-pom-form-field select::-moz-focus-inner {
+    padding: 0;
+    border: none;
+}
+
+#lp-pom-root .lp-pom-form-field .optionsList {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    padding: 0;
+    margin: 0;
+}
+
+#lp-pom-root .lp-pom-form-field .option {
+    position: relative;
+    margin-bottom: 6px;
+}
+
+#lp-pom-root .lp-pom-form-field .option input {
+    position: absolute;
+}
+
+#lp-pom-root .lp-pom-form-field .option label {
+    position: relative;
+    display: block;
+}
+
+#lp-pom-root .lp-pom-form input.submit {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+/* css to make button text vetically centered */
+#lp-pom-root .lp-pom-button {
+    text-decoration: none;
+    display: block;
+}
+
+#lp-pom-root .lp-pom-button span {
+    position: absolute;
+    top: 50%;
+    display: block;
+    text-align: center;
+    left: 0;
+    right: 0;
+    padding: 0 8px 0 8px;
+}
+
+#lp-pom-root .lp-pom-text span, #lp-pom-root.cke-text span {
+    line-height: 1em;
+}
+
+#lp-pom-root .lp-pom-text p, #lp-pom-root.cke-text p {
+    font-size: 14px;
+    line-height: 17px;
+}
+
+#lp-pom-root .lp-pom-text a, #lp-pom-root.cke-text a {
+    text-decoration: underline;
+}
+
+#lp-pom-root .lp-pom-text h1, #lp-pom-root.cke-text h1 {
+    font-size: 28px;
+    margin-bottom: 19px;
+    line-height: 34px;
+}
+
+#lp-pom-root .lp-pom-text h2, #lp-pom-root.cke-text h2 {
+    font-size: 21px;
+    margin-bottom: 16px;
+    line-height: 25px;
+}
+
+#lp-pom-root .lp-pom-text h3, #lp-pom-root.cke-text h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 19px;
+}
+
+#lp-pom-root .lp-pom-text h4, #lp-pom-root.cke-text h4 {
+    font-size: 14px;
+    margin-bottom: 14px;
+    line-height: 17px;
+}
+
+#lp-pom-root .lp-pom-text h5, #lp-pom-root.cke-text h5 {
+    font-size: 12px;
+    margin-bottom: 13px;
+    line-height: 14px;
+}
+
+#lp-pom-root .lp-pom-text h6, #lp-pom-root.cke-text h6 {
+    font-size: 10px;
+    margin-bottom: 12px;
+    line-height: 12px;
+}
+
+#lp-pom-root .lp-pom-text p, #lp-pom-root.cke-text p,
+#lp-pom-root .lp-pom-text blockquote, #lp-pom-root.cke-text blockquote,
+#lp-pom-root .lp-pom-text ul, #lp-pom-root.cke-text ul,
+#lp-pom-root .lp-pom-text dl, #lp-pom-root.cke-text dl {
+    margin-bottom: 16px;
+}
+
+#lp-pom-root .lp-pom-text h1, #lp-pom-root.cke-text h1,
+#lp-pom-root .lp-pom-text h2, #lp-pom-root.cke-text h2,
+#lp-pom-root .lp-pom-text h3, #lp-pom-root.cke-text h3,
+#lp-pom-root .lp-pom-text h4, #lp-pom-root.cke-text h4,
+#lp-pom-root .lp-pom-text h5, #lp-pom-root.cke-text h5,
+#lp-pom-root .lp-pom-text h6, #lp-pom-root.cke-text h6 {
+    font-weight: bolder;
+}
+
+#lp-pom-root .lp-pom-text b, #lp-pom-root.cke-text b,
+#lp-pom-root .lp-pom-text strong, #lp-pom-root.cke-text strong {
+    font-weight: bolder
+}
+
+#lp-pom-root .lp-pom-text optgroup, #lp-pom-root.cke-text optgroup, {
+    font-weight: normal;
+}
+
+#lp-pom-root .lp-pom-text abbr, #lp-pom-root.cke-text abbr,
+#lp-pom-root .lp-pom-text acronym, #lp-pom-root.cke-text acronym {
+    border-bottom: 1px dotted #000;
+    cursor: help;
+}
+
+#lp-pom-root .lp-pom-text em, #lp-pom-root.cke-text em {
+    font-style: italic;
+}
+
+#lp-pom-root .lp-pom-text del, #lp-pom-root.cke-text del {
+    text-decoration: line-through;
+}
+
+#lp-pom-root .lp-pom-text blockquote, #lp-pom-root.cke-text blockquote,
+#lp-pom-root .lp-pom-text ul, #lp-pom-root.cke-text ul,
+#lp-pom-root .lp-pom-text ol, #lp-pom-root.cke-text ol,
+#lp-pom-root .lp-pom-text dl, #lp-pom-root.cke-text dl {
+    margin: 14px;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+#lp-pom-root .lp-pom-text ul, #lp-pom-root.cke-text ul {
+    margin-left: 16px;
+}
+
+#lp-pom-root .lp-pom-text ol, #lp-pom-root.cke-text ol {
+    margin-left: 25px;
+}
+
+#lp-pom-root .lp-pom-text li, #lp-pom-root.cke-text li {
+    display: list-item;
+}
+
+#lp-pom-root .lp-pom-text ol li, #lp-pom-root.cke-text ol li {
+    list-style: decimal outside;
+}
+
+#lp-pom-root .lp-pom-text ul li, #lp-pom-root.cke-text ul li {
+    list-style: disc outside;
+}
+
+#lp-pom-root .lp-pom-text dl dd, #lp-pom-root.cke-text dl dd {
+    margin-left: 14px;
+}
+
+#lp-pom-root .lp-pom-text th, #lp-pom-root.cke-text th,
+#lp-pom-root .lp-pom-text td, #lp-pom-root.cke-text td {
+    border: 1px solid #000;
+    padding: 7px;
+}
+
+#lp-pom-root .lp-pom-text th, #lp-pom-root.cke-text th {
+    font-weight: bold;
+    text-align: center;
+}
+
+#lp-pom-root .lp-pom-text caption, #lp-pom-root.cke-text caption {
+    margin-bottom: 7px;
+    text-align: center;
+}
+
+#lp-pom-root .lp-pom-text sup, #lp-pom-root.cke-text sup {
+    vertical-align: super;
+}
+
+#lp-pom-root .lp-pom-text sub, #lp-pom-root.cke-text sub {
+    vertical-align: sub;
+}
+
+#powered-by-spacer {
+    height: 24px;
+}
+
+/* Styles have been placed inline to avoid being overwritten by a user */
+/* Find the styles for this element in /views/page_variants/_powered_by_unbounce.html.erb */
+#powered-by-unbounce {
+    display: block !important;
+    position: absolute !important;
+    visibility: visible !important;
+    text-indent: 0 !important;
+    bottom: 0px !important;
+    width: 100% !important;
+    height: 28px !important;
+    overflow: hidden !important;
+    background: #0d0e0f !important;
+    z-index: 2147483648 !important;
+    text-align: center !important;
+    font-size: 11px !important;
+    color: #666 !important;
+    font-weight: bold !important;
+}
+
+#lp-pom-root #powered-by-unbounce a {
+    display: inline !important;
+    position: static !important;
+    visibility: visible !important;
+    text-indent: 0 !important;
+    z-index: 2147483648 !important;
+    font-size: 11px !important;
+    color: #fff !important;
+    font-family: 'trebuchet ms' !important;
+    font-weight: bold !important;
+    line-height: 26px !important;
+    color: #aaa !important;
+}
+
+#lp-pom-root #powered-by-unbounce a:hover {
+    color: #fff !important;
+}
+
+.lp-form-errors {
+    position: absolute;
+    display: none;
+    z-index: 999999;
+}
+
+.lp-form-errors div.content {
+    border: 1px solid #661414;
+    background-color: #ccc;
+    font-family: 'helvetica', 'arial', 'verdana', 'san serif';
+}
+
+.lp-form-errors div.content h3 {
+    background-color: #661414;
+    padding: 8px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: bold;
+    color: #f3d8d8;
+}
+
+.lp-form-errors div.content ul {
+    background-color: #f3d8d8;
+    padding: 8px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
+    color: #661414;
+}
+
+.lp-form-errors div.content li {
+    list-style: square;
+    margin-left: 20px;
+    margin-bottom: 8px;
+}
+
+#lp-pom-root .lp-element.lp-code {
+    overflow: hidden;
+}
+
+#lp-pom-root .lp-pom-image {
+    overflow: hidden;
+}

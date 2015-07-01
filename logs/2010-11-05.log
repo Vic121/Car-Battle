@@ -1,0 +1,116 @@
+2010-11-05 01:18:44,210 | ERROR  | Error saving profile Data truncated for column 'invite_key' at row 1
+2010-11-05 01:18:44,210 | ERROR  | Error saving profile Data truncated for column 'invite_key' at row 1
+2010-11-05 01:18:46,029 | INFO   | yez09398 registered on the web
+2010-11-05 01:18:46,029 | INFO   | yez09398 registered on the web
+2010-11-05 01:19:33,261 | ERROR  | Error saving profile Data truncated for column 'invite_key' at row 1
+2010-11-05 01:19:33,261 | ERROR  | Error saving profile Data truncated for column 'invite_key' at row 1
+2010-11-05 01:19:35,218 | INFO   | yez809398 registered on the web
+2010-11-05 01:19:35,218 | INFO   | yez809398 registered on the web
+2010-11-05 01:20:32,272 | ERROR  | Error saving profile Data truncated for column 'invite_key' at row 1
+2010-11-05 01:20:32,272 | ERROR  | Error saving profile Data truncated for column 'invite_key' at row 1
+2010-11-05 01:20:34,026 | INFO   | yez8093998 registered on the web
+2010-11-05 01:20:34,026 | INFO   | yez8093998 registered on the web
+2010-11-05 01:21:45,447 | ERROR  | Error saving profile Data truncated for column 'invite_key' at row 1
+2010-11-05 01:21:45,447 | ERROR  | Error saving profile Data truncated for column 'invite_key' at row 1
+2010-11-05 01:21:59,372 | INFO   | ez803998 registered on the web
+2010-11-05 01:21:59,372 | INFO   | ez803998 registered on the web
+2010-11-05 01:22:37,570 | ERROR  | Error saving profile Data truncated for column 'invite_key' at row 1
+2010-11-05 01:22:37,570 | ERROR  | Error saving profile Data truncated for column 'invite_key' at row 1
+2010-11-05 01:22:39,038 | INFO   | ez80998 registered on the web
+2010-11-05 01:22:39,038 | INFO   | ez80998 registered on the web
+2010-11-05 01:22:39,330 | INFO   | ez80998 just spent 0 credit
+2010-11-05 01:22:39,330 | INFO   | ez80998 just spent 0 credit
+2010-11-05 01:22:39,338 | DEBUG  | Stat ez80998. credit, spend=1.
+2010-11-05 01:22:39,338 | DEBUG  | Stat ez80998. credit, spend=1.
+2010-11-05 01:22:40,229 | DEBUG  | Could not draw any car for Prototype / ez80998
+2010-11-05 01:22:40,229 | DEBUG  | Could not draw any car for Prototype / ez80998
+2010-11-05 01:22:40,276 | DEBUG  | Could not draw any car for Modified / ez80998
+2010-11-05 01:22:40,276 | DEBUG  | Could not draw any car for Modified / ez80998
+2010-11-05 01:22:40,323 | DEBUG  | Could not draw any car for Non-Playable / ez80998
+2010-11-05 01:22:40,323 | DEBUG  | Could not draw any car for Non-Playable / ez80998
+2010-11-05 01:22:40,359 | DEBUG  | Stat ez80998. garage, cars_add=1.
+2010-11-05 01:22:40,359 | DEBUG  | Stat ez80998. garage, cars_add=1.
+2010-11-05 01:22:40,370 | DEBUG  | Stat ez80998. garage, cars=1.
+2010-11-05 01:22:40,370 | DEBUG  | Stat ez80998. garage, cars=1.
+2010-11-05 01:22:40,382 | DEBUG  | Stat ez80998. car_manuf, Volvo=1.
+2010-11-05 01:22:40,382 | DEBUG  | Stat ez80998. car_manuf, Volvo=1.
+2010-11-05 01:22:40,391 | DEBUG  | Stat ez80998. car_country, Sweden=1.
+2010-11-05 01:22:40,391 | DEBUG  | Stat ez80998. car_country, Sweden=1.
+2010-11-05 01:22:40,399 | DEBUG  | Stat ez80998. car_tier, 2=1.
+2010-11-05 01:22:40,399 | DEBUG  | Stat ez80998. car_tier, 2=1.
+2010-11-05 01:22:40,410 | DEBUG  | Stat ez80998. car_manuf, Volvo=2.
+2010-11-05 01:22:40,410 | DEBUG  | Stat ez80998. car_manuf, Volvo=2.
+2010-11-05 01:22:40,419 | DEBUG  | Stat ez80998. car_country, Sweden=2.
+2010-11-05 01:22:40,419 | DEBUG  | Stat ez80998. car_country, Sweden=2.
+2010-11-05 01:22:40,429 | DEBUG  | Stat ez80998. car_tier, 2=2.
+2010-11-05 01:22:40,429 | DEBUG  | Stat ez80998. car_tier, 2=2.
+2010-11-05 01:22:40,439 | DEBUG  | Stat ez80998. car_year, 2000=1.
+2010-11-05 01:22:40,439 | DEBUG  | Stat ez80998. car_year, 2000=1.
+2010-11-05 01:22:40,448 | DEBUG  | Stat ez80998. car_bhp, 107=1.
+2010-11-05 01:22:40,448 | DEBUG  | Stat ez80998. car_bhp, 107=1.
+2010-11-05 01:22:40,456 | DEBUG  | Stat ez80998. car_speed, 190=1.
+2010-11-05 01:22:40,456 | DEBUG  | Stat ez80998. car_speed, 190=1.
+2010-11-05 01:22:40,466 | DEBUG  | Stat ez80998. car_weight, 1200=1.
+2010-11-05 01:22:40,466 | DEBUG  | Stat ez80998. car_weight, 1200=1.
+2010-11-05 01:22:40,889 | DEBUG  | Could not draw any car for Prototype / ez80998
+2010-11-05 01:22:40,889 | DEBUG  | Could not draw any car for Prototype / ez80998
+2010-11-05 01:22:40,935 | DEBUG  | Could not draw any car for Modified / ez80998
+2010-11-05 01:22:40,935 | DEBUG  | Could not draw any car for Modified / ez80998
+2010-11-05 01:22:40,981 | DEBUG  | Could not draw any car for Non-Playable / ez80998
+2010-11-05 01:22:40,981 | DEBUG  | Could not draw any car for Non-Playable / ez80998
+2010-11-05 01:22:41,017 | DEBUG  | Stat ez80998. garage, cars_add=2.
+2010-11-05 01:22:41,017 | DEBUG  | Stat ez80998. garage, cars_add=2.
+2010-11-05 01:22:41,027 | DEBUG  | Stat ez80998. garage, cars=2.
+2010-11-05 01:22:41,027 | DEBUG  | Stat ez80998. garage, cars=2.
+2010-11-05 01:22:41,037 | DEBUG  | Stat ez80998. car_manuf, Volkswagen=1.
+2010-11-05 01:22:41,037 | DEBUG  | Stat ez80998. car_manuf, Volkswagen=1.
+2010-11-05 01:22:41,046 | DEBUG  | Stat ez80998. car_country, Germany=1.
+2010-11-05 01:22:41,046 | DEBUG  | Stat ez80998. car_country, Germany=1.
+2010-11-05 01:22:41,056 | DEBUG  | Stat ez80998. car_tier, 2=3.
+2010-11-05 01:22:41,056 | DEBUG  | Stat ez80998. car_tier, 2=3.
+2010-11-05 01:22:41,067 | DEBUG  | Stat ez80998. car_manuf, Volkswagen=2.
+2010-11-05 01:22:41,067 | DEBUG  | Stat ez80998. car_manuf, Volkswagen=2.
+2010-11-05 01:22:41,078 | DEBUG  | Stat ez80998. car_country, Germany=2.
+2010-11-05 01:22:41,078 | DEBUG  | Stat ez80998. car_country, Germany=2.
+2010-11-05 01:22:41,088 | DEBUG  | Stat ez80998. car_tier, 2=4.
+2010-11-05 01:22:41,088 | DEBUG  | Stat ez80998. car_tier, 2=4.
+2010-11-05 01:22:41,098 | DEBUG  | Stat ez80998. car_year, 2000=2.
+2010-11-05 01:22:41,098 | DEBUG  | Stat ez80998. car_year, 2000=2.
+2010-11-05 01:22:41,108 | DEBUG  | Stat ez80998. car_bhp, 84=1.
+2010-11-05 01:22:41,108 | DEBUG  | Stat ez80998. car_bhp, 84=1.
+2010-11-05 01:22:41,118 | DEBUG  | Stat ez80998. car_speed, 170=1.
+2010-11-05 01:22:41,118 | DEBUG  | Stat ez80998. car_speed, 170=1.
+2010-11-05 01:22:41,132 | DEBUG  | Stat ez80998. car_weight, 900=1.
+2010-11-05 01:22:41,132 | DEBUG  | Stat ez80998. car_weight, 900=1.
+2010-11-05 01:22:41,553 | DEBUG  | Could not draw any car for Prototype / ez80998
+2010-11-05 01:22:41,553 | DEBUG  | Could not draw any car for Prototype / ez80998
+2010-11-05 01:22:41,602 | DEBUG  | Could not draw any car for Modified / ez80998
+2010-11-05 01:22:41,602 | DEBUG  | Could not draw any car for Modified / ez80998
+2010-11-05 01:22:41,650 | DEBUG  | Could not draw any car for Non-Playable / ez80998
+2010-11-05 01:22:41,650 | DEBUG  | Could not draw any car for Non-Playable / ez80998
+2010-11-05 01:22:41,686 | DEBUG  | Stat ez80998. garage, cars_add=3.
+2010-11-05 01:22:41,686 | DEBUG  | Stat ez80998. garage, cars_add=3.
+2010-11-05 01:22:41,696 | DEBUG  | Stat ez80998. garage, cars=3.
+2010-11-05 01:22:41,696 | DEBUG  | Stat ez80998. garage, cars=3.
+2010-11-05 01:22:41,706 | DEBUG  | Stat ez80998. car_manuf, Peugeot=1.
+2010-11-05 01:22:41,706 | DEBUG  | Stat ez80998. car_manuf, Peugeot=1.
+2010-11-05 01:22:41,715 | DEBUG  | Stat ez80998. car_country, France=1.
+2010-11-05 01:22:41,715 | DEBUG  | Stat ez80998. car_country, France=1.
+2010-11-05 01:22:41,725 | DEBUG  | Stat ez80998. car_tier, 2=5.
+2010-11-05 01:22:41,725 | DEBUG  | Stat ez80998. car_tier, 2=5.
+2010-11-05 01:22:41,735 | DEBUG  | Stat ez80998. car_manuf, Peugeot=2.
+2010-11-05 01:22:41,735 | DEBUG  | Stat ez80998. car_manuf, Peugeot=2.
+2010-11-05 01:22:41,745 | DEBUG  | Stat ez80998. car_country, France=2.
+2010-11-05 01:22:41,745 | DEBUG  | Stat ez80998. car_country, France=2.
+2010-11-05 01:22:41,754 | DEBUG  | Stat ez80998. car_tier, 2=6.
+2010-11-05 01:22:41,754 | DEBUG  | Stat ez80998. car_tier, 2=6.
+2010-11-05 01:22:41,764 | DEBUG  | Stat ez80998. car_year, 2000=3.
+2010-11-05 01:22:41,764 | DEBUG  | Stat ez80998. car_year, 2000=3.
+2010-11-05 01:22:41,774 | DEBUG  | Stat ez80998. car_bhp, 94=1.
+2010-11-05 01:22:41,774 | DEBUG  | Stat ez80998. car_bhp, 94=1.
+2010-11-05 01:22:41,783 | DEBUG  | Stat ez80998. car_speed, 170=2.
+2010-11-05 01:22:41,783 | DEBUG  | Stat ez80998. car_speed, 170=2.
+2010-11-05 01:22:41,794 | DEBUG  | Stat ez80998. car_weight, 1300=1.
+2010-11-05 01:22:41,794 | DEBUG  | Stat ez80998. car_weight, 1300=1.
+2010-11-05 01:22:41,806 | DEBUG  | ez80998 got 3 cars
+2010-11-05 01:22:41,806 | DEBUG  | ez80998 got 3 cars

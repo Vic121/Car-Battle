@@ -1,0 +1,939 @@
+@charset "utf-8";
+/* CSS Document */
+
+#body {
+    margin: 0;
+    color: #232323;
+    padding: 0;
+    background: url(http://gta.madfb.com:81/static/images/layout/bg.jpg) repeat-x scroll top;
+    background-color: #f7fcf8;
+    /*	height: 100%;*/
+    width: 760px;
+}
+
+div, h1, h2, h3, h4, p, form, label, input, textarea, img, span {
+    margin: 0;
+    padding: 0;
+}
+
+/*ul{
+	margin:0; 
+	padding:0; 
+	list-style-type:none;
+	font-size:0;
+	line-height:0;
+}
+.spacer{
+	clear:both; 
+	font-size:0; 
+	line-height:0;
+}*/
+
+/*------------------------------------------------topheader--------------------*/
+#topheader {
+    width: 100%;
+    height: 146px;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: 40px;
+    font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    color: #dcd66e;
+    text-decoration: none;
+    padding: 0px;
+    float: none;
+    background-image: url(http://gta.madfb.com:81/static/images/layout/topbanner_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logo {
+    background-image: url(http://gta.madfb.com:81/static/images/layout/logo.png);
+    background-repeat: no-repeat;
+    padding: 0px;
+    float: left;
+    height: 95px;
+    width: 221px;
+    margin-top: 30px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+.menu_area {
+    float: left;
+    margin-top: 58px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+.menu_text {
+    font-family: Arial;
+    font-size: 10px;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    color: #2E7864;
+    text-decoration: none;
+}
+
+/*------------------------------------------------body_area--------------------*/
+#body_area {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: 0px;
+    font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    color: #dcd66e;
+    text-decoration: none;
+    float: none;
+    padding-top: 22px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+.job {
+    width: 100%;
+}
+
+.job_undone {
+
+}
+
+.job_done {
+
+}
+
+.job_premium {
+
+}
+
+.job .job_img {
+    float: left;
+    width: 150px;
+}
+
+.job .job_content {
+    float: left;
+    margin-left: 10px;
+    width: 200px;
+}
+
+.job .job_action {
+    float: left;
+    width: 200px;
+    font-size: 16px;
+    font-family: "Times New Roman";
+    color: #656565;
+}
+
+#innerbody_area {
+    width: 100%;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: 0;
+    font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    color: #dcd66e;
+    text-decoration: none;
+    float: none;
+    padding-top: 52px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+.msg {
+    border: 2px solid #616161;
+    background-color: #e8e8e8;
+    margin-top: -10px;
+    padding: 10px 10px 10px 10px;
+    color: #616161;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.section_head {
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+    color: #8a8a8a;
+    text-decoration: none;
+}
+
+.page_head {
+    display: block;
+    height: 32px;
+    width: 120px;
+}
+
+.jobs_head {
+    background: url(http://gta.madfb.com:81/static/images/layout/_jobs.png) no-repeat;
+}
+
+.garage_head {
+    background: url(http://gta.madfb.com:81/static/images/layout/_garage.png) no-repeat;
+}
+
+.store_head {
+    background: url(http://gta.madfb.com:81/static/images/layout/_store.png) no-repeat;
+}
+
+.gifts_head {
+    background: url(http://gta.madfb.com:81/static/images/layout/_gifts.png) no-repeat;
+}
+
+.grunge {
+    height: 22px;
+}
+
+.grunge_tier {
+    background-image: url(http://gta.madfb.com:81/static/images/layout/_tier.png);
+    background-repeat: no-repeat;
+    display: block;
+    height: 28px;
+    width: 55px;
+    float: left;
+}
+
+.grunge_dash {
+    background-image: url(http://gta.madfb.com:81/static/images/layout/__.png);
+    background-repeat: no-repeat;
+    display: block;
+    height: 28px;
+    width: 12px;
+    float: left;
+}
+
+.midarea {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    padding: 0 0 0 20px;
+}
+
+.head {
+    font-family: Georgia;
+    font-size: 35px;
+    font-weight: normal;
+    color: #d0910b;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    width: 540px;
+    padding: 0 0 15px 0;
+}
+
+.sub_head {
+    font-family: Georgia;
+    font-size: 20px;
+    font-weight: normal;
+    color: orange;
+    text-decoration: none;
+    margin: 0px;
+    width: 120px;
+    padding: 0 0 20px 0;
+    float: left;
+}
+
+.body_textarea {
+    font-family: "Times New Roman";
+    font-size: 14px;
+    font-weight: normal;
+    color: #3c6f75;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    width: 100%;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+}
+
+.body_textarea .title {
+    color: #616161;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.body_textarea .content {
+    color: #959595;
+    font-size: 13px;
+}
+
+.body_textarea .small {
+    color: #616161;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.readmore {
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-decoration: none;
+    background: url(http://gta.madfb.com:81/static/images/layout/readmore.png) no-repeat;
+    display: block;
+    height: 18px;
+    width: 74px;
+    padding: 4px 0 0 0;
+    margin: 5px 0 0 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.readmore:hover {
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-decoration: none;
+    background: url(http://gta.madfb.com:81/static/images/layout/readmore1.png) no-repeat;
+    display: block;
+    height: 18px;
+    width: 74px;
+    padding: 4px 0 0 0;
+    margin: 5px 0 0 15px;
+    text-align: center;
+}
+
+.readmore_140 {
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    background: url(http://gta.madfb.com:81/static/images/layout/readmore_140.png) no-repeat;
+    display: block;
+    height: 18px;
+    width: 140px;
+    padding: 4px 0 0 0;
+    margin: 5px 0 0 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.readmore_140:hover {
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    background: url(http://gta.madfb.com:81/static/images/layout/readmore1_140.png) no-repeat;
+    display: block;
+    height: 18px;
+    width: 140px;
+    padding: 4px 0 0 0;
+    margin: 5px 0 0 15px;
+    text-align: center;
+}
+
+.innerbanner_head {
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: normal;
+    color: #8a8a8a;
+    text-decoration: none;
+    background-image: url(http://gta.madfb.com:81/static/images/layout/tickmark.png);
+    background-repeat: no-repeat;
+    margin: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    float: left;
+    background-position: 0px 4px;
+}
+
+/*------------------------------------------------fotter--------------------*/
+#fotter {
+    width: 100%;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    font-family: "Trebuchet MS";
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    color: #c5a873;
+    text-decoration: none;
+    padding: 0px;
+    float: left;
+    height: 123px;
+    background-image: url(http://gta.madfb.com:81/static/images/layout/fotter.jpg);
+    background-repeat: repeat-x;
+    background-position: top;
+    background-attachment: scroll;
+}
+
+.fotter_links {
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    height: 20px;
+    width: 100%;
+    color: #202219;
+    padding-top: 15px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+.fotter_text {
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: normal;
+    color: #cb0002;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    height: 43px;
+    width: 944px;
+    padding-top: 53px;
+    padding-right: 30px;
+    padding-bottom: 32px;
+    padding-left: 30px;
+}
+
+.fotter_copyrights {
+    font-family: "Trebuchet MS";
+    font-size: 10px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    height: 20px;
+    width: 100%;
+    color: #b17a04;
+    padding-top: 5px;
+    padding-right: 0px;
+    padding-bottom: 2px;
+    padding-left: 0px;
+}
+
+.fotter_validation {
+    font-family: "Trebuchet MS";
+    font-size: 9px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    height: 20px;
+    width: 100%;
+    color: #c75c2c;
+    padding-top: 5px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+/*------------------------------------------------fotterlinks --------------------*/
+a.fotterlink:link {
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none;
+    color: #202219;
+    padding-right: 5px;
+    padding-left: 5px;
+
+}
+
+a.fotterlink:visited {
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none;
+    color: #202219;
+    padding-right: 5px;
+    padding-left: 5px;
+
+}
+
+a.fotterlink:hover {
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none;
+    color: #b17a04;
+    padding-right: 5px;
+    padding-left: 5px;
+
+}
+
+a.fotterlink:active {
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none;
+    color: #202219;
+    padding-right: 5px;
+    padding-left: 5px;
+
+}
+
+/*------------------------------------------------fotterlinksend--------------------*/
+
+/*------------------------------------------------validation --------------------*/
+a.xhtml:link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    background-color: #d0910b;
+    margin: 0px;
+    clear: none;
+    float: none;
+    height: 20px;
+    width: 150px;
+    border: 1px dotted #FFFFFF;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+}
+
+a.xhtml:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    background-color: #d0910b;
+    margin: 0px;
+    clear: none;
+    float: none;
+    height: 20px;
+    width: 150px;
+    border: 1px dotted #FFFFFF;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+}
+
+a.xhtml:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    background-color: #386060;
+    margin: 0px;
+    clear: none;
+    float: none;
+    height: 20px;
+    width: 150px;
+    border: 1px dotted #FFFFFF;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+}
+
+a.xhtml:active {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    background-color: #d0910b;
+    margin: 0px;
+    clear: none;
+    float: none;
+    height: 20px;
+    width: 150px;
+    border: 1px dotted #FFFFFF;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+}
+
+a.css:link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    background-color: #386060;
+    margin: 0px;
+    padding: 0px;
+    clear: none;
+    float: none;
+    height: 20px;
+    width: 100px;
+    border: 1px dotted #FFFFFF;
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+}
+
+a.css:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    background-color: #386060;
+    margin: 0px;
+    padding: 0px;
+    clear: none;
+    float: none;
+    height: 20px;
+    width: 100px;
+    border: 1px dotted #FFFFFF;
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+}
+
+a.css:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    background-color: #d0910b;
+    margin: 0px;
+    padding: 0px;
+    clear: none;
+    float: none;
+    height: 20px;
+    width: 100px;
+    border: 1px dotted #FFFFFF;
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+}
+
+a.css:active {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    background-color: #386060;
+    margin: 0px;
+    padding: 0px;
+    clear: none;
+    float: none;
+    height: 20px;
+    width: 100px;
+    border: 1px dotted #FFFFFF;
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+}
+
+.fotter_designed {
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    height: 20px;
+    width: 100%;
+    color: #3e8f96;
+    padding-top: 15px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+/*------------------------------------------------validation--------------------*/
+.fotter_designedlink {
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none;
+    color: #1d6369;
+}
+
+.fotter_designedlink:hover {
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none;
+    color: #b17a04;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+#innercontentblank {
+    margin: 0px;
+    float: left;
+    width: 750px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 40px;
+}
+
+#innerhedding {
+    font-family: Georgia;
+    font-size: 22px;
+    font-weight: normal;
+    text-transform: none;
+    color: #d0910b;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    width: 750px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+}
+
+#innercontent {
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: normal;
+    text-transform: none;
+    color: #9ca27e;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    width: 700px;
+    padding: 0 0 10px 0;
+    text-align: justify;
+}
+
+#innercontent002 {
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: normal;
+    text-transform: none;
+    color: #9ca27e;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    width: 700px;
+    padding: 0 0 10px 0;
+    text-align: justify;
+}
+
+#innercontent003 {
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: normal;
+    text-transform: none;
+    color: #9ca27e;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    width: 700px;
+    padding: 0 0 10px 0;
+    text-align: justify;
+}
+
+#innercontent004 {
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: normal;
+    text-transform: none;
+    color: #9ca27e;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    width: 700px;
+    padding: 0 0 10px 0;
+    text-align: justify;
+}
+
+#innercontent005 {
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: normal;
+    text-transform: none;
+    color: #9ca27e;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    width: 700px;
+    padding: 0 0 10px 0;
+    text-align: justify;
+}
+
+#submenuhedding {
+    font-family: Georgia;
+    font-size: 22px;
+    font-weight: normal;
+    text-transform: none;
+    color: #d0910b;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    width: 750px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+}
+
+#submenublank {
+    margin: 0px;
+    float: left;
+    width: 750px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+}
+
+#submenutop {
+    margin: 0px;
+    float: left;
+    width: 433px;
+    height: 1px;
+    padding: 0px;
+    background-image: url(http://gta.madfb.com:81/static/images/layout/topline.jpg);
+    background-repeat: no-repeat;
+}
+
+.submenu {
+    margin: 0px;
+    float: left;
+    width: 410px;
+    height: 17px;
+    padding: 2px 0 0 23px;
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: normal;
+    text-transform: none;
+    color: #9ca27e;
+    text-decoration: none;
+    background-image: url(http://gta.madfb.com:81/static/images/layout/active.png);
+    background-repeat: no-repeat;
+}
+
+.submenu:hover {
+    margin: 0px;
+    float: left;
+    width: 410px;
+    height: 17px;
+    padding: 2px 0 0 23px;
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: normal;
+    text-transform: none;
+    color: #9ca27e;
+    text-decoration: none;
+    background-image: url(http://gta.madfb.com:81/static/images/layout/over.jpg);
+    background-repeat: no-repeat;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/

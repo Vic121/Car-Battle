@@ -1,0 +1,441 @@
+a, a:visited, a:active {
+    color: #3B5998;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3B5998;
+    text-decoration: underline;
+}
+
+.nounder:hover {
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+}
+
+body {
+    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+    font-size: 11px;
+    width: 700px;
+    padding-top: 65px;
+    padding-left: 50px;
+}
+
+div#notify {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 50px;
+    padding: 10px 10px 10px 10px;
+    font-size: 40px;
+    z-index: 100;
+    background-color: #d3d3d3;
+    text-align: center;
+}
+
+div#top {
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding-bottom: 8px;
+    padding-left: 50px;
+    position: absolute;
+    background-color: #000;
+    width: 710px;
+    height: 8px;
+    color: #fff;
+}
+
+div#top a {
+    color: #fff;
+}
+
+div#header {
+    height: 100px;
+    /*	background: red;*/
+    width: 700px;
+}
+
+div#header div.logo {
+    float: left;
+}
+
+div#header div.right_box {
+    float: right;
+    margin-right: 20px;
+    width: 400px;
+    height: 100px;
+    max-height: 100px;
+    /*	background: url(http://madfb.com:81/static/images/half_white.png) repeat;*/
+    background-color: #FFFFFF;
+}
+
+div#header span.right_box span {
+    float: left;
+    font-size: 12px;
+}
+
+div#container {
+}
+
+div#footer {
+    margin-left: -50px;
+    height: 110px;
+    width: 758px;
+    background: url(http://madfb.com:81/static/images/city-low-3.png) no-repeat;
+    background-position: top left;
+    clear: both;
+}
+
+div.plus_btn {
+    width: 93px;
+    height: 25px;
+    background: url(http://madfb.com:81/static/images/new/plus_btn_m.png) no-repeat 0;
+    padding-top: 12px;
+    padding-left: 25px;
+    color: black;
+    letter-spacing: 0.2em;
+}
+
+div.plus_btn:hover {
+    width: 93px;
+    height: 25px;
+    background: url(http://madfb.com:81/static/images/new/plus_btn_m.png) no-repeat -117px;
+    padding-top: 12px;
+    padding-left: 25px;
+    color: white;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+}
+
+a.delete, a.delete:hover {
+    background: url(http://madfb.com:81/static/images/new/x.png) no-repeat 0 1px;
+    padding-left: 10px;
+    margin-left: 3px;
+}
+
+span.req {
+    font-size: 12pt;
+}
+
+/* TABS */
+.tabs_container {
+    width: 100%;
+}
+
+.tabs {
+    width: 18%;
+    float: left;
+}
+
+.tab ul {
+
+}
+
+.tab {
+    border: 1px solid white;
+    display: block;
+    height: 23px;
+    overflow: hidden;
+    padding: 0 2px;
+    position: relative;
+    margin-left: -30px;
+    padding-left: 20px;
+    padding-top: 9px;
+    font-size: 11px;
+    border-bottom: 1px solid #D6D9DE;
+}
+
+.tab:hover {
+    background-color: #ECEEF4;
+    border-color: #ECEEF4;
+    text-decoration: none;
+}
+
+.tab_selected, .tab_selected:hover {
+    background-color: #6D84B4;
+    border-color: #3B5998;
+    height: 24px;
+    margin-top: -1px;
+    padding-left: 20px;
+    padding-top: 9px;
+    font-size: 11px;
+}
+
+.tab a {
+    color: #3B5998;
+    cursor: pointer;
+    outline-style: none;
+    text-decoration: none;
+    width: 70px;
+    display: block;
+    float: left;
+}
+
+.tab_selected a {
+    color: #fff;
+}
+
+.tabs_content {
+    width: 80%;
+    float: left;
+}
+
+.tab_indicator {
+    padding-left: 15px;
+    background: url(/static/images/indicator_fb.gif) no-repeat;
+    display: none;
+    float: left;
+}
+
+#preview {
+    position: absolute;
+    border: 1px solid #ccc;
+    background: #333;
+    padding: 5px;
+    display: none;
+    color: #fff;
+}
+
+.message {
+    width: 600px;
+    margin: 20px 20px 20px 20px;
+    border: 3px darkgrey solid;
+    background-color: lightgrey;
+    padding: 5px 5px 5px 5px;
+}
+
+.message p {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.description {
+    border: 3px #A9A9A9 solid;
+    background: #D3D3D3 none repeat scroll 0 0;
+    padding: 10px 7px 10px 10px;
+}
+
+.warning {
+    border: 3px #CC3300 solid;
+    background: #F9B3A6 none repeat scroll 0 0;
+    padding: 10px 7px 10px 10px;
+}
+
+.info {
+    background: #FFF9D7 none repeat scroll 0 0;
+    border: 3px #E2C822 solid;
+    padding: 10px 7px 10px 10px;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.3em;
+    margin: 10px 20px 10px 15px;
+
+}
+
+.question {
+    padding: 10px 7px 10px 10px;
+}
+
+.help {
+    border-bottom: 1px dotted black;
+}
+
+.countdown {
+    font-family: Helvetica, Arial, Helvetica, Geneva, sans-serif;
+    font-size: 2.5em;
+    letter-spacing: -0.02em;
+}
+
+.niceBoxOut {
+    padding: 20px;
+    margin: 0 15px 25px 25px;
+    background-color: #f0f0f0;
+    display: block;
+}
+
+.niceBox {
+    padding: 10px 10px 10px 10px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+}
+
+ul.horizontal, ul.horizontal li {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+}
+
+ul.horizontal {
+    text-align: center;
+    border-bottom: 1px solid #888;
+    padding-bottom: 5px;
+}
+
+ul.horizontal li {
+    display: inline;
+    white-space: nowrap;
+    margin-right: 5px;
+}
+
+ul.horizontal a:link, ul.horizontal a:visited {
+    text-decoration: none;
+    background-color: #ccc;
+    color: #000;
+    border: 1px solid #888;
+    padding: 5px;
+}
+
+ul.horizontal a:hover {
+    background-color: #fff;
+    border-bottom-color: #fff;
+}
+
+/* RIGHT WING */
+.rightWing {
+    width: 230px;
+    margin-top: 25px;
+    /*border-right:1px solid #CBCACA;*/
+    float: right;
+}
+
+.rightWingBox {
+    border-bottom: 1px dotted #CBCACA;
+    border-top: 1px dotted #CBCACA;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    width: 200px;
+}
+
+.rightWing h2 {
+    font-family: georgia, times, "Times new roman", serif;
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.rightWing h2 a {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.rightWingBoxHead, .rightWingBoxHead a {
+    color: #663300 !important;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.rightWingBoxContent {
+    font-family: arial, helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+.rightWingBoxContent a, .rightWingBoxContent a:visited {
+    color: #000;
+}
+
+.rightWingBoxContent a:hover {
+    color: #fff;
+    background-color: #000
+}
+
+dl.list {
+    display: block;
+    font-family: Arial;
+    border-top: 2px solid #E5E5E5;
+    font-size: 11px;
+}
+
+dl.list dt {
+    border-top: 1px solid #E5E5E5;
+    color: #999999;
+    float: left;
+    font-weight: bold;
+    padding: 4px 0;
+    width: 30px;
+}
+
+dl.list dd {
+    border-top: 1px solid #E5E5E5;
+    margin: 0 0 0 30px;
+    padding: 4px 0;
+}
+
+/* TWO COL */
+div.twoCol {
+    width: 50%;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/* ICONS */
+span.info {
+    background: transparent url(http://madfb.com:81/static/images/icons/info.gif) no-repeat scroll 3px 1px;
+    padding-left: 16px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+span.credit {
+    background: transparent url(http://madfb.com:81/static/images/icons/credit.gif) no-repeat scroll 0 0px;
+    padding-left: 16px;
+}
+
+span.cash {
+    background: transparent url(http://madfb.com:81/static/images/icons/cash.gif) no-repeat scroll 0 1px;
+    padding-left: 16px;
+}
+
+span.time {
+    background: transparent url(http://madfb.com:81/static/images/icons/time.gif) no-repeat scroll 0 -1px;
+    padding-left: 16px;
+}
+
+span.city {
+    background: transparent url(http://madfb.com:81/static/images/icons/city.gif) no-repeat scroll 0 -1px;
+    padding-left: 16px;
+}
+
+span.family {
+    background: transparent url(http://madfb.com:81/static/images/icons/gang.gif) no-repeat scroll 0 -1px;
+    padding-left: 16px;
+}
+
+span.gun {
+    background: transparent url(http://madfb.com:81/static/images/icons/gun.gif) no-repeat scroll 0 0px;
+    padding-left: 16px;
+}
+
+span.exit {
+    background: transparent url(http://madfb.com:81/static/images/icons/exit.gif) no-repeat scroll 0 0px;
+    padding-left: 16px;
+}
+
+span.happy {
+    background: transparent url(http://madfb.com:81/static/images/icons/happy.gif) no-repeat scroll 0 -1px;
+    padding-left: 16px;
+}

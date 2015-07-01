@@ -1,0 +1,25 @@
+{% extends base_page %}
+{# {% load i18n %} #}
+
+{% block content %}
+    <h3>Wish List:</h3>
+    <div>
+        {% for car in items %}
+            <div class="album_item narrow">
+                <h2>{{ car.manuf }} {{ car.short_name }}</h2>
+
+                <div class="subtitle">
+                    {% if wishlist.user == request.engine.user.user %}
+                        (<a href="{% url "wishlist_remove" car.id %}">remove from wishlist</a>)
+                    {% else %}
+                        {% if car.id|STR in request.engine.user.garage.car_ids %}
+                            <a href="{% url "wishlist_gift" wishlist.user.id car.id %}">give item</a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+                <img src="{{ settings.BASE_MEDIA_URL }}{{ car.img|img_replace:'_m.jpg' }}"/>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

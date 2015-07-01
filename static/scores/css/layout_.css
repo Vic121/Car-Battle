@@ -1,0 +1,724 @@
+@import url(siatka.css);
+@import url(wspolne.css);
+
+/* =========================================================== */
+/* definicje fontow */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    line-height: 1.4;
+    color: #000000;
+}
+
+select,
+input,
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea {
+    font-size: 100%;
+    line-height: 1.4;
+}
+
+.small,
+#top,
+#boks-funkcjonalny,
+#menu ul li.aktywny ul {
+    font-size: 92.4%;
+}
+
+table {
+    font-size: 100%;
+}
+
+#menu {
+    font-size: 108.4%;
+}
+
+#kontent-tresc h2.tytul,
+#kontent-tresc h1.tytul {
+    font-size: 117%;
+    line-height: 1.2;
+}
+
+form {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================== */
+/* definicje topu */
+#logo {
+    float: left;
+    padding: 12px 0;
+}
+
+#logo img {
+    display: block;
+}
+
+#boks-funkcjonalny {
+    float: right;
+    width: 546px;
+}
+
+#boks-funkcjonalny p {
+    padding-top: 0.25em;
+    line-height: 1;
+}
+
+#wersje-jezykowe {
+    float: right;
+    text-align: right;
+}
+
+#logowanie {
+    float: right;
+    margin-left: 6px;
+    background: #52861E url(http://static.pickscore.net/images/rog1_lewy_dolny.png) left bottom no-repeat;
+    /*	background-image: url("http://static.pickscore.net/images/sprite.png");*/
+    /*  background-position: -10px 0px;*/
+    color: #FFF;
+    font-weight: bold;
+}
+
+#logowanie p,
+#logowanie form {
+    background: transparent url(http://static.pickscore.net/images/rog1_prawy_dolny.png) right bottom no-repeat;
+    /*	background-image: url("http://static.pickscore.net/images/sprite.png");*/
+    /*	background-position: 271px -30px;'*/
+}
+
+#logowanie form p {
+    margin: 0;
+    padding: 0 9px 4px;
+    border: none;
+    vertical-align: top;
+}
+
+#logowanie form input {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+#logowanie form input.text {
+    width: 64px;
+    margin-right: 3px;
+    padding: 0 3px;
+    height: 14px;
+    border: 1px solid #52861E;
+}
+
+#logowanie form input.button {
+    margin-top: 1px;
+    vertical-align: top;
+    border: none;
+}
+
+#logowanie a {
+    display: block;
+    padding: 0 1.75em;
+    width: 1%;
+    height: 1.50em;
+    color: #FFF;
+    text-align: center;
+}
+
+#logowanie a:hover {
+    color: #E7F5D8;
+    text-decoration: none;
+}
+
+#uzytkownik {
+    position: relative;
+    clear: both;
+    float: right;
+    width: 346px;
+    text-align: right;
+}
+
+#uzytkownik dl dt {
+    font-size: 109.4%;
+}
+
+#uzytkownik dl dt,
+#uzytkownik dl dd {
+    text-align: right;
+}
+
+#uzytkownik dl {
+    position: absolute;
+    top: 6px;
+    right: 68px;
+    font-weight: bold;
+}
+
+#uzytkownik dl span {
+    font-weight: normal;
+    color: #999999;
+}
+
+#uzytkownik .avatar {
+    position: absolute;
+    right: 0;
+}
+
+.avatar {
+    margin: 6px 0 6px 6px;
+    border: solid 1px #EFEFEF;
+}
+
+/* =========================================================== */
+/* definicje menu */
+#menu {
+    clear: both;
+    background: transparent url(http://static.pickscore.net/images/bgrd_top.png) 0 1.8em repeat-x;
+    text-align: center;
+    width: 100%;
+}
+
+#menu div {
+    /*width: 72.92em;*/
+    margin: 0 auto;
+}
+
+#menu.zwiniete ul {
+    height: 2.2em;
+}
+
+#menu.rozwiniete ul {
+    height: 3.9em;
+}
+
+#menu ul {
+    position: relative;
+    margin: 0 auto;
+    width: 946px;
+    /*width: 79.0em;*/
+    /*width: 78.92em;*/
+    list-style: none;
+}
+
+#menu ul li {
+    float: left;
+    margin-right: 2px;
+}
+
+#menu ul li a {
+    display: block;
+    background: #52861E url(http://static.pickscore.net/images/rog1_lewy_gorny.png) left top no-repeat;
+    /*	background-image: url("http://static.pickscore.net/images/sprite.png") no-repeat;*/
+    /*	background-position: -10px -70px;*/
+    color: #FFF;
+    font-weight: bold;
+}
+
+/* custom tabs */
+#menu ul li.red a {
+    background: #f71f1f url(http://static.pickscore.net/images/rog1_lewy_gorny.png) left top no-repeat;
+    /*	background-image: url("http://static.pickscore.net/images/sprite.png") no-repeat;*/
+    /*	background-position: -10px -104px;*/
+}
+
+#menu ul li.red a span {
+    display: block;
+    padding: 0.25em 0.93em 0.28em;
+    background: transparent url(http://static.pickscore.net/images/rog1_prawy_gorny.png) right top no-repeat;
+    /*	background-image: url("http://static.pickscore.net/images/sprite.png") no-repeat;*/
+    /*	background-position: 64px -104px;*/
+}
+
+#menu ul li a span {
+    display: block;
+    padding: 0.25em 0.93em 0.28em;
+    background: transparent url(http://static.pickscore.net/images/rog1_prawy_gorny.png) right top no-repeat;
+    /*	background-image: url("http://static.pickscore.net/images/sprite.png") no-repeat;*/
+    /*  background-position: 64px -104px;*/
+}
+
+#menu ul li a:hover {
+    background-color: #6FB627;
+    color: #E7F5D8;
+    text-decoration: none;
+}
+
+#menu ul li a:hover span {
+    padding-bottom: 0.28em;
+    border-bottom: solid 1px #52861E;
+}
+
+#menu ul li.aktywny a {
+    padding-bottom: 0.25em;
+    background-color: #6FB627;
+}
+
+#menu ul li.aktywny a:hover span {
+    border-bottom: none;
+}
+
+#menu ul li.aktywny ul {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2.04em;
+    background: #6FB627;
+    line-height: 1;
+}
+
+#menu ul li.aktywny ul li a,
+#menu ul li.aktywny ul li a:hover,
+#menu ul li.aktywny ul li a span {
+    padding: 0;
+    background-color: transparent;
+    background-image: none;
+    font-weight: normal;
+}
+
+#menu ul li.aktywny ul li {
+    margin: 0.50em 0 0.67em;
+    border-right: solid 1px #FFF;
+}
+
+#menu ul li.aktywny ul li a span {
+    display: block;
+    padding: 0 0.93em;
+}
+
+#menu ul li.aktywny ul li.aktywny a span,
+#wersje-jezykowe .aktywny {
+    font-weight: bold;
+}
+
+/* =========================================================== */
+/* definicje submenu - ligi */
+.ligi h4 {
+    margin: 0;
+}
+
+.ligi ul {
+    padding: 0;
+    font-size: 100%;
+    border-bottom: none;
+}
+
+.ligi li {
+    border-bottom: 1px solid #DDD;
+}
+
+.ligi li.aktywny {
+    background: none;
+    font-weight: bold;
+}
+
+.ligi li a {
+    display: block;
+    padding: 3px 6px 3px 30px;
+    background-position: 6px 6px;
+    background-repeat: no-repeat;
+}
+
+.ligi li a:visited {
+    color: #52861E;
+    text-decoration: none;
+}
+
+.flag {
+    padding: 3px 6px 3px 30px;
+    background-position: 6px 6px;
+    background-repeat: no-repeat;
+    background-image: url("http://static.pickscore.net/images/sprite.png");
+}
+
+.ligi li a.angielska, .flag_gb {
+    background-position: -4px -133px !important;
+}
+
+.ligi li a.francuska, .flag_fr {
+    background-position: -4px -196px !important;
+}
+
+.ligi li a.hiszpanska, .flag_es {
+    background-position: -4px -261px !important;
+}
+
+.ligi li a.holenderska, .flag_nl {
+    background-image: url(http://static.pickscore.net/images/ikona_fl_nl.png);
+}
+
+.ligi li a.niemiecka, .flag_de {
+    background-position: -4px -165px !important;
+}
+
+.ligi li a.polska, .flag_pl {
+    background-image: url(http://static.pickscore.net/images/ikona_fl_pl.png);
+}
+
+.ligi li a.wloska, .flag_it {
+    background-position: -4px -229px !important;
+}
+
+.ligi li a.swiat, .flag_ww {
+    background-position: -4px -293px !important;
+}
+
+.ligi li a.cl, .flag_cl {
+    background-position: -4px -325px !important;
+}
+
+.ligi li a.ue, .flag_eu {
+    background-position: -4px -357px !important;
+}
+
+/* =========================================================== */
+/* definicje wygladu artykulu */
+#kontent-tresc .autor {
+    color: #000;
+    font-weight: bold;
+}
+
+#kontent-tresc .marker,
+#kontent-tresc .data,
+#kontent-tresc .komentarze,
+#kontent-tresc .analizy {
+    color: #999;
+    font-weight: normal;
+}
+
+#kontent-tresc .komentarze img,
+#kontent-tresc .analizy img {
+    vertical-align: middle;
+    margin: 0 3px 0 3px;
+}
+
+#kontent-tresc #infoArt {
+    clear: both;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #DDD;
+    font-size: 92%;
+}
+
+#kontent-tresc #infoArt p {
+    margin: 0;
+    padding: 0 6px 2px;
+    display: inline;
+}
+
+#kontent-tresc .artykul ul {
+    list-style: disc;
+}
+
+#kontent-tresc .artykul ol {
+    list-style: decimal;
+}
+
+#kontent-tresc .artykul ul,
+#kontent-tresc .artykul ol,
+#kontent-tresc .artykul dl,
+#kontent-tresc .artykul ul li,
+#kontent-tresc .artykul ol li,
+#kontent-tresc .artykul dl dt,
+#kontent-tresc .artykul dl dd {
+    margin: 0 24px;
+}
+
+#kontent-tresc .artykul ul,
+#kontent-tresc .artykul ol,
+#kontent-tresc .artykul dl,
+#kontent-tresc .artykul p,
+#kontent-tresc .artykul h2,
+#kontent-tresc .artykul h3,
+#kontent-tresc .artykul h4,
+#kontent-tresc .artykul h5 {
+    font-size: 100%;
+    margin-bottom: 12px;
+}
+
+/* =========================================================== */
+/* definicje wygladu aktualnosci na glownej i liscie artykulow */
+#kontent-tresc .foto {
+    float: left;
+    margin: 3px 6px 6px 6px;
+}
+
+#kontent-tresc h3 {
+    clear: both;
+    margin: 8px 6px 3px;
+    padding: 0;
+    border: none;
+    font-size: 108.4%;
+}
+
+#kontent-tresc ul.nastepne {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 1px;
+    border-top: 1px solid #DDD;
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+#kontent-tresc ul.nastepne li {
+    display: inline;
+    width: 49.5%;
+    margin: -1px 0 1px;
+    padding: 3px 0 3px;
+    border-bottom: 1px solid #DDD;
+}
+
+#kontent-tresc ul.nastepne li a {
+    padding: 0 6px;
+    display: inline;
+}
+
+#kontent-tresc ul.nastepne li a:hover {
+    background: none;
+    text-decoration: underline;
+}
+
+/* =========================================================== */
+/* definicje boksu zakladek*/
+.boks {
+    clear: both;
+    position: relative;
+    width: 100%;
+    border: 1px solid #DDD;
+}
+
+.boks p {
+    margin: 0 6px;
+    padding: 9px 0;
+    border-bottom: 1px solid #DDD;
+    color: #666;
+}
+
+.boks div#zdjecia div {
+    padding-left: 2px;
+}
+
+.boks div#zdjecia div img {
+    display: inline;
+    float: left;
+    margin: 6px 4px 0 3px;
+}
+
+.boks ul.stronicowanie {
+    margin: 0;
+    padding: 6px;
+    border: none;
+}
+
+/* =========================================================== */
+/* definicje szczegoly meczu */
+#kontent-tresc .srodtytul {
+    margin: 0 0 6px;
+    padding: 3px 6px;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    font-size: 100%;
+}
+
+.meczSzczegol table {
+    border: none;
+    margin-bottom: 6px;
+}
+
+.meczSzczegol table img {
+    margin: 0 3px;
+    vertical-align: middle;
+}
+
+.meczSzczegol table tr:hover {
+    background: transparent;
+}
+
+.meczSzczegol table th,
+.meczSzczegol table td {
+    text-align: center;
+    vertical-align: top;
+    border: none;
+}
+
+.meczSzczegol table table {
+    margin: 0;
+    font-size: 133.5%;
+}
+
+.meczSzczegol th.rezultat {
+    height: 16px;
+    font-size: 133.5%;
+    word-spacing: 25px;
+}
+
+.meczSzczegol .druzyna1 {
+    width: 22%;
+    text-align: right;
+}
+
+.meczSzczegol .druzyna2 {
+    width: 22%;
+    text-align: left;
+}
+
+.meczSzczegol .wynik {
+    width: 10%;
+}
+
+.meczSzczegol .typowanie {
+    width: 10%;
+}
+
+.meczSzczegol .szczegoly {
+    width: 15%;
+}
+
+.meczSzczegol .czas {
+    width: 7%;
+}
+
+.meczSzczegol .opcje {
+    width: 7%;
+}
+
+.meczSzczegol .logo img {
+    display: block;
+    margin: 0 auto 24px;
+}
+
+/* =========================================================== */
+/* reklama wlasna serwisu */
+.adSerwis,
+.adSerwis2 {
+    clear: both;
+    padding: 12px;
+    height: 166px;
+    border: 1px solid #52861E;
+}
+
+.adSerwis {
+    background: #DCF2C6 url(http://static.pickscore.net/images/bgrd_adserwis.jpg) right bottom no-repeat;
+    line-height: 1.8;
+    font-size: 117%;
+    font-weight: bold;
+}
+
+.adSerwis2 {
+    padding-right: 200px;
+    background: #FFFFCC url(http://static.pickscore.net/images/bgrd_adserwis2.jpg) right bottom no-repeat;
+}
+
+.trigger-zwiniety {
+    background: #DCF1C8 url(http://static.pickscore.net/images/ikona_zwiniete.gif) left top repeat-x;
+}
+
+/* =========================================================== */
+/* komunikaty */
+.boks .komunikat,
+.komunikat {
+    clear: both;
+    margin: 6px 0;
+    padding: 6px 12px;
+    border: 1px solid #52861E;
+    background: #D6E6CC;
+    color: #000;
+    width: 96%;
+}
+
+.center {
+    text-align: center;
+}
+
+.komunikat-raw {
+    clear: both;
+    margin: 6px 0;
+    padding: 6px 12px;
+    border: 1px solid #52861E;
+    background: #D6E6CC;
+    color: #000;
+}
+
+.boks .komunikat {
+    margin: 6px;
+}
+
+.komunikat a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.bledy {
+    background: url(http://static.pickscore.net/img/admin/icon_error.gif) 6px no-repeat #F0C0C0;
+    clear: both;
+    margin: 6px 0;
+    padding: 6px 28px;
+    border: 1px solid #DDD;
+}
+
+.bledy label {
+    text-decoration: underline;
+    color: #CC0000;
+    cursor: pointer;
+}
+
+.sukces {
+    background: url(http://static.pickscore.net/img/admin/icon_success.gif) 6px no-repeat #D6E6CC;
+    clear: both;
+    margin: 6px 0;
+    padding: 6px 28px;
+    border: 1px solid #52861E;
+}
+
+@media print {
+    .adBlok,
+    .ligi,
+    #wersje-jezykowe,
+    #boks-funkcjonalny,
+    #menu,
+    #sciezka,
+    #kontent-kolumna1,
+    #kontent-kolumna2,
+    .narzedzia,
+    #stopka ul {
+        display: none !important;
+    }
+
+    body,
+    #top,
+    #stopka {
+        width: 100%;
+        background: none;
+        border: none;
+    }
+
+    #logo {
+        padding: 0 0 10px;
+    }
+
+    #kontent-glowny {
+        float: left !important;
+    }
+
+    #kontent-tresc {
+        float: left !important;
+        width: inherit !important;
+    }
+
+    #stopka div {
+        width: inherit;
+        text-align: center;
+    }
+
+    #stopka div span {
+        float: none;
+        color: #000;
+    }
+}
+
+h1.flag {
+    padding-left: 25px !important;
+    background-position: 3px 3px;
+    background-repeat: no-repeat;
+}

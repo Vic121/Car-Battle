@@ -1,0 +1,51 @@
+{% extends base %}
+
+{% block title %}Free Gifts{% endblock %}
+
+{% block head %}
+<style type="text/css" media="screen">
+	.friend_select {
+		float: left;
+		width: 160px;
+		height: 80px;
+		margin-bottom: 10px;
+	}
+	.friend_select:hover {
+		background-color: #f0f0f0;
+	}
+	.friend_select_pic {
+		float: left;
+		width: 50px;
+	}
+	.friend_select_name {
+		float: left;
+		width: 100px;
+		margin-left: 10px;
+		font-size: 16px;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+
+{% if request.engine.user.user.is_superuser %}
+
+<div class="body_textarea">
+	<h2>Select a friends you wish to send a gift</h2>
+
+<div style="padding: 10px;">
+  <fb:request-form method="post" action="{% url "home" %}gift/?link={{ gift.link }}" content="hey" type="sample" invite="true">
+    <div class="clearfix" style="padding-bottom: 10px;">
+      <fb:multi-friend-selector condensed="true" style="width: 200px;" />
+    </div>
+    <fb:request-form-submit />
+  </fb:request-form>
+</div>
+
+{% else %}
+<div class="body_textarea">
+	<h2>Come back soon</h2>
+</div>
+{% endif %}
+
+{% endblock %}

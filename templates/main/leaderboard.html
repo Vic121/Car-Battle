@@ -1,0 +1,77 @@
+{% extends base_page %}
+
+{% block title %}Leaderboard, Top Players{% endblock %}
+{% block description %}who's on the top, who has the best garage?{% endblock %}
+
+{% block breadcrumbs %}
+    <strong>Leaderboard</strong>
+    {# <span class="final">Home</span> #}
+{% endblock %}
+
+{% block header %}Top players{% endblock %}
+
+{% block content %}
+
+    {% comment %}
+        <div class="coda-slider" id="notebook" style="height: 1450px; ">
+            <div class="leftmask"></div>
+            <div class="panel-container">
+                <div class="panel" style="display: block; ">
+                    <div class="column">
+
+                        {% for user in top_20 %}
+                            <div class="articles post">
+                                {# <a class="mask" href="http://www.nuvographics.com/articles/efficientcss/"></a> #}
+                                {# <span class="commentscount">3 Comments so far<span class="comments icon"></span></span> #}
+                                {# <img class="thumbnail left" src="http://www.nuvographics.com/wordpress/wp-content/images/notebook/efficientcss.jpg" alt="Semantics 101: Efficient CSS – Killing off the Div Class"> #}
+                                <h3 class="left"><a
+                                        href="http://www.nuvographics.com/articles/efficientcss/">{{ forloop.counter }}. {{ user }}</a>
+                                </h3>
+                                <span class="date">02 / 05 / 2010</span>
+
+                                <p>Busting your brains on valid mark-up is half the battle when it comes to an efficient
+                                    flow of code. The following article is the first of a two-part series on minimising
+                                    mark-up.</p>
+
+                                <div class="meta ellipsis">
+                                    <span class="tag icon left"></span>
+                                    <span class="tags ellipsis left">Tagged <a
+                                            href="http://www.nuvographics.com/notebook/topics/code/" rel="tag">Code and
+                                        Development</a>, <a href="http://www.nuvographics.com/notebook/topics/seo/"
+                                                            rel="tag">Search Engine Optimisation</a></span>
+                                    <span class="permalink right"><a
+                                            href="http://www.nuvographics.com/articles/efficientcss/">Read Full
+                                        Article</a></span>
+                                    <span class="author right">By <a href="http://www.thewolfrenegade.com"
+                                                                     title="Visit Mark Kemp’s website" rel="external">Mark
+                                        Kemp</a></span>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                        {# <ol id="pagination"><li><span class="title">Pages:</span></li><li><span class="page current">1</span></li><li><a href="http://www.nuvographics.com/notebook/page/2/" title="2" class="page">2</a></li><li><a href="http://www.nuvographics.com/notebook/page/2/" class="next">Next</a></li></ol> #}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endcomment %}
+
+    <div style="width: 300px; float: left;">
+        <div id="sidebar" style="position: relative; top: 0;">
+            <h3 class="left padded light">Top 20</h3>
+            {% for user in top_20 %}
+                <div class="feature mini-resource left">
+                    <a class="mask" href="{% url "profile" user.username|slugify %}"></a>
+                    <img class="avatar left" src="{{ MEDIA_URL }}{{ user.user_id|avatar }}" alt="{{ user }}">
+                    <strong class="name left">{{ forloop.counter }}. <a
+                            href="{% url "profile" user.username|slugify %}">{{ user }}</a></strong>
+                    <span class="bio serif">Level {{ user.level|intcomma }}</span><br/>
+                    <span class="bio serif">{{ user.exp|intcomma }} exp</span>
+                    {# <span class="bio serif"><a href="#" class="website" target="_blank">wish list</a>&nbsp;/&nbsp;<a href="{% url "profile" user.username|slugify %}" class="website" target="_blank">profile</a></span> #}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

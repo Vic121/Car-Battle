@@ -1,0 +1,30 @@
+{% extends base %}
+{% load modules %}
+
+{% block title %}My Albums &raquo; {{ item.album.name }}{% endblock %}
+
+{% block breadcrumbs %}
+	<strong>My albums</strong>
+	<a href="{% url "albums" %}">All</a>
+	<span class="final">{{ item.album.name }}</span>
+{% endblock %}
+
+{% block master_header %}{% endblock %}
+
+{% block content %}
+{% hint_show 'album_details' %}
+
+{% for car, status in cars %}
+<div class="album_item narrow">
+	<h2><a href="{% url "encyclopedia_car" car.manuf|slugify car.name|slugify car.id %}" title="{{ car.manuf }} {{ car.name }}">{{ car.display_short_name|truncate:29 }}</a></h2>
+	<div class="subtitle">
+		{% if status == 0 %}<a href="{% url "album_stick" item.id car.id %}" onclick="if(!alert('Are you sure? Car sticked to album is being removed from your garage)) return false;">stick to album</a>
+		{% else %}
+			{% if status == -1 %}<a href="{% url "wishlist_add" car.id %}" title="add {{ car.manuf }} {{ car.name }} to wish list">add to wish list</a>{% else %}&nbsp;{% endif %}
+		{% endif %}
+	</div>
+	<img src="{{ settings.BASE_MEDIA_URL }}{{ car.img|img_replace:'_m.jpg' }}" {% if status < 1 %}class="transparent"{% endif %} alt="{{ car.manuf }} {{ car.name }}"/>
+</div>
+{% endfor %}
+
+{% endblock %}

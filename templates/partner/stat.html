@@ -1,0 +1,53 @@
+{% extends base %}
+
+{% block title %}Partner - Stats of {{ partner.name }}{% endblock %}
+
+{% block master_header %}{% endblock %}
+
+{% block breadcrumbs %}
+    <a href="{% url "partners" %}">Partners</a>
+    <strong class="final">Stats of {{ partner.name }}</strong>
+{% endblock %}
+
+{% block head %}
+
+    <style type="text/css" media="screen">
+
+        table.partner, table.partner th, table.partner td {
+            border: 1px solid black;
+        }
+
+        table.partner th, table.partner td {
+            width: 100px;
+        }
+    </style>
+
+{% endblock %}
+
+{% block content %}
+    <br class="clear"/>
+
+    {% if stats %}
+        <table class="partner" cellspacing="0">
+            <thead>
+            <tr>
+                <th nowrap="nowrap">Date</th>
+                {# <th nowrap="nowrap">Users registered</th> #}
+                <th nowrap="nowrap">Income</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in stats %}
+                <tr class="{% cycle '' 'odd' %}">
+                    <td>{{ item.created_at|date:"m/d/y" }}</td>
+                    <td>{{ item.amount }} USD</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h2>Nothing to display</h2>
+    {% endif %}
+    <br class="clear"/>
+
+{% endblock %}

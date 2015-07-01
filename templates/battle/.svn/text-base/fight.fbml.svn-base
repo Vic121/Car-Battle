@@ -1,0 +1,49 @@
+{% extends base %}
+{% load common humanize modules %}
+{% block title %}Battle{% endblock %}
+{% block head %}
+<style type="text/css" media="screen">
+	.result_0 {
+		background-color: green;
+	}
+	.result_1 {
+		background-color: lightgrey;
+	}
+	.result_2 {
+		background-color: red;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<h2>Battle ({{ battle.card }} of 3)</h2>
+
+{% if summary %}
+<h3>Result: {{ summary }}</h3>
+{% endif %}
+
+<div style="width: 400px;">
+	<div style="width: 50%; float: left;">
+		<span style="font-size: 16px;">{{ request.engine.user.user }}</span><br/>
+		{% card attacker %}
+	</div>
+	<div style="width: 50%; float: left;">
+		<span style="font-size: 16px;">{{ user }}</span><br/>
+	{% ifequal battle.step 4 %}
+		{% card defender %}
+		
+		{% if last_step %}
+			{% if not last_card %}
+				<p><a href="{% fb_url battle_user user_id %}?next=1">next card</a></p>
+			{% else %}
+				<p><a href="{% fb_url battle_user user_id %}?next=1">finito</a></p>
+			{% endif %}
+		{% endif %}
+	{% else %}
+		{% card defender shown attacker %}
+	{% endifequal %}
+	
+	</div>
+</div>
+
+{% endblock %}

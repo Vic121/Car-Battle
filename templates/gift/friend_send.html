@@ -1,0 +1,63 @@
+{% extends base %}
+
+{% block title %}
+    Send {{ car.year }} {{ car.manuf }} {{ car.name }} a friend
+{% endblock %}
+
+{% block breadcrumbs %}
+    <strong>Garage</strong>
+    <span class="final">Send <b>{{ car.year }} {{ car.manuf }} {{ car.name }}</b> a friend</span>
+{% endblock %}
+
+{% block master_header %}{% endblock %}
+
+{% block content %}
+<div style="width: 280px; float: left;">
+    {% if car.tier == 'P' or car.tier == 'U' or car.tier == 'N' or car.tier == 'X' %}
+        {% show_card car 'small' %}
+    {% else %}
+        {% show_card car %}
+    {% endif %}
+</div>
+<div style="width: 660px; float: left;">
+    <form action="{% url "friend_send" car.id %}" method="post">
+        {% for user in friends %}
+            <div class="feature mini-resource left">
+                {# <a href="{% url "albums" %}" class="mask"></a> #}
+                {# <img alt="{{ album.name }}" src="{{ MEDIA_URL }}images/albums/{{ album.id }}_s.jpg" class="avatar left"> #}
+                <strong class="name left"><input type="radio" name="friend" value="{{ user.user.id }}"/>&nbsp;&nbsp;<a
+                        href="{% url "profile" user.username|slugify %}">{{ user }}</a></strong>
+                <span class="bio serif left">Level {{ user.level }}</span>
+                {# <span class="bio serif left">{{ user.cars }} cars</span> #}
+            </div>
+        {% endfor %}
+        <br class="clear"/>
+
+        <p>
+            <input type="submit" value="SEND {{ car.manuf }} {{ car.short_name }} to selected friend"/>
+        </p>
+    </form>
+</div>
+
+<br class="clear"/>
+
+<div class="box">
+    {% if total > settings.DEFAULT_FRIENDS_PER_GIFT_PAGE %}
+    <p style="font-size: 18px;">Page:
+        {% for num in page.page_range %}
+        {% if not num %} ...
+        {% else %}
+        {% ifequal num page_no %}
+        <b>{{ num }}</b>
+        {% else %}
+        <a href="?page_no={{ num }}">{{ num }}</a>
+        {% endifequal %}
+        {% endif %}
+        {% endfor %}
+    </p>
+    {% endif %}
+</div>
+
+<br class="clear"/>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends base %}
+{% load tips %}
+
+{% block title %}Jobs{% endblock %}
+
+{% block master_header %}{% endblock %}
+
+{% block breadcrumbs %}
+	<strong>Jobs</strong>
+	{% if user_job.job %}
+	<span class="final">Round {{ profile.job_round }} of {{ profile.job_max_round_today }} today</span>
+	{% else %}
+	<span class="final">No more rounds for today, new round starts {{ profile.job_next_day_at|timestr }}</span>
+	{% endif %}
+{% endblock %}
+{% block content %}
+
+{% if user_job.job %}
+<br class="clear"/>
+{% show_how_to_play request %}
+
+{% for job in user_job.jobs %}
+<div class="grunge"><span class="grunge_tier">&nbsp;</span><span class="grunge_dash">&nbsp;</span><span style="background: url({{ MEDIA_URL}}images/layout/_{{ forloop.counter }}.png) no-repeat; display: block; height: 28px; float: left; width: 15px; margin-left: -1px;">&nbsp;</span></div>
+
+<div class="job {% if forloop.counter > user_job.last_tier %}job_undone{% else %}job_done{% endif %}{% if forloop.counter == 6 %} job_premium{% endif %}">
+	<br style="clear: both; margin-bottom: -10px;"/>
+	<div class="job_img">
+		<a href="{% url "encyclopedia_car" job.manuf|slugify job.name|slugify job.id %}"><img src="{{ settings.BASE_MEDIA_URL }}{{ job.img|img_replace:'_s.jpg' }}" alt="{{ job.name }}"/></a>
+	</div>
+	<div class="job_content">
+		<p class="title"><a href="{% url "encyclopedia_car" job.manuf|slugify job.name|slugify job.id %}">{{ job.manuf }}</a></p>
+		<p class="title"><a href="{% url "encyclopedia_car" job.manuf|slugify job.name|slugify job.id %}">{{ job.short_name }}</a></p>
+		<p class="content">{{ job.engine_up }}, {{ job.power_bhp|floatformat }} BHP</p>
+		{# <p class="content"> Top Speed: {{ job.top_speed }} km/h ({{ job.top_speed|kph_to_mph|floatformat }} mph), 0-100 km/h (0-60 mph): {{ job.sprint_0_100|floatformat }} sec</p> #}
+		<p class="content"><strong>${{ tier_income|KEY:forloop.counter }} & {{ tier_exp|KEY:forloop.counter|intcomma }} EXP when collect</strong></p>
+	</div>
+	<div class="job_action">
+		{% if forloop.counter|GT:user_job.last_tier %}
+			<span clicktoshowdialog="help_dialog">ask {% help_left user_job.help_has forloop.counter %} more friends to unlock</span>
+			{% ask_for_help_link user_job request.engine.user.profile forloop.counter0 %}
+		{% else %}
+			{% collect_link job %}
+		{% endif %}
+	</div>
+	{% if forloop.counter|EQ:user_job.last_tier %}
+		<div class="sub_head">{{ request.engine.job.time_left }}</div>
+	{% else %}
+		{% if forloop.counter|GT:user_job.last_tier %}
+			<div class="job_action"><b>or</b> win a fight <a href="{% url "tier_battle" %}" class="readmore">FIGHT</a></div>
+		{% endif %}
+	{% endif %}
+</div>
+<br class="clear"/><br class="clear"/>
+{% endfor %}
+
+
+{% else %}
+{% endif %}
+<br/>
+{% endblock %}

@@ -1,0 +1,30 @@
+<div id="navigation">
+    <a href="{% url "home" %}" {% if module == 'home' %}class="current"{% endif %}>
+        <strong>Home</strong>
+        <span>dashboard</span>
+    </a>
+    <a href="{% url "jobs" %}" {% if module == 'jobs' %}class="current"{% endif %}>
+        <strong>Jobs</strong>
+        <span>get cars fast & easy</span>
+    </a>
+    <a href="{% url "battle" %}" {% if module == 'battle' %}class="current"{% endif %}>
+        <strong>Battle</strong>
+        <span>fight other players</span>
+    </a>
+    <a href="{% url "garage" %}" {% if module == 'garge' %}class="current"{% endif %}>
+        <strong>Garage</strong>
+        <span>your rides</span>
+    </a>
+    <a href="{% url "store" %}" {% if module == 'store' %}class="current"{% endif %}>
+        <strong>STORE</strong>
+        <span>cars and bonuses</span>
+    </a>
+    <a href="{% url "albums" %}" {% if module == 'album' %}class="current"{% endif %}>
+        <strong>Albums</strong>
+        <span>your precious albums</span>
+    </a>
+    <a href="{% url "auction" %}" {% if module == 'auction' %}class="current"{% endif %}>
+        <strong>Auction</strong>
+        <span>buy and sell items</span>
+    </a>
+</div>

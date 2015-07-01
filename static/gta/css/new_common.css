@@ -1,0 +1,1568 @@
+/*	Theme Name: NuvoGraphics
+	Description: The second full theme installment of NuvoGraphics.
+	Version: 2.2
+	Author: Chris Sealey
+	Author URI: http://www.chrissealey.me
+	Tags: clean, web 2.0, 960 GS, grid, design
+
+	Š 2009 Chris Sealey & NuvoGraphics */
+@import url('new_forms.css');
+@import url('new_reset.css');
+
+/*-----------------------------------------------------------------------------------------------
+TYPOGRAPHY
+-----------------------------------------------------------------------------------------------*/
+
+body, #body {
+    font-family: Helvetica, Verdana, Arial, Sans-Serif;
+    color: #353535;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+h1 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+h2 {
+    color: #39609D;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+h3 {
+    color: #353535;
+    font-size: 12px;
+    line-height: 20px;
+    /*text-transform: uppercase;*/
+}
+
+p a, em a, strong a {
+    border-bottom: 1px dotted #99BDF7;
+}
+
+a:link, a:visited {
+    color: #39609D;
+}
+
+a:hover {
+    color: #5981C1;
+}
+
+a:active {
+    color: #1C4FA0;
+}
+
+/*-----------------------------------------------------------------------------------------------
+CORE STRUCTURE
+-----------------------------------------------------------------------------------------------*/
+
+body#long, div#long {
+    background: url(/static/gta/images/layout_new/header.jpg) top center repeat-x;
+}
+
+body#short, div#short {
+    background: url(/static/gta/images/layout_new/header_short.jpg) top center repeat-x;
+}
+
+#long_header {
+    height: 405px;
+    width: 100%;
+}
+
+#short_header {
+    height: 250px;
+    width: 100%;
+}
+
+#content {
+    position: relative;
+    min-height: 710px;
+    width: 960px;
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+}
+
+#content.nobase {
+    margin: 0 auto;
+}
+
+#footer {
+    background: #2D3338;
+    color: #CACACA;
+    width: 100%;
+    padding: 0 0 20px 0;
+}
+
+/*-----------------------------------------------------------------------------------------------
+HEADER
+-----------------------------------------------------------------------------------------------*/
+
+#navigation {
+    height: 48px;
+    width: 960px;
+    margin: 0 auto;
+}
+
+#navigation a {
+    color: white;
+    line-height: 14px;
+    width: 117px;
+    padding: 10px;
+    float: left;
+}
+
+#navigation a:hover, #navigation .current {
+    background: url(/static/gta/images/layout_new/masks.png) 0 -301px;
+    text-shadow: 1px 1px 0 black;
+}
+
+#navigation strong {
+    display: block;
+    text-transform: uppercase;
+}
+
+#takeaway {
+    position: relative;
+    height: 320px;
+    width: 960px;
+    margin: 1px auto;
+}
+
+#takeaway_short {
+    position: relative;
+    height: 160px;
+    width: 960px;
+    margin: 1px auto;
+}
+
+#logo {
+    background: url(/static/gta/images/layout_new/sprite.png) no-repeat scroll left top transparent;
+    height: 40px;
+    padding: 10px;
+    position: absolute;
+    text-indent: -9999px;
+    top: 20px;
+    width: 250px;
+}
+
+#grab {
+    position: absolute;
+    top: 100px;
+    font-family: Georgia, Palatino, Times, Serif;
+    text-shadow: #1f275a 1px 1px 0;
+    width: 480px;
+}
+
+#grab h1 {
+    color: white;
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: normal;
+    margin: 10px;
+}
+
+#grab h2 {
+    color: #F0F0F0;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: normal;
+    margin: 0 10px 10px 10px;
+}
+
+#grab h2 a {
+    color: #CEDCE5;
+}
+
+#grab h2 a:hover {
+    color: #A8CBE2;
+}
+
+#grab .cta {
+    margin: 10px;
+}
+
+#feature {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    height: 300px;
+    width: 460px;
+    overflow: hidden;
+}
+
+#feature ul {
+    position: absolute;
+    top: -15px;
+    height: 315px;
+}
+
+#feature img {
+    width: 460px;
+}
+
+/*-----------------------------------------------------------------------------------------------
+INFO BAR
+-----------------------------------------------------------------------------------------------*/
+
+#infobar {
+    line-height: 32px;
+    height: 32px;
+    width: 960px;
+    margin: 2px auto;
+}
+
+#breadcrumbs {
+    width: 480px;
+}
+
+#breadcrumbs strong, #breadcrumbs a, #breadcrumbs span {
+    background: url(/static/gta/images/layout_new/separator.png) no-repeat right;
+    padding: 9px 20px 9px 10px;
+}
+
+#breadcrumbs .final {
+    background: none;
+}
+
+#contactinfo {
+    height: 32px;
+    margin: 0 10px;
+}
+
+#contactinfo .email {
+    color: #353535;
+    padding: 0 10px 0 0;
+}
+
+#contactinfo .email:hover {
+    color: #6C6C6C;
+}
+
+#contactinfo .email .icon {
+    background-position: -62px -190px;
+    margin: 8px 10px;
+}
+
+#contactinfo .phone .icon {
+    background-position: -88px -190px;
+    margin: 8px 10px;
+}
+
+#search {
+    position: relative;
+    height: 32px;
+    width: 221px;
+    margin: 0 9px;
+}
+
+#search label {
+    position: absolute;
+    right: 240px;
+    text-align: right;
+    width: 220px;
+}
+
+#search .form {
+    position: absolute;
+    background: url(/static/gta/images/layout_new/sprite.png) -10px -215px no-repeat;
+    color: #5D5D5D;
+    font-size: 11px;
+    width: 177px;
+    padding: 9px 6px 8px 6px;
+}
+
+#search .button {
+    position: absolute;
+    right: 0;
+    background: url(/static/gta/images/layout_new/sprite.png) -200px -215px no-repeat;
+    text-indent: -9999px;
+    font-size: 0;
+    color: #465169; /* text hack for IE */
+    height: 32px;
+    width: 32px;
+    margin: 0;
+    cursor: pointer;
+}
+
+#search .button:hover {
+    background-position: -200px -185px;
+}
+
+#search .button:active {
+    background-position: -200px -155px;
+}
+
+/*-----------------------------------------------------------------------------------------------
+CONTENT
+-----------------------------------------------------------------------------------------------*/
+
+.column {
+    width: 700px;
+    margin: 0;
+    padding: 0 10px;
+    float: right;
+}
+
+.column.full {
+    width: 940px;
+    padding: 0 10px;
+}
+
+.column.portfolio {
+    float: right;
+}
+
+.column.portfolio #intro {
+    border-top: 1px solid #E5E5E5;
+    margin: 10px 0 0 0;
+    padding: 15px 0 0 0;
+}
+
+#intro p {
+    font-family: Georgia, Palatino, Times, Serif;
+    font-size: 20px;
+    line-height: 26px !important;
+    margin: 4px 0 13px 0 !important;
+}
+
+#intro a {
+    border: none !important;
+}
+
+.column h1 {
+    border-bottom: 1px solid #E5E5E5;
+    color: #39609D;
+    margin: 20px 0 10px 0;
+    padding: 0 0 5px 0;
+}
+
+.column h2 {
+    color: #353535;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 20px 0 0 0;
+}
+
+.leftmask, .rightmask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    z-index: 10;
+}
+
+.leftmask {
+    background: url(/static/gta/images/layout_new/mask_left.png) repeat;
+    left: 0;
+}
+
+.rightmask {
+    background: url(/static/gta/images/layout_new/mask_right.png) repeat;
+    right: 0;
+}
+
+#entry p, #entry img {
+    margin: 10px 0;
+    line-height: 20px;
+}
+
+#entry a.left img, #entry a.right img {
+    background: #F8F7F7;
+    border: 1px solid #E5E5E5;
+    padding: 4px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+#entry a.left img {
+    margin: 5px 10px 20px 0;
+}
+
+#entry a.right img {
+    margin: 5px 0 20px 10px;
+}
+
+#entry img.left, #entry img.alignleft {
+    margin: 5px 20px 10px 0;
+}
+
+#entry img.right, #entry img.alignright {
+    margin: 5px 0 10px 20px;
+}
+
+#entry a.left:hover img, #entry a.right:hover img {
+    background: #E5E5E5;
+}
+
+#entry ol {
+    margin: 10px 0 10px 0;
+}
+
+#entry ol li {
+    margin: 7px 0 7px 15px;
+}
+
+#entry ul {
+    margin: 10px 0 10px 0;
+    list-style: disc;
+}
+
+#entry ul li {
+    margin: 7px 0 7px 15px;
+}
+
+#entry blockquote {
+    border-left: 5px solid #F8F7F7;
+    color: #9A9A9A;
+    font-style: italic;
+    margin: 15px 0 15px 20px;
+    padding: 0 0 0 20px;
+}
+
+/*-----------------------------------------------------------------------------------------------
+SIDEBAR
+-----------------------------------------------------------------------------------------------*/
+
+#sidebar {
+    position: absolute;
+    top: 41px;
+    left: 10px;
+    width: 220px;
+}
+
+#sidebar.portfolio {
+    top: 51px;
+    left: 10px;
+    right: auto;
+}
+
+#sidebar h3 {
+    border-bottom: 1px solid #E5E5E5;
+    width: 100%;
+    padding: 15px 0 13px 0;
+}
+
+#sidebar h3.padded {
+    margin: 10px 0 0 0;
+}
+
+#sidebar h3.light {
+    padding: 15px 0 4px 0;
+    margin-bottom: 10px;
+}
+
+#sidebar .current.project, #sidebar .current.project:hover {
+    background: #353535;
+    color: white;
+    height: 76px;
+    margin: 10px 0;
+    padding: 10px 0;
+    cursor: default;
+}
+
+#sidebar .current.project .thumbnail {
+    margin: 0 10px;
+}
+
+#sidebar .current.project .name {
+    max-width: 150px;
+}
+
+#sidebar .current.project .date {
+    max-width: 150px;
+}
+
+#sidebar .current.project .liveversion {
+    border-bottom: 1px dotted #57666f;
+    color: #CEDCE5;
+    max-width: 150px;
+}
+
+#sidebar .current.project .liveversion:hover {
+    color: #A8CBE2;
+}
+
+#sidebar .current.project .noliveversion {
+    border-bottom: 1px dotted #9A9A9A;
+    color: #9A9A9A;
+    max-width: 150px;
+}
+
+#sidebar .current.project .scrollto {
+    background: #eb3d82;
+    color: white;
+    text-shadow: 1px 1px 0 #c51f61;
+    line-height: 18px;
+    width: 200px;
+    margin: 8px 0 0 0;
+    padding: 4px 10px;
+}
+
+#sidebar .current.project .scrollto:hover {
+    background: #e75691;
+}
+
+#sidebar .project {
+    position: relative;
+    color: #353535;
+    line-height: 12px;
+    height: 50px;
+    width: 220px;
+    padding: 10px 0;
+    float: left;
+    cursor: pointer;
+}
+
+#sidebar .project:hover {
+    background: #eeeeef;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 10px 0 10px 10px;
+    margin: 0 0 0 -10px;
+}
+
+#sidebar .project .mask {
+    left: 0;
+    top: 10px;
+    background-position: -170px -301px;
+    height: 50px;
+    width: 50px;
+}
+
+#sidebar .project:hover .mask {
+    left: 10px;
+    top: 10px;
+}
+
+#sidebar .project .thumbnail {
+    background: #2F2F2F;
+    height: 50px;
+    width: 50px;
+    margin: 0 10px 0 0;
+    overflow: hidden;
+}
+
+#sidebar .project .thumbnail img {
+    height: 50px;
+    width: 80px;
+    margin: 0 0 0 -15px;
+}
+
+#sidebar .project .name {
+    width: 160px;
+    margin: -1px 0 7px 0;
+}
+
+#sidebar .project .date {
+    position: relative;
+    font-style: normal;
+    width: 160px;
+}
+
+#sidebar .project .newtag {
+    position: absolute;
+    top: 0;
+    left: -33px;
+    background: url(/static/gta/images/layout_new/sprite.png) -131px -130px no-repeat;
+    height: 12px;
+    width: 25px;
+    z-index: 2;
+}
+
+#sidebar .project .liveversion, #sidebar .project .noliveversion {
+    border-bottom: 1px dotted #99BDF7;
+    color: #39609D;
+    font-size: 11px;
+    max-width: 160px;
+    margin: 6px 0 2px 0;
+    padding: 0 0 1px 0;
+}
+
+#sidebar .project .noliveversion {
+    border-bottom: 1px dotted #9A9A9A;
+    color: #9A9A9A;
+}
+
+#sidebar .topics {
+    border-top: 1px solid #E5E5E5;
+    margin: 20px 0 0 0;
+    float: left;
+}
+
+#sidebar .topic {
+    position: relative;
+    background: #F8F7F7;
+    border-bottom: 1px solid #E5E5E5;
+    color: #353535;
+    width: 174px;
+    padding: 8px 10px 8px 36px;
+    float: left;
+    cursor: pointer;
+}
+
+#sidebar .topic .icon {
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    background: url(/static/gta/images/layout_new/sprite.png) no-repeat -10px -550px;
+}
+
+#sidebar .current.topic .icon {
+    background-position-y: -580px;
+}
+
+#sidebar .topic.design .icon {
+    background-position-x: -10px;
+}
+
+#sidebar .topic.business .icon {
+    background-position-x: -36px;
+}
+
+#sidebar .topic.code .icon {
+    background-position-x: -62px;
+}
+
+#sidebar .topic.wordpress .icon {
+    background-position-x: -88px;
+}
+
+#sidebar .topic.ia .icon {
+    background-position-x: -114px;
+}
+
+#sidebar .topic.seo .icon {
+    background-position-x: -140px;
+}
+
+#sidebar .topic.socialmedia .icon {
+    background-position-x: -166px;
+}
+
+#sidebar .topic.productivity .icon {
+    background-position-x: -192px;
+}
+
+#sidebar .topic:hover {
+    background: #eeeeef;
+}
+
+#sidebar .topic .count {
+    position: absolute;
+    right: 10px;
+    color: #60aef1;
+    font-size: 10px;
+}
+
+#sidebar .current.topic {
+    color: #60aef1;
+}
+
+.feature {
+    position: relative;
+    line-height: 13px;
+    margin: 10px 0 0 0;
+    height: 60px;
+}
+
+.feature.mini-resource {
+    width: 220px;
+    margin: 10px;
+}
+
+.feature.maxi-resource {
+    width: 440px;
+    margin: 10px;
+}
+
+.feature .mask, .user-feature .mask {
+    left: 0;
+    top: 0;
+    background-position: -170px -301px;
+    height: 50px;
+    width: 50px;
+}
+
+.feature .avatar, .feature .img, .user-feature .avatar {
+    background: #f1f1f1;
+    height: 50px;
+    width: 50px;
+    margin: 0 10px 0 0;
+}
+
+.feature .img {
+    width: 150px;
+    height: 150px;
+}
+
+.feature .name {
+    width: 70%;
+    margin: -1px 0 7px 0;
+}
+
+.feature .website {
+    border-bottom: 1px dotted #99BDF7;
+    font-size: 11px;
+    margin: 6px 0 2px 0;
+    padding: 0 0 1px 0;
+}
+
+.feature .bio {
+    width: 70%;
+}
+
+/*-----------------------------------------------------------------------------------------------
+MISC ELEMENTS
+-----------------------------------------------------------------------------------------------*/
+
+.heading {
+    position: relative;
+    border-bottom: 1px solid #E5E5E5;
+    height: 30px;
+    width: 940px;
+    margin: 10px;
+    float: left;
+}
+
+.heading.full {
+    width: 940px;
+}
+
+.heading.left, .heading.right {
+    width: 460px;
+}
+
+.heading.nomargin {
+    margin: 10px 10px 0 10px;
+}
+
+.heading h1, .heading h3, .heading h4 {
+    min-width: 240px;
+    max-width: 460px;
+    margin: 5px 0 6px 0;
+    float: left;
+}
+
+#tools {
+    margin: 0 -5px 0 0;
+}
+
+.tool {
+    position: relative;
+}
+
+.tool a {
+    display: block;
+    background: url(/static/gta/images/layout_new/sprite.png) no-repeat;
+    text-indent: -9999px;
+    height: 16px;
+    width: 16px;
+    padding: 5px 5px 10px 5px;
+    cursor: pointer;
+}
+
+.tool:hover .tooltip {
+    visibility: visible;
+}
+
+.tool .tooltip {
+    visibility: hidden;
+    position: absolute;
+    top: 25px;
+    right: 12px;
+    display: block;
+    background: url(/static/gta/images/layout_new/masks.png) -70px -255px;
+    color: white;
+    white-space: nowrap;
+    padding: 7px 6px 2px 6px;
+    width: 138px;
+    z-index: 10;
+}
+
+.tool.behance a {
+    background-position: -5px -65px;
+}
+
+.tool.facebook a {
+    background-position: -31px -65px;
+}
+
+.tool.twitter a {
+    background-position: -57px -65px;
+}
+
+.tool.delicious a {
+    background-position: -83px -65px;
+}
+
+.tool.rss a {
+    background-position: -57px -95px;
+    width: 42px;
+}
+
+.tool.rss .tooltip {
+    right: 23px;
+}
+
+.tool.print a {
+    background-position: -5px -125px;
+}
+
+.tool.send a {
+    background-position: -31px -125px;
+}
+
+.tool.digg a {
+    background-position: -57px -125px;
+}
+
+.tool.stumble a {
+    background-position: -83px -125px;
+}
+
+.tool.edit a {
+    background-position: -5px -155px;
+}
+
+.tool.control a {
+    background-position: -31px -155px;
+}
+
+.categories {
+    position: absolute;
+    left: 240px;
+    margin: 7px 0 0 0;
+}
+
+.categories li {
+    display: inline;
+    margin: 0 20px 4px 0;
+}
+
+.categories li a {
+    color: #9A9A9A;
+}
+
+.categories li a:hover, .categories li .current {
+    color: #353535;
+}
+
+.categories li .current {
+    cursor: default;
+}
+
+#pagination {
+    height: 30px;
+    width: 700px;
+    float: left;
+}
+
+#pagination li {
+    float: left;
+    list-style: none;
+}
+
+#pagination li .title {
+    display: block;
+    padding: 5px 10px 5px 0;
+}
+
+#pagination li .current {
+    display: block;
+    padding: 5px 10px;
+}
+
+#pagination li a {
+    display: block;
+    color: #9A9A9A;
+    padding: 5px 10px;
+}
+
+#pagination li a:hover, #pagination li a:active {
+    color: #353535;
+}
+
+.ribbon {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background: url(/static/gta/images/layout_new/sprite.png) -115px -68px no-repeat;
+    height: 46px;
+    width: 46px;
+    z-index: 20;
+}
+
+.ribbon.feature {
+    position: absolute;
+    top: 5px;
+    right: 2px;
+    background-position: -173px -68px;
+    height: 66px;
+    width: 66px;
+}
+
+.mask {
+    background: url(/static/gta/images/layout_new/masks.png);
+    position: absolute;
+    width: 220px;
+    z-index: 1;
+}
+
+.icon {
+    display: block;
+    background: url(/static/gta/images/layout_new/sprite.png);
+    text-indent: -9999px;
+    height: 16px;
+    width: 16px;
+}
+
+.icon.tick {
+    background-position: -114px -190px;
+}
+
+.icon.cross {
+    background-position: -140px -190px;
+}
+
+.icon.product {
+    background-position: -36px -190px;
+}
+
+.icon.download {
+    background-position: -10px -100px;
+}
+
+.icon.note {
+    background-position: -140px -160px;
+}
+
+.cta {
+    float: left;
+    background: url(/static/gta/images/layout_new/sprite.png) no-repeat;
+    border: none !important;
+    text-indent: -9999px;
+    height: 34px;
+    width: 190px;
+    margin: 2px 10px;
+}
+
+.cta.tutorial {
+    background-position: -10px -250px;
+}
+
+.cta.tutorial:hover {
+    background-position: -10px -294px;
+}
+
+.cta.tutorial:active {
+    background-position: -10px -338px;
+}
+
+.cta.shop {
+    background-position: -10px -382px;
+}
+
+.cta.shop:hover {
+    background-position: -10px -426px;
+}
+
+.cta.shop:active {
+    background-position: -10px -470px;
+}
+
+.alt_cta {
+    color: #F0F0F0;
+    font-size: 18px;
+    line-height: 34px;
+    height: 34px;
+    margin: 10px;
+    float: left;
+}
+
+.alt_cta a {
+    color: white;
+    border-bottom: 1px dotted #F0F0F0;
+    margin: 0 0 0 5px;
+}
+
+.alt_cta a:hover {
+    color: #CEDCE5;
+}
+
+.alt_cta a:active {
+    color: #A8CBE2;
+}
+
+/*-----------------------------------------------------------------------------------------------
+WIDGETS
+-----------------------------------------------------------------------------------------------*/
+
+.post {
+    position: relative;
+    border-bottom: 1px solid #E5E5E5;
+    margin: 0 0 10px 0;
+    padding: 10px 0 15px 0;
+    float: left;
+}
+
+.post.basic h3 {
+    margin-bottom: 7px;
+}
+
+.post.basic p {
+    line-height: 20px;
+}
+
+.post.basic .meta {
+    margin-top: 14px;
+}
+
+.post.basic {
+    width: 460px;
+    margin: 0 10px 10px 10px;
+}
+
+.post .mask {
+    top: 10px;
+    left: 0;
+    background-position: 0 -150px;
+    height: 100px;
+    z-index: 15;
+}
+
+.post .commentscount {
+    background: url(/static/gta/images/layout_new/masks.png) 0 -361px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    color: white;
+    text-shadow: 1px 1px 0 black;
+    line-height: 18px;
+    width: 200px;
+    padding: 6px 10px;
+    z-index: 10;
+    visibility: hidden;
+}
+
+.post .commentscount .icon {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    background-position: -10px -190px;
+}
+
+.post:hover .commentscount {
+    visibility: visible;
+}
+
+.post .thumbnail {
+    background: #2F2F2F;
+    height: 100px;
+    width: 220px;
+    margin: 0 20px 5px 0;
+    z-index: 5;
+}
+
+.post h3 {
+    position: relative;
+    width: 594px;
+    margin: -5px 80px 5px 0;
+    padding: 0 0 0 26px;
+}
+
+.post h3 .icon {
+    position: absolute;
+    top: 1px;
+    left: 0;
+}
+
+.post h3 a {
+    color: #353535;
+}
+
+.post h3 a:hover {
+    color: #9A9A9A;
+}
+
+.post p {
+    font-family: Georgia, Palatino, Times, Serif;
+    font-size: 13px;
+    float: left;
+}
+
+.post .date {
+    position: absolute;
+    top: 6px;
+    right: 0;
+    color: #60aef1;
+    font-weight: normal;
+}
+
+.post .meta {
+    font-size: 10px;
+    width: 460px;
+    margin: 8px 0 0 0;
+    float: left;
+}
+
+.post .meta .tag.icon {
+    background-position: -88px -160px;
+    margin: 2px 5px 1px -4px;
+}
+
+.post .meta .tags {
+    width: auto;
+}
+
+.post:hover .meta .tags, .nobase .post .meta .tags {
+    width: 255px;
+}
+
+.post .meta .author {
+    margin: 0 20px 0 0;
+    visibility: hidden;
+}
+
+.post:hover .author, .nobase .post .author {
+    visibility: visible;
+}
+
+.post .meta .permalink {
+    display: none;
+    visibility: hidden;
+}
+
+.post:hover .meta .permalink, .nobase .post .meta .permalink {
+    display: block;
+    visibility: visible;
+}
+
+.post .meta .permalink a {
+    border-bottom: 1px dotted #e31e9b;
+    color: #e31e9b;
+}
+
+.post .meta .permalink a:hover {
+    color: #e670bb;
+}
+
+.post.articles h3 {
+    width: 380px;
+    padding: 0;
+}
+
+.post.articles p {
+    width: 460px;
+    float: left;
+}
+
+.box, .box-1 {
+    position: relative;
+    width: 180px;
+    margin: 10px;
+    float: left;
+}
+
+.box-2 {
+    position: relative;
+    width: 380px;
+    margin: 10px;
+    float: left;
+}
+
+.box-25 {
+    position: relative;
+    width: 470px;
+    margin: 10px;
+    float: left;
+}
+
+.box-3 {
+    position: relative;
+    width: 600px;
+    margin: 10px;
+    float: left;
+}
+
+.box-4 {
+    position: relative;
+    width: 940px;
+    margin: 10px;
+    float: left;
+}
+
+.work, .service, .resource {
+    position: relative;
+    height: 273px;
+    width: 220px;
+    margin: 10px;
+    float: left;
+}
+
+.work .mask, .service .mask, .resource .mask {
+    height: 140px;
+    z-index: 15;
+}
+
+.work .date {
+    background: url(/static/gta/images/layout_new/masks.png) 0 -361px;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    color: white;
+    text-shadow: 1px 1px 0 black;
+    line-height: 18px;
+    text-align: center;
+    width: 200px;
+    padding: 6px 10px;
+    z-index: 10;
+    visibility: hidden;
+}
+
+.work:hover .date {
+    visibility: visible;
+}
+
+.work .thumbnail, .service .thumbnail, .resource .thumbnail {
+    background: #2F2F2F;
+    height: 140px;
+    width: 220px;
+    z-index: 5;
+}
+
+.work h2, .service h2, .resource h2 {
+    font-family: Georgia, Palatino, Times, Serif;
+    font-weight: normal;
+    margin: 13px 0 5px 0;
+}
+
+/* .service {
+	height: 293px !important;
+} */
+.service h3 {
+    font-family: Georgia, Palatino, Times, Serif;
+    font-weight: normal;
+    text-transform: none;
+    font-size: 12px;
+    line-height: 12px;
+    margin: 0 0 10px 0;
+}
+
+.service h3 a {
+    color: #9A9A9A;
+}
+
+.service h3 a:hover {
+    color: #353535;
+}
+
+/*-----------------------------------------------------------------------------------------------
+COMMENTS
+-----------------------------------------------------------------------------------------------*/
+
+#comments {
+    padding: 20px 0 10px 0;
+}
+
+#reply {
+    background: #F8F7F7;
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 17px 20px;
+}
+
+#reply h3 {
+    color: #b6b6b6;
+    width: 222px;
+}
+
+#reply h5 {
+    font-weight: normal;
+}
+
+#reply #commentform {
+    position: relative;
+    height: 169px;
+    width: 680px;
+}
+
+#reply #commentform input {
+    position: absolute;
+    left: 0;
+    color: #b6b6b6;
+    border: 1px solid #d7d7d7;
+    padding: 5px;
+    width: 189px;
+}
+
+#reply #commentform input#author {
+    top: 28px;
+}
+
+#reply #commentform input#email {
+    top: 68px;
+}
+
+#reply #commentform input#url {
+    top: 108px;
+}
+
+#reply #commentform textarea {
+    position: absolute;
+    top: 28px;
+    right: 20px;
+    border: 1px solid #d7d7d7;
+    font-family: Helvetica, Verdana, Arial, Sans-Serif; /* force font hack for IE */
+    color: #353535;
+    font-size: 12px;
+    line-height: 18px;
+    width: 427px;
+    padding: 5px;
+    height: 126px;
+    resize: none;
+}
+
+#reply #commentform input#submit {
+    position: absolute;
+    top: 148px;
+    background: url(/static/gta/images/layout_new/sprite.png) -10px -520px no-repeat;
+    border: none;
+    text-indent: -9999px;
+    font-size: 0;
+    color: #465169; /* text hack for IE */
+    height: 19px;
+    width: 65px;
+    cursor: pointer;
+}
+
+#reply #commentform input#submit:hover {
+    background-position-x: -85px;
+}
+
+#reply #commentform input#submit:active {
+    background-position-x: -160px;
+}
+
+#comments .commentlist {
+    list-style-type: none;
+    margin: 0;
+}
+
+#comments .comment {
+    margin: 20px 0;
+}
+
+#comments .comment .commentinfo {
+    position: relative;
+    background: url(/static/gta/images/layout_new/stripes.png) repeat;
+    height: 32px;
+}
+
+#comments .comment .commentinfo .tag {
+    position: absolute;
+    right: 48px;
+    top: 6px;
+    background: #cf5282;
+    color: white;
+    font-size: 10px;
+    line-height: 18px;
+    padding: 0 5px 2px 5px;
+}
+
+#comments .comment .commentinfo .tag.author {
+    background: #cf5282;
+    text-shadow: #8e3859 1px 1px 0;
+}
+
+#comments .comment .commentinfo .tag.editor {
+    background: #4ea6ae;
+    text-shadow: #326a6f 1px 1px 0;
+}
+
+#comments .comment .commentinfo .commentmeta {
+    position: absolute;
+    left: 0;
+    background: white;
+    padding: 0 10px 0 0;
+    height: 32px;
+}
+
+#comments .comment .commentinfo span {
+    font-size: 10px;
+    line-height: 12px;
+}
+
+#comments .comment .commentinfo img.avatar {
+    position: absolute;
+    right: 0;
+    border-left: 10px solid white;
+    height: 32px;
+    width: 32px;
+    margin: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+}
+
+#comments .comment p {
+    margin: 10px 0 0 0;
+}
+
+/*-----------------------------------------------------------------------------------------------
+CODE & PREFORMATTED TEXT
+-----------------------------------------------------------------------------------------------*/
+
+.wp_syntax {
+    background: #F8F7F7 !important;
+    border: 1px solid #E5E5E5 !important;
+    width: 698px !important;
+    margin: 10px 0 !important;
+}
+
+.wp_syntax .line_numbers {
+    border-right: 1px solid silver;
+    line-height: 18px !important;
+    min-width: 20px;
+    padding: 10px !important;
+}
+
+.wp_syntax .code {
+    line-height: 18px !important;
+    padding: 10px !important;
+}
+
+code {
+    color: #E670BB;
+}
+
+/*-----------------------------------------------------------------------------------------------
+FOOTER
+-----------------------------------------------------------------------------------------------*/
+
+#calltoaction {
+    background: #F8F7F7;
+    border-top: 1px solid #E5E5E5;
+    width: 100%;
+    padding: 13px 0;
+}
+
+.message {
+    position: relative;
+    font-size: 18px;
+    line-height: 34px;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.message a {
+    color: #e31e9b;
+    border-bottom: 1px dotted #e31e9b;
+}
+
+.message a:hover {
+    color: #e670bb;
+}
+
+.message .cta {
+    position: absolute;
+    margin: 1px 0;
+    top: -1px;
+}
+
+.message .cta.tutorial {
+    right: 240px;
+}
+
+.message .cta.shop {
+    right: 0px;
+}
+
+#overview {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 0 14px 0;
+}
+
+#overview h2 {
+    color: white;
+    margin: 0 0 8px 0;
+}
+
+#footer .highlight {
+    background: #4c5155;
+    border-top: 1px solid #14171a;
+    height: 1px;
+    width: 100%;
+    margin: 0 0 20px 0;
+    float: left;
+}
+
+.footblock {
+    line-height: 20px;
+    width: 220px;
+    margin: 10px;
+    float: left;
+}
+
+.footblock p a, #copyright a {
+    color: #CEDCE5;
+    display: inline;
+    border: none;
+}
+
+.footblock a {
+    position: relative;
+    color: #CACACA;
+    display: block;
+    cursor: pointer;
+}
+
+.footblock a:hover, .footblock a:hover span, #copyright a:hover {
+    color: white;
+}
+
+.footblock a:active, .footblock a:active span, #copyright a:active {
+    color: #666;
+}
+
+.footblock a span {
+    position: absolute;
+    right: 0;
+    color: #CEDCE5;
+    font-size: 10px;
+}
+
+#copyright {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 0 12px 0;
+}
+
+#copyright .highlight {
+    width: 940px;
+    margin: 0 0 12px 0;
+}
+
+#copyright .left {
+    width: 220px;
+    margin: 0 20px 0 0;
+}
+
+/*-----------------------------------------------------------------------------------------------
+CONTACT
+-----------------------------------------------------------------------------------------------*/
+
+#contact h1 {
+    border: none;
+    color: #353535;
+    width: 460px;
+    margin: 6px 20px 6px 0;
+    float: left;
+}
+
+#contact p {
+    width: 460px;
+    margin: 0 20px 10px 0;
+    float: left;
+}

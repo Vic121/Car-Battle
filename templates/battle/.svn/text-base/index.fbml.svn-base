@@ -1,0 +1,16 @@
+{% extends base %}
+{% load common humanize modules %}
+{% block title %}Battle{% endblock %}
+
+{% block content %}
+<h2>Battle</h2>
+
+{% if opponents %}
+	{% for opponent in opponents %}
+		<p>{{ forloop.counter }}. <b>{{ opponent.user }}</b> <a href="{% fb_url battle_user opponent.user.id %}">fight</a></p>
+	{% endfor %}
+{% else %}
+	found no one to fight with
+{% endif %}
+
+{% endblock %}

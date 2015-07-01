@@ -1,0 +1,69 @@
+.tributeBoxOut {
+    background-color: #f0f0f0;
+    padding: 20px;
+
+    float: left;
+    width: 250px;
+    margin: 0 15px 25px 25px;
+}
+
+.tributeBox {
+    padding: 10px 10px 10px 10px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+}
+
+.tributeBox h2 {
+    font-size: 18px;
+}
+
+.tributeBox .subheader {
+    font-size: 12px;
+    margin-top: -15px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 1px dotted #cccccc;
+}
+
+table {
+    border: 0;
+    padding: 0;
+}
+
+.owners tr {
+    width: 100%;
+    margin: 0;
+    padding: 5px 0 5px 0;
+}
+
+.owners tr:hover {
+    background-color: #f0f0f0;
+}
+
+.owners td {
+    padding: 5px 5px 5px 5px;
+}
+
+.owners td.action {
+    width: 15%;
+    padding-left: 15px;
+}
+
+.requirements h3, .owners h3 {
+    width: 175px;
+    height: 20px;
+    margin-top: -8px;
+    font-size: 1px;
+    color: #ffffff;
+}
+
+.requirements {
+    border-bottom: 1px dotted #cccccc;
+    margin-bottom: 10px;
+}
+
+.requirements p {
+    line-height: 0.7em;
+}

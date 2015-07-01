@@ -1,0 +1,117 @@
+{% extends base %}
+{% load modules %}
+
+{% block head %}
+{# <link type="text/css" rel="stylesheet" media="screen" href="http://static.ak.fbcdn.net/rsrc.php/v1/pkg/77/118975/css/common.css.pkg.php"/> #}
+<link href="{{ MEDIA_URL }}css/fb_flag_nav.css" rel="stylesheet" type="text/css" media="screen"/>
+<script type="text/javascript" charset="utf-8">
+	var switch_tab = function(v) {
+		{% for k in settings.CAR_GROUPS %}
+			$('#tab_{{ forloop.counter0 }}').css('display', 'none');
+			$('#{{ forloop.counter0 }}_li').removeClass('flag_nav_item_selected');
+		{% endfor %}
+		$('#tab_' + v).css('display', 'block');
+		$('#'+ v + '_li').addClass('flag_nav_item_selected');
+	};
+	var replace_desc = function(id) {
+		$('#add_desc_more_btn_' + id).css('display', 'none');
+		$('#add_desc_' + id).css('display', 'inline');
+	};
+</script>
+{% endblock %}
+
+{% block title %}Garage{% endblock %}
+
+{% block breadcrumbs %}
+	<strong>My garage</strong>
+	{# <span class="final">All</span> #}
+{% endblock %}
+
+{% block master_header %}{% endblock %}
+
+{% block content %}
+
+<div id="content" class="mywidth clearfix">
+{# <div class="dashboard_header"> #}
+	{# <div class="dh_titlebar clearfix">Garage</div> #}
+{# </div> #}
+<div class="content_no_sidebar">
+	<div class="dev_applications clearfix">
+	<div class="flag_nav flag_nav_has_icon dev_app_list" id="dev_app_list">
+	<div class="flag_nav_container">
+		{% for k,v in settings.CAR_GROUPS %}
+			<div class="flag_nav_item {% if forloop.first %}flag_nav_item_selected{% endif %}" id="{{ forloop.counter0 }}_li">
+		    	<a href="#" onclick="switch_tab('{{ forloop.counter0 }}'); return false;" class="clearfix"> 
+		      		{# <div class="flag_nav_li_icon" style="background-image: url(http://www.facebook.com/images/icons/fbfile.gif);"></div> #}
+		      		<div class="flag_nav_li_title">{{ v }} ({% if items|KEY:k %}{{ items|KEY:k|length }}{% else %}0{% endif %})</div>
+		      		<div class="flag_nav_top_mask"></div>
+		     	</a>
+		    	<span class="flag_nav_border_hack"> </span>
+		    </div>
+		{% endfor %}
+	</div>
+	</div>
+	<div class="dev_app_infos_shadow">
+		<div class="dev_app_infos" id="dev_app_infos">
+			
+	{% for k, tier in settings.CAR_GROUPS %}
+		<div id="tab_{{ forloop.counter0 }}" {% if not forloop.first %}style="display:none;"{% endif %}>
+		{% if items|KEY:k %}
+		{% for car, amnt in items|KEY:k %}
+			<div class="dev_application app_show" id="{{ car.id }}_info" style="padding-bottom: 10px; border-bottom: 1px solid #D8DFEA;">
+			<div class="dev_application_header clearfix">
+				<img src="{{ settings.BASE_MEDIA_URL }}{{ car.img|img_replace:'_m.jpg' }}"/>
+				<h3>{{ car.manuf }} {% if amnt > 1 %}({{ amnt }}){% endif %}</h3>
+					<div id="submit">
+						<div class="dev_app_submit">
+							<h6><a href="{% url "encyclopedia_car" car.manuf|slugify car.name|slugify car.id %}">{{ car.year }} {{ car.name }}</a></h6>
+							<p id="desc_{{ car.id }}">Engine {{ car.engine }} cm<sup>3</sup>, {{ car.power_bhp|floatformat }} BHP, Top Speed: {{ car.top_speed }} km/h ({{ car.top_speed|kph_to_mph|floatformat }} mph)<a href="#" onclick="replace_desc('{{ car.id }}');" id="add_desc_more_btn_{{ car.id }}"> more </a></p><p style="display: none;" id="add_desc_{{ car.id }}">0-100 km/h (0-60 mph): {{ car.sprint_0_100|floatformat }} sec, {{ car.weight }} kg, {{ car.power_to_weight|floatformat }} BHP/Ton</p>
+							<p>&nbsp;</p>
+						</div>
+					</div>
+				</div>
+				<div class="dev_application_data">
+					{# <div class="dev_app_insights clearfix"></div> #}
+					<div class="dev_application_info"></div>
+					<div class="dev_application_other">
+						<script type="text/javascript"><!--
+						var feedStory_{{ car.id }} = {% feed_story_js car 'feed_story' %};
+						var actionLinks_{{ car.id }} = {% feed_story_js car 'action_links' %};
+						var userMsg_{{ car.id }} = 'One of my beauties!';
+						var headlineMsg_{{ car.id }} = 'Show everyone your collection';
+						//--></script>
+						
+						<ul class="actionspro">
+							{% if request.engine.IS_FB %}
+							{# <li><a href="#" onclick="Facebook.streamPublish(userMsg_{{ car.id }}, feedStory_{{ car.id }}, actionLinks_{{ car.id }}, null, headlineMsg_{{ car.id }}, null, true, null);">Share</a></li> #}
+							{% endif %}
+							<li><a href="{% url "friend_send" car.id %}">Send a Friend</a></li>
+							<li><a href="{% url "auction_sell_car" car.id %}">Sell {% if amnt|GT:1 %}1 of {{ amnt }} {% endif %} on auction</a></li>
+							<li><a href="{% url "garage_sell" car.id %}">Sell now {% if amnt|GT:1 %}1 of {{ amnt }} {% endif %} for ${{ car.tier|price_by_tier }}</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+		{% else %}
+			<div class="dev_application app_show" id="{{ car.id }}_info" style="padding-bottom: 10px; border-bottom: 1px solid #D8DFEA;">
+			<div class="dev_application_header clearfix">
+				{# <a href="{{ settings.BASE_MEDIA_URL }}{{ car.img }}" target="_blank"><img src="{{ settings.BASE_MEDIA_URL }}{{ car.img|img_replace:'_m.jpg' }}"/></a> #}
+				<h3>no cars in garage in this tier</h3>
+			</div>
+			</div>
+		{% endif %}
+	</div>
+	{% endfor %}
+		
+		<div class="dev_app_footer">
+			{# <a href="www.facebook.com/">Action1</a> | <a href="www.facebook.com/">Action2</a> #}
+		</div>
+		</div>
+	    <!-- End Of Active Page. Other pages go here. -->
+	    </div>
+		</div>
+	</div>  
+	</div>
+</div>
+{% endblock %}

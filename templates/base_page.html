@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta name="google-site-verification" content="6_gRXWy1lSivJJeWaTJjBRYwCyLeaSO646JEpffAyX8"/>
+    {% include 'partials/_head.html' %}
+    <title>Car Battle - {% block title %}{% endblock %}</title>
+    {% block head %}{% endblock %}
+</head>
+<body id="long">
+<div id="fb-root"></div>
+<div id="long_header">
+
+    {% include 'partials/_menu_anon.html' %}
+
+    <div id="takeaway">
+
+        <a href="/" id="logo">Car Battle</a>
+
+        <div id="grab">
+            <h1>Car Battle is a game made for car enthusiasts.</h1>
+
+            <h2>Here you can create (at least virtually) a great collection of cars from the entire history of the
+                automobile. </h2>
+            <a href="{% url "tutorial" %}" class="cta tutorial">Visit tutorial</a>
+            {# <span class="alt_cta serif">or <a href="http://www.nuvographics.com/notebook/">Read the Notebook</a></span> #}
+        </div>
+
+        <div class="rounded_top" id="feature" style="height: 140px; width: 300px;">
+            {% include 'partials/user_box.html' %}
+        </div>
+    </div>
+
+    <div id="infobar">
+        <div class="ellipsis left" id="breadcrumbs">
+            {% block breadcrumbs %}{% endblock %}
+            {# <strong>You are here</strong> #}
+            {# <span class="final">Home</span> #}
+        </div>
+
+        {% block search %}
+            {# <form action="http://www.nuvographics.com" method="get" class="right" id="search"> #}
+            {# 	<input type="text" value="Search the archives" onblur="this.value=!this.value?'Search the archives':this.value;" onfocus="this.select()" onclick="this.value='';" id="s" name="s" class="form"> #}
+            {# 	<input type="submit" value="search" class="button"> #}
+            {# </form> #}
+        {% endblock %}
+
+        {# <div class="right" id="contactinfo"> #}
+        {# 	<a href="mailto:q@car-battle.com" class="email left"> #}
+        {# 		<span class="icon left">Email us:</span> #}
+        {# 		<span class="left">q@car-battle.com</span> #}
+        {# 	</a> #}
+        {# </div> #}
+    </div>
+</div>
+
+{% include 'partials/msg_box.html' %}
+
+<div class="clearfix nobase" id="content">
+
+    {% block master_header %}
+        <div class="heading clearfix full">
+
+            <h1 class="ellipsis ">
+                {% block header %}{% endblock %}
+            </h1>
+
+            {% block tools %}
+                <ul class="right" id="tools">
+                    <li class="tool facebook left"><a
+                            href="http://www.facebook.com/apps/application.php?id={{ settings.FACEBOOK_APP_ID }}"></a><span
+                            class="tooltip rounded_bottom">Car Battle on Facebook</span></li>
+                    <li class="tool twitter left"><a href="http://www.twitter.com/carbattle"></a><span
+                            class="tooltip rounded_bottom">Follow on Twitter</span></li>
+                </ul>
+            {% endblock %}
+
+            {% block filters %}{% endblock %}
+        </div>
+    {% endblock %}
+
+    {% if messages %}
+        <br class="clear"/>
+        <div class="fbinfobox">
+            {% for message in messages %}
+                <p>{{ message|safe }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if message %}
+        <br class="clear"/>
+        <div class="fbinfobox">
+            <p>{{ message|safe }}</p>
+        </div>
+    {% endif %}
+
+    {% if request.engine.summary %}
+        <br class="clear"/>
+        <div class="fbinfobox">
+            {% for section, items in request.engine.get_summary.iteritems %}
+                <div style="margin-bottom: 10px;">
+                    {{ items|safe }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    <br class="clear"/><br class="clear"/>
+
+    <div id="calltoaction">
+        <p class="message serif">
+            {% block slogan %}
+                {# Like what you see? <a href="http://www.nuvographics.com/contact/">Let's work together.</a> #}
+                {# <a href="http://www.nuvographics.com/work/" class="cta design">View Selected Design Work</a> #}
+            {% endblock %}
+            {# <a href="{% url "auth_login" %}" class="cta notebook">Register now</a> #}
+        </p>
+    </div>
+
+
+    {% include 'partials/_foot.html' %}
+</body>
+</html>

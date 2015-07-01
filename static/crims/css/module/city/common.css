@@ -1,0 +1,46 @@
+/* COMMON */
+
+/*li {
+	border-bottom: 2px dotted grey #f0f0f0;
+	
+}*/
+
+.in_queue {
+    border-bottom: 2px dotted grey;
+}
+
+.stat {
+    font-size: 14px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.stat b {
+    margin-left: 5px;
+    font-size: 28px;
+}
+
+.stat_lo {
+    font-size: 12px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.stat_lo b {
+    margin-left: 5px;
+    font-size: 22px;
+}
+
+/* Units */
+ul.queuedUnits, ul.hireUnits, ul.myUnits {
+    list-style-type: none;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* Resources */
+ul.resources {
+    list-style-type: none;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding: 0;
+    margin: 0;
+}

@@ -1,0 +1,89 @@
+{% extends base_page %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+    <strong>Sign-in or Register</strong>
+    {# <span class="final">Home</span> #}
+{% endblock %}
+
+{% block content %}
+
+    <div class="box-4">
+        <div id="stylized" class="myform rounded"
+             style="float: left; {% if not request.engine.IS_PARTNER %}margin-left: 50px;{% endif %}">
+            <form id="form" name="form" method="post" action="
+                    {% url "auth_login" %}{% if request.GET.partner %}?partner={{ request.GET.partner }}{% endif %}">
+                <h3>If you're registered already, sign-in here:</h3>
+                <br/>
+                <label>Nickname:
+                    <span class="small">&nbsp;</span>
+                </label>
+                <input type="text" name="username" id="name" class="rounded"/>
+
+                <label>Password
+                    <span class="small">&nbsp;</span>
+                </label>
+                <input type="password" name="password" id="password" class="rounded"/>
+
+                <input type="hidden" name="action_type" value="login"/>
+                <button type="submit" class="button" type="submit">Enter the game</button>
+                <div class="spacer"></div>
+
+            </form>
+        </div>
+
+        <div id="stylized" class="myform rounded" style="float: left; margin-left: 30px;">
+            <form id="form" name="form" method="post" action="
+                    {% url "auth_login" %}{% if request.GET.partner %}?partner={{ request.GET.partner }}{% endif %}">
+                <h3>Not registered yet? it takes only a second:</h3>
+                <br/>
+                {% if not request.engine.IS_PARTNER %}
+                    <p style="text-align:center">
+                        <fb:login-button perms="email,status_update,publish_stream">Register via Facebook!
+                        </fb:login-button>
+                    </p><br/>
+                {% endif %}
+                <label>Nickname:
+                    {% if form.username.errors %}
+                        <span class="small"><em style="color: red;">{{ form.username.errors|join:", " }}</em></span>
+                    {% else %}
+                        <span class="small">it has to be unique</span>
+                    {% endif %}
+                </label>
+                {{ form.username }}
+
+                <label>E-mail:
+                    {% if form.email.errors %}
+                        <span class="small"><em style="color: red;">{{ form.email.errors|join:", " }}</em></span>
+                    {% else %}
+                        <span class="small">valid e-mail address</span>
+                    {% endif %}
+                </label>
+                {{ form.email }}
+
+                <label>Password:
+                    {% if form.password1.errors %}
+                        <span class="small"><em style="color: red;">{{ form.password1.errors|join:", " }}</em></span>
+                    {% else %}
+                        <span class="small">&nbsp;</span>
+                    {% endif %}
+                </label>
+                {{ form.password1 }}
+
+                <label>Password:
+                    {% if form.password2.errors %}
+                        <span class="small"><em style="color: red;">{{ form.password2.errors|join:", " }}</em></span>
+                    {% else %}
+                        <span class="small">repeat password</span>
+                    {% endif %}
+                </label>
+                {{ form.password2 }}
+
+                <input type="hidden" name="action_type" value="register"/>
+                <button type="submit" class="button" type="submit">REGISTER</button>
+                <div class="spacer"></div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

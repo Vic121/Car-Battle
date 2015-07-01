@@ -1,0 +1,24 @@
+{% extends base_page %}
+
+{% block master_header %}{% endblock %}
+
+{% block title %}Home{% endblock %}
+
+{% block breadcrumbs %}	
+	<strong>Home</strong>
+	{# <span class="final">Home</span> #}
+{% endblock %}
+
+{% block content %}
+
+<div style="width: 680px; float: left;">
+{% include 'partials/home/news.html' %}
+
+{% include 'partials/home/album_latest.html' %}
+</div>
+
+{% endblock %}
+
+{% block slogan %}
+	Tips? Feedback? <a href="mailto:q@car-battle.com">Let me know</a>.
+{% endblock %}

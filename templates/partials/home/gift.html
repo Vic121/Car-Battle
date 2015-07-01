@@ -1,0 +1,27 @@
+{% if gifts_pending %}
+    <div class="heading right">
+        <h1>Pending Gifts ({{ gifts_pending_count }})</h1>
+    </div>
+    {% for gift in gifts_pending %}
+        <div class="car-feature left">
+            <h2 class="left"><a href="{% url "profile" gift.sender.username|slugify %}">{{ gift.sender }}</a> sent you:
+            </h2>
+            <img src="{{ settings.BASE_MEDIA_URL }}{{ gift.car.img|img_replace:'_s.jpg' }}">
+
+            <h1>
+                <a href="{% url "encyclopedia_car" gift.car.manuf|slugify gift.car.name|slugify gift.car.id %}">{{ gift.car.manuf }}</a>
+            </h1>
+
+            <h1>
+                <a href="{% url "encyclopedia_car" gift.car.manuf|slugify gift.car.name|slugify gift.car.id %}">{{ gift.car.year }} {{ gift.car.short_name }}</a>
+            </h1><br/>
+
+            <div>
+                <a href="{% url "gift_accept" gift.car.id gift.sender.user_id %}" class="accept">&nbsp;&nbsp;&nbsp;</a>
+                <a href="{% url "gift_decline" gift.car.id gift.sender.user_id %}" class="decline">
+                    &nbsp;&nbsp;&nbsp;</a>
+            </div>
+        </div>
+    {% endfor %}
+    <br class="clear"/>
+{% endif %}

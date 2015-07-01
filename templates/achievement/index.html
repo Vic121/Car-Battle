@@ -1,0 +1,81 @@
+{% extends base %}
+{% load modules %}
+
+{% block title %}
+    Achievements
+{% endblock %}
+
+{% block content %}
+
+    <h2>Selected Manufacturers</h2>
+    <br/>
+    <ul>
+        {% for item in achievements|KEY:'car_manuf' %}
+            {% ifchanged item.key %}<b>{{ item.key }}</b>{% endifchanged %}
+            <li>
+                <img class="avatar" src="{{ MEDIA_URL }}{{ item.img }}"/>
+                {{ item.name }}, get {{ item.value }} {{ item.key }} cars<br/>
+                and receive {{ item.exp|intcomma }} exp {% if item.cash %}+ ${{ item.cash|intcomma }}{% endif %}<br/>
+                {% if item.car_id %}+ {{ item.car_id }}{% endif %}.
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Production Year</h2>
+    <br/>
+    <ul>
+        {% for item in achievements|KEY:'car_year' %}
+            {% ifchanged item.key %}<b>{{ item.key }}</b>{% endifchanged %}
+            <li>
+                <img class="avatar" src="{{ MEDIA_URL }}{{ item.img }}"/>
+                {{ item.name }}, get {{ item.value }} {{ item.key }} cars<br/>
+                and receive {{ item.exp|intcomma }} exp {% if item.cash %}+ ${{ item.cash|intcomma }}{% endif %}<br/>
+                {% if item.car_id %}+ {{ item.car_id }}{% endif %}.
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>BHP</h2>
+    <br/>
+    <ul>
+        {% for item in achievements|KEY:'car_bhp' %}
+            {% ifchanged item.key %}<b>{{ item.key }}</b>{% endifchanged %}
+            <li>
+                <img class="avatar" src="{{ MEDIA_URL }}{{ item.img }}"/>
+                {{ item.name }}, get {{ item.value }} {{ item.key }} cars<br/>
+                and receive {{ item.exp|intcomma }} exp {% if item.cash %}+ ${{ item.cash|intcomma }}{% endif %}<br/>
+                {% if item.car_id %}+ {{ item.car_id }}{% endif %}.
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Car Tier</h2>
+    <br/>
+    <ul>
+        {% for item in achievements|KEY:'car_tier' %}
+            {% ifchanged item.key %}<b>{{ item.key }}</b>{% endifchanged %}
+            <li>
+                <img class="avatar" src="{{ MEDIA_URL }}{{ item.img }}"/>
+                {{ item.name }}, get {{ item.value }} {{ item.key }} cars<br/>
+                and receive {{ item.exp|intcomma }} exp {% if item.cash %}+ ${{ item.cash|intcomma }}{% endif %}<br/>
+                {% if item.car_id %}+ {{ item.car_id }}{% endif %}.
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Country</h2>
+    <br/>
+    <ul>
+        {% for item in achievements|KEY:'car_country' %}
+            {% ifchanged item.key %}<b>{{ item.key }}</b>{% endifchanged %}
+            <li>
+                <img class="avatar" src="{{ MEDIA_URL }}{{ item.img }}"/>
+                {{ item.name }}, get {{ item.value }} {{ item.key }} cars<br/>
+                and receive {{ item.exp|intcomma }} exp {% if item.cash %}+ ${{ item.cash|intcomma }}{% endif %}<br/>
+                {% if item.car_id %}+ {{ item.car_id }}{% endif %}.
+            </li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}

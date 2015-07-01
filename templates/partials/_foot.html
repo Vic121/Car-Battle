@@ -1,0 +1,238 @@
+<div id="footer">
+    <hr class="highlight">
+    <div class="clearfix" id="overview">
+        <div class="footblock">
+            <h2>About Car Battle</h2>
+
+            <p>We're all about cars! You'll find here the rarest expensive exotic cars as well as cheap ones, cars with
+                beautiful and controversial designs, the latest state-of-the-art prototypes, and even some models that
+                rolled off the production lines decades ago.</p>
+        </div>
+
+        <div class="footblock">
+            <h2>Sitemap</h2>
+            <a href="{% url "tutorial" %}">Tutorial</a>
+            <a href="/partner.html">Affiliate Program</a>
+            <a href="{% url "leaderboard" %}">Leaderboard</a>
+            <a href="{% url "encyclopedia" %}">Encyclopedia</a>
+            <a href="{% url "auth_login" %}">Register</a>
+            <a href="{% url "contact" %}">Contact Us</a>
+        </div>
+
+        <div class="footblock">
+            <h2>Top Manufacturers</h2>
+            {% for manuf in top_manufs %}
+                <a href="{% url "encyclopedia_cars" manuf.manuf|slugify %}">{{ manuf.manuf }}<span
+                        class="count">{{ manuf.rows|intcomma }} cars</span></a>
+            {% endfor %}
+            <a href="{% url "encyclopedia" %}"><span class="count">total of {{ all_cars }}</span></a>
+        </div>
+
+        <div class="footblock">
+            <h2>Top Players</h2>
+            {% for player in top_players %}
+                <a href="{% url "profile" player.username|slugify %}">{{ forloop.counter }}. {{ player }}<span
+                        class="count">{{ player.exp|intcomma }} exp</span></a>
+            {% endfor %}
+            <a href="{% url "leaderboard" %}"><span class="counter">more &raquo;</span></a>
+        </div>
+
+    </div>
+
+    <div class="clearfix" id="copyright">
+        <hr class="highlight">
+        <p class="left">Copyright &copy; 2010 Car Battle</p>
+    </div>
+</div>
+
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+    FB.init({appId: {{ settings.FACEBOOK_APP_ID }}, status: true, cookie: true, xfbml: true});
+    FB.Event.subscribe('xfbml.render', function (response) {
+        FB.Canvas.setAutoResize();
+    });
+    FB.Event.subscribe('auth.sessionChange', function (response) {
+        if (response.session) {
+            if (!response.perms) {
+                FB.logout(function (response) {
+                    alert('No permissions granted, session terminated!');
+                });
+            }
+
+            {% if request.engine.IS_FB %}
+                document.location = 'http://fb.car-battle.com/'
+            {% else %}
+                document.location = 'http://www.car-battle.com/'
+            {% endif %}
+
+        } else {
+            // out
+        }
+    });
+
+    //stream publish method
+    function streamPublish(name, description, hrefTitle, hrefLink, userPrompt) {
+        FB.ui({
+                    method: 'stream.publish',
+                    message: '',
+                    attachment: {
+                        name: name,
+                        caption: '',
+                        description: (description),
+                        href: hrefLink
+                    },
+                    action_links: [
+                        {text: hrefTitle, href: hrefLink}
+                    ],
+                    user_prompt_message: userPrompt
+                },
+                function (response) {
+
+                });
+    }
+
+    function share() {
+        var share = {
+            method: 'stream.share',
+            u: 'http://car-battle.com/'
+        };
+
+        FB.ui(share, function (response) {
+            console.log(response);
+        });
+    }
+
+    function shareWallItem(txt, link, picture) {
+        FB.ui({
+                    method: 'stream.publish',
+                    message: txt,
+                    attachment: {
+                        name: 'Car Battle is a game for car enthusiasts, must play if you like cars',
+                        caption: '',
+                        description: link,
+                        href: '{{ request.engine.user.profile.domain }}',
+                        'media': [{'type': 'image', 'src': picture, 'href': link}],
+                    },
+                    action_links: [
+                        {text: 'Play Car Battle', href: '{{ request.engine.user.profile.domain }}'}
+                    ],
+                    user_prompt_message: 'Share item with you friends'
+                },
+                function (response) {
+                    //alert(response);
+                });
+    }
+
+    function fqlQuery() {
+        FB.api('/me', function (response) {
+            var query = FB.Data.query('select name, hometown_location, sex, pic_square from user where uid={0}', response.id);
+            query.wait(function (rows) {
+
+                document.getElementById('name').innerHTML =
+                        'Your name: ' + rows[0].name + "<br />" +
+                        '<img src="' + rows[0].pic_square + '" alt="" />' + "<br />";
+            });
+        });
+    }
+
+    function setStatus() {
+        status1 = document.getElementById('status').value;
+        FB.api(
+                {
+                    method: 'status.set',
+                    status: status1
+                },
+                function (response) {
+                    if (response == 0) {
+                        alert('Your facebook status not updated. Give Status Update Permission.');
+                    }
+                    else {
+                        alert('Your facebook status updated');
+                    }
+                }
+        );
+    }
+</script>
+
+{% if not settings.LOCAL %}
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-317705-16']);
+        _gaq.push(['_setDomainName', '.car-battle.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+    <script type="text/javascript">
+        {% if request.engine.user %}
+            var clicky_custom = {};
+            clicky_custom.session = {
+                username: "{{ request.engine.user.profile }}",
+                group: "users"
+            };
+        {% endif %}
+
+        var clicky = {
+            log: function () {
+                return;
+            }, goal: function () {
+                return;
+            }
+        };
+        var clicky_site_id = 254344;
+        (function () {
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+            ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild(s);
+        })();
+    </script>
+    <a title="Web Analytics" href="http://getclicky.com/254344"></a>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/254344ns.gif"/></p></noscript>
+
+{% endif %}
+{% if settings.SQL_DEBUG %}
+    <br style="clear: both;"/>
+    <div id="debug">
+        <p>
+            {{ sqldebug.queries.count }} Quer{{ sqldebug.queries|pluralize:"y,ies" }}, {{ sqldebug.time }} seconds
+            {% ifnotequal sql_queries|length 0 %}
+                (<span style="cursor: pointer;"
+                       onclick="var s=document.getElementById('debugQueryTable').style;s.display=s.display=='none'?'':'none';this.innerHTML=this.innerHTML=='Show'?'Hide':'Show';">Show</span>
+                )
+            {% endifnotequal %}
+        </p>
+
+        <table id="debugQueryTable" style="display: none;">
+            <col width="1"></col>
+            <col></col>
+            <col width="1"></col>
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">SQL</th>
+                <th scope="col">Time</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for query in sqldebug.queries %}
+                <tr class="{% cycle odd,even %}">
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ query }}</td>
+                    <td>{{ query.time }}</td>
+                </tr>{% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endif %}

@@ -1,0 +1,95 @@
+{% extends base %}
+{% load i18n tips %}
+
+{% block title %}Car Auctions{% endblock %}
+{% block description %}Cars currently being sold on Car Battle. Auctions are great source of car you actually need for battles or albums, so check them regularly.{% endblock %}
+
+{% block breadcrumbs %}
+	<strong>Auctions</strong>
+	<span class="final">Current listing</span>
+{% endblock %}
+
+{% block filters %}
+	<ul class="categories right" id="coda-nav-1">
+		<li><a href="?tier=" {% if filter == None %}class="current"{% endif %}>All</a></li>
+		<li><a href="?tier=1" {% if filter == '1' %}class="current"{% endif %}>Tier 1</a></li>
+		<li><a href="?tier=2" {% if filter == '2' %}class="current"{% endif %}>Tier 2</a></li>
+		<li><a href="?tier=3" {% if filter == '3' %}class="current"{% endif %}>Tier 3</a></li>
+		<li><a href="?tier=4" {% if filter == '4' %}class="current"{% endif %}>Tier 4</a></li>
+		<li><a href="?tier=5" {% if filter == '5' %}class="current"{% endif %}>Tier 5</a></li>
+		<li><a href="?tier=6" {% if filter == '6' %}class="current"{% endif %}>Tier 6</a></li>
+		<li><a href="?tier=U" {% if filter == 'U' %}class="current"{% endif %}>Tier U</a></li>
+		<li><a href="?tier=P" {% if filter == 'P' %}class="current"{% endif %}>Tier P</a></li>
+		<li><a href="?tier=X" {% if filter == 'X' %}class="current"{% endif %}>Tier X</a></li>
+	</ul>
+{% endblock %}
+
+{% block content %}
+
+<p class="upd_on"><a href="{% url "auction" %}">
+{% ifequal tab 'auction' %}<b>{% trans 'Auctions' %}</b>
+{% else %}{% trans 'Auctions' %}{% endifequal %}
+</a> | <a href="{% url "auction_bidding" %}">
+{% ifequal tab 'bidding' %}<b>{% trans 'Bidding' %}</b>
+{% else %}{% trans 'Bidding' %}{% endifequal %}
+</a> | <a href="{% url "auction_bidded" %}">
+{% ifequal tab 'bidded' %}<b>{% trans 'Bidded' %}</b>
+{% else %}{% trans 'Bidded' %}{% endifequal %}
+</a></p>
+
+<br class="clear"/>
+{% show_how_to_play request %}
+
+<div class="auctions">
+{% if selected %}
+<table cellspacing="0" style="width: 100%"><thead>
+	<tr>			
+		<th class="name_heading" style="width: 5%;">&nbsp;</th>
+		<th class="name_left" nowrap="nowrap" style="width: 45%;">&nbsp;</th>
+		<th nowrap="nowrap" style="width: 15%;">Price</th>
+		<th nowrap="nowrap" style="width: 15%;">Buy it now</th>
+		<th nowrap="nowrap" style="width: 20%;">Ends</th>
+	</tr>
+</thead>
+<tbody>
+	{% for item in selected %}	
+	<tr class="{% cycle '' 'odd' %}">
+		<td class="card_tier_{{ item.tier }}">Tier {{ item.tier }}</td>
+		<td class="action_text"><strong><a href="{% url "auction_details" item.title|slugify item.id %}">{{ item.title }}</a></strong></td>
+		{% if item.is_for_credits %}
+			<td><p>{{ item.current_price|intcomma }}</p> credits</td>
+		{% else %}
+			<td>${{ item.current_price|intcomma }}</td>
+		{% endif %}
+		{% if item.buy_it_now_price > 0 %}
+			<td>${{ item.buy_it_now_price|intcomma }}</td>
+		{% else %}
+			<td>&ndash;</td>
+		{% endif %}
+		<td>{{ item.end_at|timestr }}</td>
+	</tr>
+	{% endfor %}
+</tbody>
+</table>
+<br class="clear"/>
+{% if items_count|GT:20 %}
+<p style="font-size: 18px; float: left; margin-top: 10px; width: 80%;">{% trans 'Page' %}: 
+{% for num in page.page_range %}
+    {% if not num %} ... 
+    {% else %}
+	{% ifequal num page_no %}
+		<b>{{ num }}</b>
+	{% else %}
+		<a href="{% url "auction" num %}">{{ num }}</a>
+	{% endifequal %}
+    {% endif %}
+{% endfor %}
+</p>
+{% endif %}
+
+{% else %}
+<h2>{% trans 'No auctions right now' %}</h2>
+{% endif %}
+</div>
+
+{% endblock %}

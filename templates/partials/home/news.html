@@ -1,0 +1,15 @@
+{% if news %}
+    <div class="heading right">
+        <h1>News</h1>
+    </div>
+    {% for item in news %}
+        <div class="feature maxi-resource left">
+            <a href="javascript:void(0);" class="mask"></a>
+            <img alt="{{ album.name }}" src="{{ MEDIA_URL }}images/{{ item.img }}" class="avatar left">
+            <strong class="name left">{{ item.title|safe }}</strong>
+            <span class="bio serif left">{{ item.content_short }}</span>
+        </div>
+        <br class="clear"/>
+    {% endfor %}
+
+{% endif %}

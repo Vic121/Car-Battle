@@ -1,0 +1,26 @@
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="Content-Language" content="en"/>
+<meta name="robots" content="index,follow,all">
+<meta name="description"
+      content="{% block description %}Car Battle is a game made for car enthusiasts. You'll find here the rarest expensive exotic cars as well as cheap ones, cars with beautiful and controversial designs. Collect them all!{% endblock %}">
+<meta name="keywords"
+      content="{% block keywords %}Game, BMW, Ford, Audi, Mercedes, Dodge, Porsche, Volkswagen, VW, Ferrari, Dodge{% endblock %}">
+<script src="http://www.google.com/jsapi"></script>
+<script type="text/javascript" charset="utf-8">google.load("jquery", "1.4.2");</script>
+<script src="{{ MEDIA_URL }}js/engine.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        Engine.init();
+    });
+</script>
+<link href="{{ MEDIA_URL }}css/new_common.css" rel="stylesheet" type="text/css"/>
+<link href="{{ MEDIA_URL }}css/common.css" rel="stylesheet" type="text/css"/>
+<link href="{{ MEDIA_URL }}css/{% if request.engine.IS_PARTNER %}partner{% else %}www{% endif %}.css" rel="stylesheet"
+      type="text/css"/>
+<link rel="shortcut icon" HREF="http://www.car-battle.com/static/images/favicon.ico"/>
+<script type="text/javascript" charset="utf-8">
+    function selectall(id) {
+        document.getElementById(id).focus();
+        document.getElementById(id).select();
+    }
+</script>

@@ -1,0 +1,65 @@
+{% extends base_page %}
+
+{% block master_header %}{% endblock %}
+
+{% block title %}Must play if you love cars{% endblock %}
+
+{% block breadcrumbs %}
+    <strong>Home</strong>
+    {# <span class="final">Home</span> #}
+{% endblock %}
+
+{% block content %}
+
+    <div style="width: 480px; float: right;">
+        <div class="heading right">
+            <h1>Login</h1>
+        </div>
+        <div id="stylized" class="myform rounded" style="float: left; margin-left: 50px;">
+            <p>
+                <fb:login-button perms="email,status_update,publish_stream">Sign in via Facebook!</fb:login-button>
+                &nbsp; or <strong> use our form by <a href="{% url "auth_login" %}">clicking here &raquo;</a></strong>
+            </p>
+
+            <form id="form" name="form" method="post" action="{% url "auth_login" %}">
+                <label>Nickname:
+                    <span class="small">&nbsp;</span>
+                </label>
+                <input type="text" name="username" id="name" class="rounded"/>
+
+                <label>Password
+                    <span class="small">&nbsp;</span>
+                </label>
+                <input type="password" name="password" id="password" class="rounded"/>
+
+                <input type="hidden" name="action_type" value="login"/>
+                <button type="submit" class="button" type="submit">Enter the game</button>
+                <div class="spacer"></div>
+            </form>
+        </div>
+
+        <div class="heading right">
+            <h1>Our Facebook profile</h1>
+        </div>
+        <div class="box">
+            <iframe src="http://www.facebook.com/plugins/likebox.php?id={{ settings.FACEBOOK_APP_ID }}&amp;width=460&amp;connections=10&amp;stream=true&amp;header=false&amp;height=555"
+                    scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:460px; height:555px;"
+                    allowTransparency="true"></iframe>
+        </div>
+
+    </div>
+
+    <div style="width: 480px; float: left;">
+        {% include 'partials/home/daily_promo.html' %}
+
+        {% include 'partials/home/album_latest.html' %}
+
+        {% include 'partials/home/link.html' %}
+
+    </div>
+
+{% endblock %}
+
+{% block slogan %}
+    Tips? Feedback? <a href="mailto:q@car-battle.com">Let me know</a>.
+{% endblock %}

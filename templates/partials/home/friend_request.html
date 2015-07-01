@@ -1,0 +1,25 @@
+{% if friends_pending %}
+    <div class="heading right">
+        <h1>Friend Requests ({{ friends_pending_count }})</h1>
+    </div>
+    {% for user in friends_pending %}
+        <div class="user-feature left">
+            <img class="avatar left" src="{{ MEDIA_URL }}{{ user.user_id|avatar }}"
+                 alt="{{ user }}, level {{ user.level|intcomma }}"/>
+
+            <h1><a href="{% url "profile" user.username|slugify %}">{{ user|truncate:18 }}</a></h1>
+
+            <div>
+                <span class="bio serif">Level {{ user.level }}</span><br/>
+                <span class="bio serif"><a href="{% url "profile" user.username|slugify %}#wishlist">wish
+                    list &raquo;</a></span><br/>
+
+                <div>
+                    <a href="{% url "friend_accept" user.user.id %}" class="accept">&nbsp;&nbsp;&nbsp;</a>
+                    <a href="{% url "friend_decline" user.user.id %}" class="decline">&nbsp;&nbsp;&nbsp;</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <br class="clear"/>
+{% endif %}

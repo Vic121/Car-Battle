@@ -1,0 +1,37 @@
+{% extends base %}
+
+{% block master_header %}{% endblock %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+    <div style="width: 480px; float: right;">
+        {% include 'partials/home/wishlist.html' %}
+
+        {% include 'partials/home/gift.html' %}
+
+        {% include 'partials/home/friend_request.html' %}
+
+        {% include 'partials/home/friend.html' %}
+
+        {% include 'partials/home/invite.html' %}
+
+        {% include 'partials/home/activity.html' %}
+    </div>
+
+    <div style="width: 480px; float: left;">
+        {% include 'partials/home/achievement.html' %}
+
+        {% include 'partials/home/wall.html' %}
+
+        {% include 'partials/home/daily_promo.html' %}
+
+        {% include 'partials/home/album.html' %}
+
+        {# {% include 'partials/home/news.html' %} #}
+
+        {# {% include 'partials/home/link.html' %} #}
+    </div>
+
+{% endblock %}

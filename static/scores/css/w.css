@@ -1,0 +1,614 @@
+body {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    line-height: 1.4;
+}
+
+#pickscore_module {
+    width: 170px;
+}
+
+#pickscore_module table th, #pickscore_module_full table th {
+    color: #fff;
+    background-color: #f00;
+}
+
+a {
+    /*color: #52861E;*/
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    /*color: #52861E;*/
+    text-decoration: none;
+}
+
+p .aktywny, .aktywny {
+    font-weight: bold;
+}
+
+tfoot tr th {
+    margin: 0;
+    padding: 0;
+}
+
+.wiecej {
+    clear: both;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-align: left;
+    font-size: 92%;
+    font-weight: normal;
+}
+
+/* =========================================================== */
+/* modul  */
+.modul {
+    clear: both;
+}
+
+.modul .half {
+    width: 50%;
+}
+
+.modul .tytul {
+    margin-bottom: 3px;
+    padding: 2px 6px 2px;
+    border-top: 3px solid #52861E;
+    border-bottom: 1px solid #52861E;
+    font-size: 100%;
+}
+
+.modul .tytul a {
+    display: block;
+    background: transparent url(http://static.pickscore.net/images/ikona_wiecej.gif) right center no-repeat;
+    color: #000;
+    text-decoration: none;
+}
+
+.modul .tytul a:hover {
+    color: #52861E;
+}
+
+.modul .headlight {
+    margin: 0px 0px 0px 0px;
+    padding: 1px 6px 3px;
+    font-size: 115%;
+    text-align: center;
+}
+
+.modul .headlight a {
+    background: red;
+    color: white;
+}
+
+.modul .headlight a:hover {
+    background: white;
+    color: red;
+    text-decoration: none;
+}
+
+.modul p {
+    margin: 3px 6px;
+}
+
+.modul .lista {
+    font-size: 92%;
+}
+
+.modul .lista li {
+    border-bottom: 1px solid #FFF;
+}
+
+.modul .lista li.aktywny {
+    background: #E7F5D8;
+}
+
+.modul .lista li a {
+    display: block;
+    padding: 0 6px;
+}
+
+.modul .lista li a:hover,
+.ligi li a:hover {
+    background-color: #FFFFCC;
+    text-decoration: none;
+}
+
+/* =========================================================== */
+/* tabele */
+table {
+    position: relative;
+    clear: both;
+    border: 1px solid #DDD;
+    border-collapse: separate;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    empty-cells: show;
+}
+
+thead th {
+    border: none;
+    padding: 3px 6px;
+    text-align: left;
+}
+
+td,
+tbody th {
+    /*  font-size: 95%;*/
+    border: none;
+    border-top: 1px solid #FFF;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: left;
+}
+
+td,
+tbody th,
+tr.rozwiniety table td {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+tr.wiersz1,
+tr.wiersz1.rozwiniety:hover {
+    background-color: #EFEFEF;
+}
+
+tr.wiersz2,
+tr.wiersz2.rozwiniety:hover {
+    background-color: #F7F7F7;
+}
+
+tr.aktywny,
+tr.wiersz1.rozwiniety.aktywny:hover,
+tr.wiersz2.rozwiniety.aktywny:hover {
+    background-color: #E7F5D8;
+}
+
+table tr:hover {
+    background: #FFFFCC;
+}
+
+tr.rozwiniety td {
+    padding: 0 0 3px 0;
+    border-top: none;
+    background-image: url(http://static.pickscore.net/images/bgrd_tr.png);
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    text-align: left;
+}
+
+tr.rozwiniety table {
+    border-collapse: collapse;
+    border: none;
+    width: auto;
+    color: #666;
+}
+
+tr.rozwiniety table td {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+tr.rozwiniety table tr,
+tr.rozwiniety table td,
+tr.rozwiniety table tr:hover,
+thead tr:hover,
+tfoot tr:hover {
+    background: none;
+}
+
+tr.rozwiniety img {
+    margin: 3px 0;
+    vertical-align: middle;
+}
+
+.druzyna1,
+tr.rozwiniety .druzyna1 {
+    padding-left: 12px;
+    padding-right: 0;
+    width: 100px;
+    text-align: right;
+}
+
+.wynik,
+tr.rozwiniety .wynik {
+    text-align: center;
+    font-weight: bold;
+    width: 50px;
+}
+
+.druzyna2,
+tr.rozwiniety .druzyna2 {
+    text-align: left;
+    padding-left: 0;
+    padding-right: 12px;
+    width: 100px;
+}
+
+.typowanie {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.typowanie input {
+    font-size: 100%;
+    width: 14px;
+    height: 12px;
+    margin: 0 3px;
+    padding: 0 3px;
+    border: 1px solid #999;
+    background: #FFF;
+}
+
+.typowanie input.typ1 {
+    text-align: right;
+}
+
+.typowanie input.typ2 {
+    text-align: left;
+}
+
+.typowanie input.button {
+    margin: 6px 0;
+    padding: 2px 0;
+    width: 53px;
+    height: auto;
+}
+
+.opcje {
+    text-align: right;
+}
+
+.opcje img {
+    margin-left: 6px;
+}
+
+.border th {
+    border-bottom: 1px solid #DDD;
+}
+
+tr.przeczytana a {
+    color: #6F7887;
+}
+
+tr.przeczytana img,
+tr.nieprzeczytana img {
+    display: block;
+}
+
+/* =========================================================== */
+/* definicje wygladu aktualnosci na glownej i liscie artykulow */
+#kontent-tresc .foto {
+    float: left;
+    margin: 3px 6px 6px 6px;
+}
+
+#kontent-tresc h3 {
+    clear: both;
+    margin: 8px 6px 3px;
+    padding: 0;
+    border: none;
+    font-size: 108.4%;
+}
+
+#kontent-tresc ul.nastepne {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 1px;
+    border-top: 1px solid #DDD;
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+#kontent-tresc ul.nastepne li {
+    display: inline;
+    width: 49.5%;
+    margin: -1px 0 1px;
+    padding: 3px 0 3px;
+    border-bottom: 1px solid #DDD;
+}
+
+#kontent-tresc ul.nastepne li a {
+    padding: 0 6px;
+    display: inline;
+}
+
+#kontent-tresc ul.nastepne li a:hover {
+    background: none;
+    text-decoration: underline;
+}
+
+/* =========================================================== */
+/* definicje boksu zakladek*/
+.boks {
+    clear: both;
+    position: relative;
+    width: 100%;
+    border: 1px solid #DDD;
+}
+
+.boks p {
+    margin: 0 6px;
+    padding: 9px 0;
+    border-bottom: 1px solid #DDD;
+    color: #666;
+}
+
+.boks div#zdjecia div {
+    padding-left: 2px;
+}
+
+.boks div#zdjecia div img {
+    display: inline;
+    float: left;
+    margin: 6px 4px 0 3px;
+}
+
+.boks ul.stronicowanie {
+    margin: 0;
+    padding: 6px;
+    border: none;
+}
+
+/* =========================================================== */
+/* definicje szczegoly meczu */
+#kontent-tresc .srodtytul {
+    margin: 0 0 6px;
+    padding: 3px 6px;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    font-size: 100%;
+}
+
+.meczSzczegol table {
+    border: none;
+    margin-bottom: 6px;
+}
+
+.meczSzczegol table img {
+    margin: 0 3px;
+    vertical-align: middle;
+}
+
+.meczSzczegol table tr:hover {
+    background: transparent;
+}
+
+.meczSzczegol table th,
+.meczSzczegol table td {
+    text-align: center;
+    vertical-align: top;
+    border: none;
+}
+
+.meczSzczegol table table {
+    margin: 0;
+    font-size: 133.5%;
+}
+
+.meczSzczegol th.rezultat {
+    height: 16px;
+    font-size: 133.5%;
+    word-spacing: 25px;
+}
+
+.meczSzczegol .druzyna1 {
+    width: 22%;
+    text-align: right;
+}
+
+.meczSzczegol .druzyna2 {
+    width: 22%;
+    text-align: left;
+}
+
+.meczSzczegol .wynik {
+    width: 6%;
+}
+
+.meczSzczegol .typowanie {
+    width: 10%;
+}
+
+.meczSzczegol .szczegoly {
+    width: 15%;
+}
+
+.meczSzczegol .czas {
+    width: 7%;
+}
+
+.meczSzczegol .opcje {
+    width: 7%;
+}
+
+.meczSzczegol .logo img {
+    display: block;
+    margin: 0 auto 24px;
+}
+
+/* =========================================================== */
+/* reklama wlasna serwisu */
+.adSerwis,
+.adSerwis2 {
+    clear: both;
+    padding: 12px;
+    height: 166px;
+    border: 1px solid #52861E;
+}
+
+.adSerwis {
+    background: #DCF2C6 url(http://static.pickscore.net/images/bgrd_adserwis.jpg) right bottom no-repeat;
+    line-height: 1.8;
+    font-size: 117%;
+    font-weight: bold;
+}
+
+.adSerwis2 {
+    padding-right: 200px;
+    background: #FFFFCC url(http://static.pickscore.net/images/bgrd_adserwis2.jpg) right bottom no-repeat;
+}
+
+.trigger-zwiniety {
+    background: #DCF1C8 url(http://static.pickscore.net/images/ikona_zwiniete.gif) left top repeat-x;
+}
+
+/* =========================================================== */
+/* komunikaty */
+.boks .komunikat,
+.komunikat {
+    clear: both;
+    margin: 6px 0;
+    padding: 6px 12px;
+    border: 1px solid #52861E;
+    background: #D6E6CC;
+    color: #000;
+    width: 96%;
+}
+
+.center {
+    text-align: center;
+}
+
+.komunikat-raw {
+    clear: both;
+    margin: 6px 0;
+    padding: 6px 12px;
+    border: 1px solid #52861E;
+    background: #D6E6CC;
+    color: #000;
+}
+
+.boks .komunikat {
+    margin: 6px;
+}
+
+.komunikat a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.bledy {
+    background: url(http://static.pickscore.net/img/admin/icon_error.gif) 6px no-repeat #F0C0C0;
+    clear: both;
+    margin: 6px 0;
+    padding: 6px 28px;
+    border: 1px solid #DDD;
+}
+
+.bledy label {
+    text-decoration: underline;
+    color: #CC0000;
+    cursor: pointer;
+}
+
+.sukces {
+    background: url(http://static.pickscore.net/img/admin/icon_success.gif) 6px no-repeat #D6E6CC;
+    clear: both;
+    margin: 6px 0;
+    padding: 6px 28px;
+    border: 1px solid #52861E;
+}
+
+@media print {
+    .adBlok,
+    .ligi,
+    #wersje-jezykowe,
+    #boks-funkcjonalny,
+    #menu,
+    #sciezka,
+    #kontent-kolumna1,
+    #kontent-kolumna2,
+    .narzedzia,
+    #stopka ul {
+        display: none !important;
+    }
+
+    body,
+    #top,
+    #stopka {
+        width: 100%;
+        background: none;
+        border: none;
+    }
+
+    #logo {
+        padding: 0 0 10px;
+    }
+
+    #kontent-glowny {
+        float: left !important;
+    }
+
+    #kontent-tresc {
+        float: left !important;
+        width: inherit !important;
+    }
+
+    #stopka div {
+        width: inherit;
+        text-align: center;
+    }
+
+    #stopka div span {
+        float: none;
+        color: #000;
+    }
+}
+
+a.angielska {
+    display: block;
+    padding: 3px 6px 3px 30px;
+    background-position: 6px 6px;
+    background-repeat: no-repeat;
+    background-image: url(http://static.pickscore.net/images/ikona_fl_en.png);
+}
+
+a.francuska {
+    padding: 3px 6px 3px 30px;
+    background-position: 6px 6px;
+    background-repeat: no-repeat;
+    background-image: url(http://static.pickscore.net/images/ikona_fl_fr.png);
+}
+
+h1.flag {
+    padding-left: 25px !important;
+    background-position: 3px 3px;
+    background-repeat: no-repeat;
+}
+
+.premiership {
+    background-image: url(http://static.pickscore.net/images/ikona_fl_en.png);
+}
+
+.bundesliga {
+    background-image: url(http://static.pickscore.net/images/ikona_fl_de.png);
+}
+
+.ligue-1 {
+    background-image: url(http://static.pickscore.net/images/ikona_fl_fr.png);
+}
+
+.serie-a {
+    background-image: url(http://static.pickscore.net/images/ikona_fl_it.png);
+}
+
+.primera-division {
+    background-image: url(http://static.pickscore.net/images/ikona_fl_es.png);
+}
+
+.champions-league {
+    background-image: url(http://static.pickscore.net/images/ikona_fl_cl.png);
+}
+
+.uefa-cup {
+    background-image: url(http://static.pickscore.net/images/ikona_fl_ue.png);
+}

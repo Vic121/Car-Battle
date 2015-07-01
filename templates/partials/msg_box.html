@@ -1,0 +1,24 @@
+<div id="msg_box" class="msg_box">
+    <div style="width: 100%">
+        <div style="width: 80%; line-height: 1.8em; float: left;">Put your message here:</div>
+        <div style="width: 15%; line-height: 1.8em; float: left;" id="status_left">140</div>
+    </div>
+    <br style="clear: both"/>
+
+    <div style="width: 100%">
+        <div style="width: 80%; float: left;">
+            <form id="msg_form" action="{% url "msg_send" %}" method="post">
+                <textarea autocomplete="off" accesskey="u" name="status" id="status" rows="2" cols="40"></textarea>
+            </form>
+        </div>
+        <div style="float: left; padding-left: 10px; padding-top: 7px;">
+            <div class="plus_btn" style="font-size: 12px;" onclick="Engine.msg_box_submit()">send</div>
+            <p>
+                <small><a href="{% url "msg_inbox" %}">go to inbox</a></small>
+            </p>
+        </div>
+        <br style="clear: both"/>
+        <span class="msg_details">Usage: choose recepient(s) by prepending username with "@", ie. "@aplayer331 a message".</span>
+    </div>
+    <br style="clear: both"/>
+</div>

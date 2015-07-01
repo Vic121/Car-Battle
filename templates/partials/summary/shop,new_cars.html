@@ -1,0 +1,11 @@
+<h2>New cars in your garage!</h2>
+{% for item in items %}
+    {% for car in item.cars %}
+        <div style="width: 100%;">
+            <div style="width: 250px; height: 530px; float: left;">
+                {% show_card car %}
+            </div>
+        </div>
+    {% endfor %}
+{% endfor %}
+<br class="clear"/><br class="clear"/>

@@ -1,0 +1,79 @@
+{% extends base_page %}
+
+{% block title %}Car Battle Affiliate Program - Integration{% endblock %}
+
+{% block header %}
+    Car Battle Affiliate Program - Integration
+{% endblock %}
+
+{% block breadcrumbs %}
+    <a href="{% url "partner" %}">Affiliate Program</a>
+    <span class="final">How to integrate</span>
+{% endblock %}
+
+{% block content %}
+
+    <div class="box-3">
+
+        <div id="intro">
+            <a name="double"></a>
+
+            <h1>Implementation on any website</h1>
+        </div>
+        <div style="text-align: justify; padding-top: 5px;">
+            <p>Having Car Battle on your site is just a while. If you don't have an account, <a
+                    href="{% url "auth_login" %}">register</a> and once you're logged in register new partner at <a
+                    href="{% url "partners" %}">http://www.car-battle.com{% url "partners" %}</a>.</p><br/>
+
+            <p>Now all you need to do is to put given HTML code on freshly created page on your website. That's all step
+                necessary.</p><br/>
+        </div>
+        <br/>
+
+        <div id="intro">
+            <a name="single"></a>
+
+            <h1>Implementation on sites that require authentication</h1>
+        </div>
+        <div style="text-align: justify; padding-top: 5px;">
+            <p>Our goal is to provide as easy and painless integration of Car Battle with your website as possible. If
+                your users are already signed in with your website there's no reason why they should be bothered with
+                another forms. But to achieve that we requires simple form of authentication between our websites.</p>
+            <br/>
+
+            <p>
+                Follow these steps:<br/>
+            <ol style="padding-left: 25px;">
+                <li><a href="{% url "auth_login" %}">Register</a> first,</li>
+                <li>Go to <a href="{% url "partners" %}">http://www.car-battle.com{% url "partners" %}</a> and create
+                    partner's profile with name of your choice,
+                </li>
+                <li>Create a new page on your website with width of 760px or more,</li>
+                <li>Put given HTML (iframe) code on created page</li>
+                <li>add 3 more parameters to an iframe's src (url) section:
+                    <ul style="padding-left: 15px;">
+                        <li><b>username</b> - username of currently signed in user</li>
+                        <li><b>password</b> - MD5 of combined username (above) and secret code we gave you upon creating
+                            partner profile
+                        </li>
+                        <li><b>email</b> - email of currently signed in user</li>
+                    </ul>
+                    <br/>
+                    complete iframe can look like this: <br/>
+
+                    <div style="text-align: left;"><b>&lt;iframe border="0" frameborder="no" framespacing="0"
+                        scrolling="no" style="width: 760px; height: 2500px; overflow: hidden;"
+                        src="http://partner.car-battle.com/?partner=test&username=axel_f&email=axel_f@gmail.com&password=3n23nrff03das0a2"&gt;&lt;/iframe&gt;</b>
+                    </div>
+                </li>
+            </ol>
+            </p><br/>
+
+            <p>Obviously if you signing in is just an option for you, using both forms of authentication with one
+                partner is technically possible. Anyway, we recommend to convince or even force users to sign in before
+                they play, as in effect you'll create two or more game accounts. It may confuse some players.</p>
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "mail/base.html" %}
+
+{% block hello %}{{ receiver }}{% endblock %}
+
+{% block content %}
+    {{ sender }} want to be your friend on Car Battle, check out requests on
+    <a href="{{ profile.domain }}">Dashboard</a> and accept or reject request.<br/>
+    <br/>
+    Having your friends here is just adding more fun and competition to the game. You can watch what car they have, what
+    cars they're looking for, send them cars or other goods. To invite more people just send then this link:
+    <a href="{{ profile.domain }}add_me/?link={{ profile.invite_key }}">{{ profile.domain }}add_me/?link={{ profile.invite_key }}</a>
+    .
+{% endblock %}

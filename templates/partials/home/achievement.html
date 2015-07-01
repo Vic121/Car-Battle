@@ -1,0 +1,16 @@
+{% load achievement %}
+
+{% if achievements.pending %}
+    <div class="heading right">
+        <h1>Achievements in progress</h1>
+    </div>
+    <ul class="achievement">
+        {% for k,v in achievements.random_pendings.iteritems %}
+            {% for kk, vv in v.iteritems %}
+                <li>{% render_achievement request.engine k kk vv %}</li>
+            {% endfor %}
+        {% endfor %}
+        <li><span class="right" style="padding-right: 10px;"><a href="{% url "profile" %}">more &raquo;</a></span></li>
+    </ul>
+
+{% endif %}

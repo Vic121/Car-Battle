@@ -1,0 +1,218 @@
+#content {
+    position: relative;
+    min-height: 710px;
+    width: 745px;
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+}
+
+#navigation {
+    height: 48px;
+    width: 745px !important;
+    margin: 0 auto;
+}
+
+#navigation a {
+    color: white;
+    line-height: 14px;
+    width: 100px;
+    padding: 10px;
+    float: left;
+}
+
+#takeaway {
+    position: relative;
+    height: 320px;
+    width: 745px !important;
+    margin: 1px auto;
+}
+
+#takeaway_short {
+    position: relative;
+    height: 160px;
+    width: 745px !important;
+    margin: 1px auto;
+}
+
+.heading {
+    position: relative;
+    border-bottom: 1px solid #E5E5E5;
+    height: 30px;
+    width: 360px !important;
+    margin: 10px;
+    float: left;
+}
+
+.heading.full {
+    width: 740px !important;
+}
+
+#infobar {
+    line-height: 32px;
+    height: 32px;
+    width: 745px !important;
+    margin: 2px auto;
+}
+
+.categories {
+    position: absolute;
+    left: 200px;
+    margin: 7px 0 0 0;
+}
+
+#topbar {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #3b5d14;
+    background: #b2d281;
+    font-weight: bold;
+    padding: 6px;
+    overflow: auto;
+    height: 1%;
+    clear: both;
+}
+
+#topbar a {
+    color: #3b5d14;
+    text-decoration: none;
+    margin: 0 10px;
+    height: 23px;
+    line-height: 23px;
+    float: left;
+    display: block;
+}
+
+#topbar a.active {
+    height: 23px;
+    line-height: 23px;
+    background: url(../images/layout/tb_a.png) right top no-repeat;
+    padding-right: 10px;
+}
+
+#topbar a.active span {
+    background: url(../images/layout/tb_span.png) left top no-repeat;
+    height: 23px;
+    display: block;
+    padding-left: 10px;
+}
+
+#middlebar {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #3b5d14;
+    background: #90b557;
+    font-weight: bold;
+    padding: 6px;
+    overflow: auto;
+    height: 1%;
+    clear: both;
+}
+
+#middlebar a {
+    color: #3b5d14;
+    text-decoration: none;
+    margin: 0 5px;
+    padding-right: 10px;
+    height: 23px;
+    line-height: 23px;
+    display: block;
+    float: left;
+    background: url(../images/layout/mb_a.png) right top no-repeat;
+}
+
+#middlebar a span {
+    background: url(../images/layout/mb_span.png) left top no-repeat;
+    height: 23px;
+    display: block;
+    padding-left: 10px;
+}
+
+#user_box {
+    float: right;
+    background: #e3e3e3;
+    background: -moz-linear-gradient(top, #e3e3e3, #c8c8c8);
+    background: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(#c8c8c8));
+    -moz-box-shadow: 1px 1px 3px #292929;
+    -webkit-box-shadow: 1px 1px 3px #292929;
+
+    margin: 0;
+    padding: 10px 5px 0 10px;
+    width: 280px;
+    height: 110px;
+    font-family: helvetica, arial, sans-serif ! imporant;
+}
+
+#user_box div#avatar {
+    position: absolute;
+    margin: 10px 5px 0 5px;
+}
+
+#avatar img, .avatar img {
+    width: 50px;
+    height: 50px;
+}
+
+#user_box p {
+    margin: 0 !important;
+    width: 100% !important;
+    padding-left: 70px;
+}
+
+#user_box h1 {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-left: -15px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    position: relative;
+    width: 85%;
+
+    background: #e3e3e3;
+    background: -moz-linear-gradient(top, #e3e3e3, #c8c8c8);
+    background: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(#c8c8c8));
+    -moz-box-shadow: 1px 1px 3px #292929;
+    -webkit-box-shadow: 1px 1px 3px #292929;
+
+    color: #454545;
+    text-shadow: 0 1px 0 white;
+}
+
+#user_box #user_lvl {
+    float: right;
+    background: #dd3e1d;
+    background: -moz-linear-gradient(top, #e96f55, #dd3e1d);
+    background: -webkit-gradient(linear, left top, left bottom, from(#e96f55), to(#dd3e1d));
+    padding: 5px 10px;
+    margin-right: 10px;
+    position: relative;
+
+    -moz-box-shadow: 1px 1px 3px #292929;
+    -webkit-box-shadow: 1px 1px 3px #292929;
+
+    font-size: 22px;
+    color: #fff;
+    text-shadow: 0 1px 0 #e96f55;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border-left: 20px solid transparent;
+    border-top: 10px solid #c8c8c8;
+    top: 104%;
+    left: 0;
+    position: absolute;
+}
+
+.myform {
+    width: 320px;
+}
+
+#stylized input {
+    width: 150px;
+}
+
+#stylized button {
+    margin-left: 90px;
+}

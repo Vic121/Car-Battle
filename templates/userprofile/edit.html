@@ -1,0 +1,184 @@
+{% extends base %}
+
+{% block master_header %}{% endblock %}
+
+{% block title %}
+    {{ profile }}'s public profile
+{% endblock %}
+
+{% block head %}
+    <link type="text/css" rel="stylesheet" media="screen"
+          href="http://static.ak.fbcdn.net/rsrc.php/v1/pkg/77/118975/css/common.css.pkg.php"/>
+
+    <meta property="og:title" content="Profile of {{ profile.user }}"/>
+    <meta property="og:site_name" content="Car Battle - must play if you love cars"/>
+    <!-- <meta property="og:image" content="http://ia.media-imdb.com/rock.jpg"/> -->
+{% endblock %}
+
+{% block content %}
+    <div class="box-2">
+
+        <h2>Update your profile</h2>
+
+        <p>
+            <a href="#details">change your details</a> | <a href="#pass">change password</a> | <a href="#av">change
+            avatar</a>
+        </p>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <br/>
+
+        <form name="profil" action="" method="post">
+            <a name="details"></a>
+            <fieldset>
+                <h3>Contact details</h3>
+
+                <p>
+                    <input id="im_msn" name="im_msn" type="text" value="{{ details.msn }}"/>
+                    <label for="im_msn">MSN</label>
+                </p>
+
+                <p>
+                    <input id="im_skype" name="im_skype" type="text" value="{{ details.skype }}"/>
+                    <label for="im_skype">Skype</label>
+                </p>
+
+                <p>
+                    <input id="im_gg" name="im_gg" type="text" value="{{ details.gg }}"/>
+                    <label for="im_gg">Gadu-Gadu</label>
+                </p>
+
+                <p>
+                    <input id="im_jabber" name="im_jabber" type="text" value="{{ details.jabber }}"/>
+                    <label for="im_jabber">Jabber</label>
+                </p>
+
+                <p>
+                    <input id="im_icq" name="im_icq" type="text" value="{{ details.icq }}"/>
+                    <label for="im_icq">ICQ</label>
+                </p>
+
+                <p>
+                    <input id="im_yahoo" name="im_yahoo" type="text" value="{{ details.yahoo }}"/>
+                    <label for="im_yahoo">yahoo</label>
+                </p>
+
+                <p>
+                    <input id="www" name="www" type="text" value="{{ details.website }}"/>
+                    <label for="www">WWW</label>
+                </p>
+            </fieldset>
+            <br/>
+            <fieldset>
+                <h3>About me</h3>
+
+                <p>
+                    <textarea id="about_me" name="about_me">{{ details.about }}</textarea>
+                </p>
+            </fieldset>
+            <div class="alignRight">
+                <input type="hidden" name="change_profile" value="1">
+                <input class="button" type="submit" value="Edit"/>
+            </div>
+        </form>
+        <br/>
+
+        <form name="haslo" action="" method="post">
+            <a name="notify"></a>
+            <fieldset>
+                <h3>Notifications</h3>
+
+                <p>
+                    <input id="check_n1" name="n1" type="checkbox"
+                           {% if request.engine.user.profile.notify|KEY:0 == '1' %}checked="checked"{% endif %}/>
+                    <label for="n1">Newsletter (max. once per week)</label>
+                </p>
+
+                <p>
+                    <input id="check_n2" name="n2" type="checkbox"
+                           {% if request.engine.user.profile.notify|KEY:1 == '1' %}checked="checked"{% endif %}/>
+                    <label for="n2">Daily summary of my activity</label>
+                </p>
+
+                <p>
+                    <input id="check_n3" name="n3" type="checkbox"
+                           {% if request.engine.user.profile.notify|KEY:2 == '1' %}checked="checked"{% endif %}/>
+                    <label for="n3">Daily summary of auctions I may be interested in</label>
+                </p>
+
+                <p>
+                    <input id="check_n4" name="n4" type="checkbox"
+                           {% if request.engine.user.profile.notify|KEY:3 == '1' %}checked="checked"{% endif %}/>
+                    <label for="n4">New message received</label>
+                </p>
+
+                <p>
+                    <input id="check_n5" name="n5" type="checkbox"
+                           {% if request.engine.user.profile.notify|KEY:4 == '1' %}checked="checked"{% endif %}/>
+                    <label for="n5">Friendship requests</label>
+                </p>
+
+                <p>
+                    <input id="check_n6" name="n6" type="checkbox"
+                           {% if request.engine.user.profile.notify|KEY:5 == '1' %}checked="checked"{% endif %}/>
+                    <label for="n6">Gift received</label>
+                </p>
+
+                <p>
+                    <input id="check_n7" name="n7" type="checkbox"
+                           {% if request.engine.user.profile.notify|KEY:6 == '1' %}checked="checked"{% endif %}/>
+                    <label for="n7">Friendship requests</label>
+                </p>
+            </fieldset>
+            <div class="alignRight">
+                <input type="hidden" name="notify" value="1">
+                <input class="button" type="submit" value="Edit"/>
+            </div>
+        </form>
+
+        <br/>
+
+        <form name="haslo" action="" method="post">
+            <a name="pass"></a>
+            <fieldset>
+                <h3>Change password</h3>
+
+                <p>
+                    <input id="old_pass" name="old_pass" class="text" type="password"/>
+                    <label for="old_pass">Current password</label>
+                </p>
+
+                <p>
+                    <input id="pass1" name="pass1" class="password" type="password"/>
+                    <label for="pass1">New password</label>
+                </p>
+
+                <p>
+                    <input id="pass2" name="pass2" class="password" type="password"/>
+                    <label for="pass2">Repeat new password</label>
+                </p>
+            </fieldset>
+            <div class="alignRight">
+                <input type="hidden" name="change_pass" value="1">
+                <input class="button" type="submit" value="Change password"/>
+            </div>
+        </form>
+
+        <br/>
+
+        <form name="avatar" action="" method="post" enctype="multipart/form-data">
+            <a name="av"></a>
+            <fieldset>
+                <h3>Change avatar</h3>
+
+                <p>
+                    <label for="avatar">Pick your new avatar</label>
+                    <input id="avatar" name="avatar" class="file" type="file"/>
+                </p>
+            </fieldset>
+            <div class="alignRight">
+                <input class="button" type="submit" value="Upload"/>
+            </div>
+        </form>
+
+    </div>
+{% endblock %}

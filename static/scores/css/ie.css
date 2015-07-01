@@ -1,0 +1,11 @@
+* html table tr.rozwiniety td {
+    background-image: none;
+}
+
+#kontent-tresc form legend {
+    margin-left: -3px;
+}
+
+#kontent-tresc form textarea {
+    width: 99.7%;
+}

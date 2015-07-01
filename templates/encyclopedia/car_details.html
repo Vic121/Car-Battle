@@ -1,0 +1,45 @@
+{% extends base_page %}
+
+{% block title %}{{ car.manuf }} {{ car.year }} {{ car.name }} in Car Battle's Car Encyclopedia - technical description,
+    photo{% endblock %}
+{% block description %}Car Encyclopedia page for {{ car.manuf }} {{ car.year }} {{ car.name }} - technical description,
+    photo, comments{% endblock %}
+{% block keywords %}Car Encyclopedia, {{ car.manuf }}, {{ car.year }}, {{ car.name }}, BMW, Ford, Audi, Mercedes, Dodge,
+    Porsche, Volkswagen, VW{% endblock %}
+
+{% block breadcrumbs %}
+    <strong>Encyclopedia</strong>
+    <a href="{% url "encyclopedia" %}">Manufacturers</a>
+    <a href="{% url "encyclopedia_cars" car.manuf|slugify %}">{{ car.manuf }}</a>
+    <span class="final">{{ car.year }} {{ car.name }}</span>
+{% endblock %}
+
+{% block header %}{{ car.manuf }} {{ car.year }} {{ car.name }}{% endblock %}
+
+{% block content %}
+
+    <div class="box">
+        <p>
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcar-battle.com%2Fencyclopedia%2F{{ car.manuf|slugify }}%2F{{ car.name|slugify }}%2F{{ car.id }}%2F&amp;layout=standard&amp;show_faces=false&amp;width=350&amp;action=like&amp;colorscheme=light&amp;height=35"
+                    scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:350px; height:35px;"
+                    allowTransparency="true"></iframe>
+        </p>
+
+        {% if car.tier == 'P' or car.tier == 'U' or car.tier == 'N' or car.tier == 'X' %}
+            {% show_card car 'small' %}
+        {% else %}
+            {% show_card car %}
+        {% endif %}
+    </div>
+
+    <div style="float: right;">
+        <iframe src="http://www.facebook.com/plugins/likebox.php?id={{ settings.FACEBOOK_APP_ID }}&amp;width=245&amp;connections=10&amp;stream=true&amp;header=false&amp;height=555"
+                scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:245px; height:555px;"
+                allowTransparency="true"></iframe>
+    </div>
+
+{% endblock %}
+
+{% block slogan %}
+    Found a mistake, missing image or just got tips for me? <a href="mailto:cars@car-battle.com">Let me know</a>
+{% endblock %}

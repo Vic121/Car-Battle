@@ -1,0 +1,1053 @@
+.transparent {
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    -moz-opacity: .3;
+    -webkit-opacity: .3;
+    background-color: rgb(0, 0, 255);
+}
+
+.large {
+    font-size: 140%;
+}
+
+/* Card section */
+table.card {
+    margin: 15px 15px 15px 10px;
+    padding: 7px 5px 5px 7px;
+    font-family: "Courier New", Courier, mono;
+    color: black;
+    font-size: 10pt;
+    width: 235px;
+    height: 350px;
+    border: 5px solid #9f9f9f;
+    background-color: #efefef;
+}
+
+table.card a, table.card a:visited, table.card a:active {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+table.card a:hover {
+    text-decoration: none;
+}
+
+table.wide {
+    width: 260px;
+}
+
+table.card th {
+    float: left;
+    text-align: left;
+    width: 115px;
+    padding-top: 4px;
+}
+
+table.card td {
+    float: left;
+    text-align: left;
+    padding-left: 5px;
+    padding-top: 4px;
+    width: 100%;
+}
+
+.card_img {
+    border: 0;
+    text-align: center !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+table.card td.content {
+    font-weight: normal;
+    float: left;
+    width: 75px;
+}
+
+table.card td.comment {
+    width: 16px;
+}
+
+.question {
+    background: url(/static/gta/images/icons/question.gif) no-repeat right top;
+}
+
+.q {
+    background: url(/static/gta/images/icons/question.gif) no-repeat 0 -1px;
+}
+
+.ok {
+    background: url(/static/gta/images/icons/status_ok_16.png) no-repeat 0 -1px;
+}
+
+.result_0 {
+    /*	background: url(/static/gta/images/icons/status_ok_16.png) no-repeat right top;*/
+    background-color: #0c0;
+}
+
+.result_1 {
+    background-color: lightgrey;
+}
+
+.result_2 {
+    /*	background: url(/static/gta/images/icons/close_16.png) no-repeat right top;*/
+    background-color: #f55;
+}
+
+.card_title {
+    float: left;
+    font-size: 12pt;
+    width: 100%;
+}
+
+.card_manuf {
+    float: left;
+    font-size: 14pt;
+    width: 175px;
+}
+
+.card_tier {
+    float: right;
+    font-size: 11pt;
+    padding: 4px 4px 4px 4px;
+    margin-right: 5px;
+}
+
+.card_title_amnt {
+    float: left;
+    font-size: 11pt;
+    padding-top: 4px;
+}
+
+.card_subtitle {
+    font-size: 10pt;
+}
+
+/* Tiers & Colors */
+.card_tier_1 {
+    background-color: yellow;
+    color: black !important;
+}
+
+.card_tier_2 {
+    background-color: blue;
+    color: white !important;
+}
+
+.card_tier_3 {
+    background-color: green;
+    color: white !important;
+}
+
+.card_tier_4 {
+    background-color: red;
+    color: white !important;
+}
+
+.card_tier_5 {
+    background-color: olive;
+    color: white !important;
+}
+
+.card_tier_6 {
+    background-color: maroon;
+    color: white !important;
+}
+
+.card_tier_u, .card_tier_U {
+    background-color: black;
+    color: white !important;
+}
+
+.card_tier_x, .card_tier_X {
+    background-color: gray;
+    color: black !important;
+}
+
+.card_tier_p, .card_tier_P {
+    background-color: silver;
+    color: black !important;
+}
+
+/* Facebook Box Styles */
+.fbgreybox, .fbbluebox, .fbgreenbox, .fbinfobox, .fberrorbox {
+    color: #333333;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    width: 80%;
+}
+
+.fbgreybox {
+    background-color: #f7f7f7;
+    border: 1px solid #cccccc;
+}
+
+.fbbluebox {
+    background-color: #eceff6;
+    border: 1px solid #d4dae8;
+}
+
+.fbgreenbox {
+    background-color: #befdbe;
+    border: 1px solid #9dfc9d;
+}
+
+.fbinfobox {
+    background-color: #fff9d7;
+    border: 1px solid #e2c822;
+}
+
+.fberrorbox {
+    background-color: #ffebe8;
+    border: 1px solid #dd3c10;
+}
+
+.fbbox p {
+    font-size: 14px;
+}
+
+/* Default Facebook CSS */
+.fbbody {
+    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+    font-size: 11px;
+    color: #333333;
+}
+
+/* Default Anchor Style */
+.fbbody a {
+    color: #3b5998;
+    outline-style: none;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.fbbody a:hover {
+    text-decoration: underline;
+}
+
+/* Content Divider on White Background */
+.fbcontentdivider {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 520px;
+    height: 1px;
+    background-color: #d8dfea;
+}
+
+/* Facebook Tab Style */
+.fbtab {
+    padding: 8px;
+    background-color: #d8dfea;
+    color: #3b5998;
+    font-weight: bold;
+    float: left;
+    margin-right: 4px;
+    text-decoration: none;
+}
+
+.fbtab:hover {
+    background-color: #3b5998;
+    color: #ffffff;
+    cursor: hand;
+}
+
+.fbtable table {
+    margin-left: 20px;
+    margin-top: 17px;
+    width: 370px;
+    text-align: center;
+}
+
+.fbtable th.name_heading {
+    color: #333333;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.fbtable table th {
+    border-color: #C7CFE0;
+    border-bottom: 1px solid #E2E6EF;
+    margin: 0;
+    padding: 3px;
+    color: #777777;
+    font-size: 9px;
+}
+
+.fbtable td {
+    border-bottom: 1px solid #E2E6EF;
+    margin: 0;
+    padding: 3px;
+    color: #555555;
+    font-size: 11px;
+}
+
+.fbtable table .even_colomn {
+    background: #F8F8F8 none repeat scroll 0 0;
+}
+
+.fbtable td.action_text {
+    width: 230px;
+}
+
+.fbforum table {
+    width: 200px;
+}
+
+.fbforum table tr {
+    background-color: #FFFFFF;
+}
+
+.fbforum table tr.odd {
+    background-color: #F0F0FF;
+}
+
+.fbforum table td {
+    padding: 3px 3px 3px 9px;
+}
+
+.fbforum table .subheader {
+    color: gray;
+    font-size: 9px;
+}
+
+.fbforum table h4 {
+    font-weight: bold;
+    margin: 0;
+    font-size: 11px;
+}
+
+.tooltip_pro {
+    position: absolute;
+    z-index: 35;
+    display: none;
+}
+
+.tooltip_pro .tooltip_text {
+    padding: 3px 8px 3px 9px;
+    text-align: center;
+    white-space: nowrap;
+    left: 0px;
+    color: white;
+    font-size: 11px;
+    background: #282828;
+    position: relative;
+}
+
+.tooltip_pro .tooltip_pointer {
+    height: 4px;
+    width: 7px;
+    font-size: 1px;
+    margin: 0px auto 0px;
+    padding: 0px;
+    background: transparent url(/images/dark-pointer.gif) top center no-repeat;
+}
+
+table td {
+    width: 100px;
+    padding: 10px;
+    text-size: 11px;
+}
+
+/* Facebook Box Header */
+td h2, div.wide h2, div.narrow h2 {
+    background-color: #D8DFEA;
+    border-top: 1px solid #3B5998;
+    color: #3B5998;
+    font-size: 11px;
+    padding: 1px 6px;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Subheader, e.g. "Displaing 10 of 100 items" */
+.subtitle {
+    background-color: #EEEEEE;
+    border-bottom: 1px solid #CCCCCC;
+    color: #000000;
+    font-size: 11px;
+    font-weight: normal;
+    padding: 3px 5px 2px;
+}
+
+div.wide {
+    float: left;
+    margin: 0;
+    padding: 0 0 0 20px;
+    width: 396px;
+}
+
+div.narrow {
+    float: left;
+    margin: 0;
+    padding: 0 0 0 20px;
+    width: 200px;
+}
+
+.menu {
+    background: #F7F7F7 none repeat scroll 0 0;
+    border: 1px solid #BDC7D8;
+    padding: 5px;
+    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+    font-size: 11px;
+    width: 330px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+.menu div.close {
+    position: relative;
+    top: 2px;
+    left: 290px;
+}
+
+.menu h3 {
+    margin-bottom: 10px;
+    padding: 5px 0 0 5px;
+    font-size: 13px;
+}
+
+.menu ul {
+    color: #3B5998;
+    padding: 0 10px 5px;
+}
+
+.menu li {
+    font-weight: bold;
+    list-style-image: none;
+    list-style-position: inside;
+    list-style-type: square;
+    padding: 0 0 5px;
+}
+
+.menu .descrip {
+    color: #444444;
+    font-weight: normal;
+    padding: 3px 0 0 15px;
+}
+
+.battle h3 {
+    border-bottom: 1px solid #CCCCCC;
+    font-size: 13px;
+    font-weight: bold;
+    color: #999999;
+    padding-top: 15px;
+    display: block;
+    margin: 0;
+}
+
+.upd_on {
+    color: gray;
+    margin: 0 0 0px 5px;
+    font-size: 10px;
+    font-weight: normal;
+    padding: 0;
+    text-align: right;
+}
+
+.battle table {
+    width: 400px;
+    text-align: center;
+}
+
+.battle table th {
+    border-color: #C7CFE0;
+    border-bottom: 1px solid #E2E6EF;
+    margin: 0;
+    padding: 3px;
+    color: #777777;
+    font-size: 9px;
+}
+
+.battle td {
+    border-bottom: 1px solid #E2E6EF;
+    margin: 0;
+    padding: 3px;
+    color: #555555;
+    font-size: 11px;
+    padding: 3px 3px 3px 9px;
+}
+
+.battle th.name_heading {
+    color: #333333;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: left !important;
+    padding-left: 10px;
+}
+
+.battle table .even_colomn {
+    background: #F8F8F8 none repeat scroll 0 0;
+}
+
+.battle td.action_text {
+    width: 230px;
+}
+
+.battle table tr {
+    background-color: #FFFFFF;
+}
+
+.battle table tr.odd {
+    background-color: #F0F0FF;
+}
+
+.battle table .subheader {
+    color: gray;
+    font-size: 9px;
+}
+
+.battle table h4 {
+    font-weight: bold;
+    margin: 0;
+    font-size: 11px;
+}
+
+/* Auctions */
+.auctions h3 {
+    border-bottom: 1px solid #CCCCCC;
+    font-size: 13px;
+    font-weight: bold;
+    color: #999999;
+    padding-top: 15px;
+    display: block;
+    margin: 0;
+}
+
+.auctions .upd_on {
+    color: gray;
+    margin: 0 35px 0 5px;
+    font-size: 10px;
+    font-weight: normal;
+    padding: 0;
+    text-align: right;
+}
+
+.auctions table {
+    margin-left: 20px;
+    /*	margin-top:17px;*/
+    float: left;
+    /*	width:370px;*/
+    text-align: center;
+}
+
+.auctions th.name_heading {
+    color: #333333;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.auctions table th {
+    border-color: #C7CFE0;
+    border-bottom: 1px solid #E2E6EF;
+    margin: 0;
+    padding: 3px;
+    color: #777777;
+    font-size: 9px;
+}
+
+.auctions td {
+    border-bottom: 1px solid #E2E6EF;
+    margin: 0;
+    padding: 3px;
+    color: #555555;
+    font-size: 11px;
+    min-width: 30px;
+}
+
+.auctions table td.name_left {
+    text-align: left;
+}
+
+.auctions table .even_colomn {
+    background: #F8F8F8 none repeat scroll 0 0;
+}
+
+.auctions td.action_text {
+    width: 210px;
+}
+
+.auctions table {
+    width: 85%;
+}
+
+.auctions table tr {
+    background-color: #FFFFFF;
+}
+
+.auctions table tr.odd {
+    background-color: #F0F0FF;
+}
+
+.auctions table td {
+    padding: 3px 3px 3px 9px;
+}
+
+.auctions table .subheader {
+    color: gray;
+    font-size: 9px;
+}
+
+.auctions table h4 {
+    font-weight: bold;
+    margin: 0;
+    font-size: 11px;
+}
+
+.album_item {
+    height: 215px;
+}
+
+.job {
+    font-family: "Trebuchet, Arial";
+    font-size: 14px;
+    font-weight: normal;
+    color: #3c6f75;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    width: 95%;
+    padding: 0 0 10px 5px;
+}
+
+.job_undone {
+    background-color: #ffc3c4;
+    border: #ff6e71 3px solid;
+}
+
+.job_done {
+    background-color: #befdbe;
+    border: #9dfc9d 3px solid;
+}
+
+.job_premium {
+    background-color: #ff7f82;
+    border: #ff4c50 3px solid;
+}
+
+.job .job_img {
+    float: left;
+    width: 150px;
+}
+
+.job .job_content {
+    float: left;
+    margin-left: 10px;
+    width: 200px;
+}
+
+.job .job_action {
+    float: left;
+    width: 195px;
+    margin-left: 5px !important;
+    font-size: 16px;
+    font-family: "Times New Roman";
+    color: #656565;
+}
+
+.job_content .title {
+    color: #616161;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.job_content .title a, .job_content .title a:visited {
+    color: #616161;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.job_content .title a:hover {
+    text-decoration: underline;
+}
+
+.job_content .content {
+    color: #737373;
+    font-size: 13px;
+}
+
+.job_content .small {
+    color: #616161;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.jobs_head {
+    background: url(/static/gta/images/layout/_jobs.png) no-repeat;
+}
+
+.garage_head {
+    background: url(/static/gta/images/layout/_garage.png) no-repeat;
+}
+
+.store_head {
+    background: url(/static/gta/images/layout/_store.png) no-repeat;
+}
+
+.gifts_head {
+    background: url(/static/gta/images/layout/_gifts.png) no-repeat;
+}
+
+.grunge {
+    height: 22px;
+}
+
+.grunge_tier {
+    background-image: url(/static/gta/images/layout/_tier.png);
+    background-repeat: no-repeat;
+    display: block;
+    height: 28px;
+    width: 55px;
+    float: left;
+}
+
+.grunge_dash {
+    background-image: url(/static/gta/images/layout/__.png);
+    background-repeat: no-repeat;
+    display: block;
+    height: 28px;
+    width: 12px;
+    float: left;
+}
+
+.readmore {
+    font-family: Arial;
+    font-size: 11px !important;
+    font-weight: bold;
+    color: #FFFFFF !important;
+    text-decoration: none;
+    background: url(/static/gta/images/layout/readmore.png) no-repeat;
+    display: block;
+    height: 18px;
+    width: 74px;
+    padding: 4px 0 0 0;
+    margin: 5px 0 0 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.readmore:hover {
+    font-family: Arial;
+    font-size: 11px !important;
+    font-weight: bold;
+    color: #FFFFFF !important;
+    text-decoration: none;
+    background: url(/static/gta/images/layout/readmore1.png) no-repeat;
+    display: block;
+    height: 18px;
+    width: 74px;
+    padding: 4px 0 0 0;
+    margin: 5px 0 0 0;
+    text-align: center;
+}
+
+.readmore_140 {
+    font-family: Arial;
+    font-size: 11px !important;
+    font-weight: bold;
+    color: #FFFFFF !important;
+    text-decoration: none;
+    background: url(/static/gta/images/layout/readmore_140.png) no-repeat;
+    display: block;
+    height: 18px;
+    width: 140px;
+    padding: 4px 0 0 0;
+    margin: 5px 0 0 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.readmore_140:hover {
+    font-family: Arial;
+    font-size: 11px !important;
+    font-weight: bold;
+    color: #FFFFFF !important;
+    text-decoration: none;
+    background: url(/static/gta/images/layout/readmore1_140.png) no-repeat;
+    display: block;
+    height: 18px;
+    width: 140px;
+    padding: 4px 0 0 0;
+    margin: 5px 0 0 0;
+    text-align: center;
+}
+
+#submenuhedding {
+    font-family: Georgia;
+    font-size: 22px;
+    font-weight: normal;
+    text-transform: none;
+    color: #d0910b;
+    text-decoration: none;
+    margin: 0px;
+    float: left;
+    width: 750px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+}
+
+#submenublank {
+    margin: 0px;
+    float: left;
+    width: 750px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+}
+
+#submenutop {
+    margin: 0px;
+    float: left;
+    width: 433px;
+    height: 1px;
+    padding: 0px;
+    background-image: url(/static/gta/images/layout/topline.jpg);
+    background-repeat: no-repeat;
+}
+
+.submenu {
+    margin: 0px;
+    float: left;
+    width: 410px;
+    height: 17px;
+    padding: 2px 0 0 23px;
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: normal;
+    text-transform: none;
+    color: #9ca27e;
+    text-decoration: none;
+    background-image: url(/static/gta/images/layout/active.png);
+    background-repeat: no-repeat;
+}
+
+.submenu:hover {
+    margin: 0px;
+    float: left;
+    width: 410px;
+    height: 17px;
+    padding: 2px 0 0 23px;
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: normal;
+    text-transform: none;
+    color: #9ca27e;
+    text-decoration: none;
+    background-image: url(/static/gta/images/layout/over.jpg);
+    background-repeat: no-repeat;
+}
+
+input {
+    border: 1px solid black;
+    padding: 3px 3px 3px 3px;
+}
+
+.car-feature, .user-feature {
+    margin: 10px 5px 0 5px;
+    -moz-box-shadow: 1px 1px 3px #292929;
+    -webkit-box-shadow: 1px 1px 3px #292929;
+}
+
+.user-feature {
+    width: 215px;
+    margin: 10px 5px 0 0;
+    padding: 10px 0 0 5px;
+}
+
+.car-feature {
+    width: 150px;
+    min-height: 177px;
+}
+
+.car-feature img {
+
+}
+
+.car-feature h1, .car-feature h2, .car-feature h3 {
+    padding: 0 5px 5px 5px;
+}
+
+.car-feature h1 {
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.car-feature h2 {
+    font-size: 13px;
+    text-align: right;
+}
+
+.car-feature .accept, .car-feature .decline, .user-feature .accept, .user-feature .decline {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 5px;
+    display: block;
+    float: left;
+}
+
+.car-feature .accept, .user-feature .accept {
+    background: url(/static/gta/images/icons/thumb-up-green.png) no-repeat;
+    margin-left: 35px;
+}
+
+.user-feature .accept {
+    margin-left: 75px;
+}
+
+.car-feature .accept:hover, .user-feature .accept:hover {
+    background-color: #99cc66;
+}
+
+.car-feature .decline, .user-feature .decline {
+    background: url(/static/gta/images/icons/thumb-down-red.png) no-repeat;
+    margin-left: 5px;
+}
+
+.car-feature .decline:hover, .user-feature .decline:hover {
+    background-color: #cc6666;
+}
+
+div.plus_btn {
+    width: 93px;
+    height: 25px;
+    background: url(http://static.crimecorp.com/images/new/plus_btn_m.png) no-repeat 0;
+    padding-top: 12px;
+    padding-left: 25px;
+    color: black;
+    letter-spacing: 0.2em;
+}
+
+div.plus_btn:hover {
+    width: 93px;
+    height: 25px;
+    background: url(http://static.crimecorp.com/images/new/plus_btn_m.png) no-repeat -117px;
+    padding-top: 12px;
+    padding-left: 25px;
+    color: white;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+}
+
+a.delete, a.delete:hover {
+    background: url(http://static.crimecorp.com/images/new/x.png) no-repeat 0 1px;
+    padding-left: 10px;
+    margin-left: 3px;
+}
+
+/* MSG BOX */
+.msg_link {
+    background: url(http://static.crimecorp.com/images/icons/email_16.png) no-repeat 0 -2px;
+    padding-left: 16px;
+}
+
+div.msg_box {
+    width: 95%;
+    height: 100px;
+    border: solid 2px grey;
+    padding: 5px 0 10px 10px;
+    font-size: 16px;
+    background-color: #ececec;
+    display: none;
+}
+
+div.msg_box #status {
+    width: 100%;
+    height: 52px;
+    font-size: 16px;
+}
+
+div.msg_box div.status_btn {
+
+}
+
+div.status_btn #status_btn {
+
+}
+
+ul.msg {
+    list-style-type: none;
+    list-style-position: outside;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+}
+
+ul.msg li {
+    line-height: 1.1em;
+    padding: 0.7em 0 0.6em 0.8em;
+    border-bottom: 1px dashed #D2DADA;
+    position: relative;
+    display: block;
+    width: 500px;
+}
+
+ul.msg li:hover {
+    background-color: #F7F7F7;
+}
+
+.msg {
+    display: block;
+    /*margin-left:56px;*/
+    min-height: 50px;
+    width: 450px;
+}
+
+.msg_content a, .msg_content a:visited {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.msg_content a:hover, .msg_content a:active {
+    text-decoration: underline;
+}
+
+.msg_details {
+    color: #999999;
+    display: block;
+    font-size: 0.764em;
+    margin: 3px 0 0;
+}
+
+.msg_actions {
+    border-width: 0;
+    line-height: 1.8em;
+    position: absolute;
+    left: 470px;
+    right: 5px;
+    top: 1.4em;
+    width: 32px;
+}
+
+.msg_actions a {
+    color: #2276BB;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+    outline-color: -moz-use-text-color;
+    outline-style: none;
+    outline-width: medium;
+    padding: 3px 8px;
+    text-decoration: none;
+}
+
+.reply {
+    background-image: url(http://static.crimecorp.com/images/icons/email_reply_32.png);
+}
+
+.reply_m {
+    background-image: url(http://static.crimecorp.com/images/icons/email_reply_16.png);
+}
+
+.send {
+    background-image: url(http://static.crimecorp.com/images/icons/email_32.png);
+}
+
+.send_m {
+    background-image: url(http://static.crimecorp.com/images/icons/email_16.png);
+}

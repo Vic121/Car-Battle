@@ -1,0 +1,67 @@
+{% extends base_page %}
+
+{% block title %}Become a Partner{% endblock %}
+
+{% block header %}
+    Become a Car Battle Partner
+{% endblock %}
+
+{% block content %}
+
+    <div class="box-3">
+
+        <div id="intro">
+            <h1>WHY our game on your site?</h1>
+        </div>
+        <div style="text-align: justify; padding-top: 5px;">
+            <p>It's simple, because if people spend more time on your site it's better for you and your business.
+                They're more likely to return and explore your content more deeply.</p>
+
+            <p>Better user retention means more satisfaction for you, but if not enough, <strong>we add up to 20%
+                commission of your users' in-game payments</strong>. It's a win-win scenario for you and your users, you
+                make money and have more engaged users and they get access to another entertaining feature.</p>
+        </div>
+        <br/>
+
+        <div id="intro">
+            <h1>HOW to do it?</h1>
+        </div>
+        <div style="text-align: justify; padding-top: 5px;">
+            <p>If you run a blog, portal or other website that doesn't require registering to access content.</p>
+
+            <p style="padding-left: 25px; padding-bottom: 5px;">&rsaquo; <strong>It's just 5 minutes</strong>, all you
+                need to do is to create a new page on your site and put there piece code of we give you.</p>
+
+            <p style="padding-left: 25px; padding-bottom: 5px;">&rsaquo; <a href="{% url "auth_login" %}">Register</a>
+                first, then go to <a href="{% url "partners" %}">http://www.car-battle.com{% url "partners" %}</a> and
+                follow instructions.</p>
+
+            <p>If you run a website that requires authentication like a forum, private blog, etc.</p>
+
+            <p style="padding-left: 25px;">&rsaquo; You can folow first scenario and integrate it within minutes or we
+                have an option to avoid double-authentication of players, so your users sign in only once for both
+                services. This option requires basic programming skills. <a href="{% url "partner_integration" %}">Read&nbsp;more&nbsp;&raquo;</a>
+            </p>
+        </div>
+        <br/>
+
+        <div id="intro">
+            <h1>Lack of technical skills?</h1>
+        </div>
+        <div style="text-align: justify; padding-top: 5px;">
+            <p>If you like the ideas of having Car Battle on your website, but after reading this still don't know where
+                to start, please contact me <a href="mailto:partner@car-battle.com">partner@car-battle.com</a>.</p>
+        </div>
+        <br/>
+
+        <div id="intro">
+            <h1>Problems or questions</h1>
+        </div>
+        <div style="text-align: justify; padding-top: 5px;">
+            <p>Check out our <a href="{% url "partner_faq" %}">FAQ section</a> or leave me a message @ <a
+                    href="mailto:partner@car-battle.com">partner@car-battle.com</a> and we'll see what we can do.</p>
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "mail/base.html" %}
+{% load common humanize %}
+
+{% block hello %}{{ receiver }}{% endblock %}
+
+{% block content %}
+    I thought you may be interested in some of the auctions added in the last 24h. Check them out.<br/>
+
+    <ul>
+        {% for a in auctions %}
+            <li>
+                <a href="{{ profile.domain }}{% url "auction_details" a.title|slugify a.id %}">{{ a.title }}</a>
+                {% if a.start_price %}started from ${{ a.start_price|intcomma }}
+                    {% if a.start_price != a.current_price %}and the highest bid is now $
+                        {{ a.current_price|intcomma }}{% endif %}
+                {% else %}
+                    can be yours for ${{ a.buy_it_now_price|intcomma }}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

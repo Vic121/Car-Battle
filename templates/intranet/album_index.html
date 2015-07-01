@@ -1,0 +1,73 @@
+{% extends "admin/base_site.html" %}
+{% load adminmedia admin_list common humanize %}
+
+{% if not is_popup %}{% block breadcrumbs %}
+    <div class="breadcrumbs"><a href="{% url "home" %}">Home</a> &rsaquo; <a href="/intranet/">Intranet</a> &raquo;
+        Albumy
+    </div>{% endblock %}{% endif %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <script src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript" charset="utf-8">google.load("jquery", "1.4.0");</script>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/changelists.css"/>
+{% endblock %}
+
+{% block content %}
+
+    <h1>Albumy</h1>
+    <div id="content-main">
+
+        <table cellspacing="0">
+            <thead>
+            <tr>
+                <th>&nbsp;</th>
+                <th>Nazwa</th>
+                <th>Krótka</th>
+                <th>il.</th>
+                <th>lvl</th>
+                <th>$</th>
+                <th><img src="{{ MEDIA_URL }}admin/img/admin/lock.png"/></th>
+                <th><img src="{{ MEDIA_URL }}admin/img/admin/icon-yes.gif"/></th>
+                <th>&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in items %}
+                <tr id="item_{{ item.id }}">
+                    <td>{{ forloop.counter }}</td>
+                    <td><a href="{% url "intranet_album" item.id %}">{{ item.name }}</a></td>
+                    <td>{{ item.short_name }}</td>
+                    <td>{{ item.cars|length }}</td>
+                    <td>{{ item.min_lvl }}</td>
+                    <td>{{ item.price|intcomma }}</td>
+                    <td>{% if item.is_locked %}<img src="{{ MEDIA_URL }}admin/img/admin/icon-yes.gif"/>{% else %}
+                        <img src="{{ MEDIA_URL }}admin/img/admin/icon-no.gif"/>{% endif %}</td>
+                    <td>{% if item.is_active %}<img src="{{ MEDIA_URL }}admin/img/admin/icon-yes.gif"/>{% else %}
+                        <img src="{{ MEDIA_URL }}admin/img/admin/icon-no.gif"/>{% endif %}</td>
+                    <td><a href="{% url "intranet_album_edit" item.id %}{{ item.search }}">edit</a> / <a
+                            href="{% url "intranet_album" item.id %}{{ item.search }}" target="_blank">find</a></td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <form action="{% url "intranet_albums" %}" method="post">
+                    <td>&nbsp;</td>
+                    <td><input type="text" name="name"/></td>
+                    <td><input type="text" name="short_name"/></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td><input type="submit" value="Dodaj"/></td>
+                </form>
+            </tbody>
+        </table>
+
+        <p class="paginator">
+            {{ items|length }} albumów
+        </p>
+
+    </div>
+    </div>
+
+
+{% endblock %}

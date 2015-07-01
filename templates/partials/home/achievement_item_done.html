@@ -1,0 +1,3 @@
+<p class="title"><a href="{% url "achievement" item.type %}#{{ item.name|slugify }}">{{ item.name }}
+    {% if item.level > 0 %}(Level {{ item.level }}){% endif %}</a></p>
+<p class="content">{{ item_desc.desc }}</p>

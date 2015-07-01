@@ -1,0 +1,117 @@
+{% extends base %}
+
+{% block title %}Partner - New partner{% endblock %}
+
+{% block master_header %}{% endblock %}
+
+{% block breadcrumbs %}
+    <a href="{% url "partners" %}">Partners</a>
+    <strong class="final">New partner</strong>
+{% endblock %}
+
+{% block content %}
+    <br class="clear"/>
+
+    <form action="" method="post">
+        <table class="partner" cellspacing="0">
+            <tbody>
+            <tr>
+                <td>
+                    <label>Name *</label><br/>
+                    {% if form.name.errors %}
+                        <span class="small"><em style="color: red;">{{ form.name.errors|join:", " }}</em></span>
+                    {% else %}
+                        <span class="small"><em>it has to be unique</em></span>
+                    {% endif %}
+                </td>
+                <td>
+                    {{ form.name }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Email *</label><br/>
+                    {% if form.contact.errors %}
+                        <span class="small"><em style="color: red;">{{ form.contact.errors|join:", " }}</em></span>
+                    {% endif %}
+                </td>
+                <td>
+                    {{ form.contact }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Website *</label><br/>
+                    {% if form.website.errors %}
+                        <span class="small"><em style="color: red;">{{ form.website.errors|join:", " }}</em></span>
+                    {% endif %}
+                </td>
+                <td>
+                    {{ form.website }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>First Name</label><br/>
+                    {% if form.first_name.errors %}
+                        <span class="small"><em style="color: red;">{{ form.first_name.errors|join:", " }}</em></span>
+                    {% endif %}
+                </td>
+                <td>
+                    {{ form.first_name }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Last Name</label><br/>
+                    {% if form.last_name.errors %}
+                        <span class="small"><em style="color: red;">{{ form.last_name.errors|join:", " }}</em></span>
+                    {% endif %}
+                </td>
+                <td>
+                    {{ form.last_name }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Address</label><br/>
+                    {% if form.address.errors %}
+                        <span class="small"><em style="color: red;">{{ form.address.errors|join:", " }}</em></span>
+                    {% endif %}
+                </td>
+                <td>
+                    {{ form.address }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Postcode</label><br/>
+                    {% if form.postcode.errors %}
+                        <span class="small"><em style="color: red;">{{ form.postcode.errors|join:", " }}</em></span>
+                    {% endif %}
+                </td>
+                <td>
+                    {{ form.postcode }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Country</label>
+                    {% if form.country.errors %}
+                        <span class="small"><em style="color: red;">{{ form.country.errors|join:", " }}</em></span>
+                    {% endif %}
+                </td>
+                <td>
+                    {{ form.country }}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><input type="submit" value="Add"/></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <br class="clear"/>
+
+{% endblock %}

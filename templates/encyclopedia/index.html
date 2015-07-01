@@ -1,0 +1,46 @@
+{% extends base_page %}
+{# {% load i18n %} #}
+
+{% block title %}Car Encyclopedia with BMW, Ford, Audi, Mercedes, VW, Porsche and many others{% endblock %}
+{% block description %}Car Encyclopedia with cars like BMW, Ford, Audi, Mercedes, VW, Porsche and many others. You can
+    find here all cars available in Car Battle.{% endblock %}
+{% block keywords %}Car Encyclopedia, BMW, Ford, Audi, Mercedes, Dodge, Porsche, Volkswagen, VW{% endblock %}
+
+{% block breadcrumbs %}
+    <strong>Encyclopedia</strong>
+    <span class="final">Manufacturers</span>
+{% endblock %}
+
+{% block header %}Car manufacturers you can find{% endblock %}
+
+{% block content %}
+    <div class="box-3">
+        {% for manuf in manufs %}
+            {% comment %}
+                <div class="service">
+                    <span class="short mask"></span>
+                    <img alt="Information Architecture"
+                         src="http://www.nuvographics.com/wordpress/wp-content/images/services/informationarchitecture.jpg"
+                         class="thumbnail">
+
+                    <h2><a href="{% url "encyclopedia_cars" manuf.1 %}">{{ manuf.0 }}</a></h2>
+
+                    <p>&nbsp;</p>
+                </div>
+            {% endcomment %}
+            <div class="box"><a href="{% url "encyclopedia_cars" manuf.1 %}"
+                                title="{{ manuf.0 }} models">{{ manuf.0 }}</a></div>
+        {% endfor %}
+    </div>
+
+    <div style="float: right;">
+        <iframe src="http://www.facebook.com/plugins/likebox.php?id={{ settings.FACEBOOK_APP_ID }}&amp;width=245&amp;connections=10&amp;stream=true&amp;header=false&amp;height=555"
+                scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:245px; height:555px;"
+                allowTransparency="true"></iframe>
+    </div>
+
+{% endblock %}
+
+{% block slogan %}
+    Click for a <a href="{% url "encyclopedia_albums" %}">list of albums</a> available on Car Battle
+{% endblock %}

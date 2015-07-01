@@ -1,0 +1,240 @@
+{% extends "admin/base_site.html" %}
+{% load adminmedia admin_list common humanize %}
+
+{% if not is_popup %}{% block breadcrumbs %}
+    <div class="breadcrumbs"<a href="/intranet/">Home</a> &raquo; Merge Cars</div>{% endblock %}{% endif %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <script src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript" charset="utf-8">google.load("jquery", "1.4.0");</script>
+    <script type="text/javascript" src="{{ settings.BASE_MEDIA_URL }}js/jquery.tablednd_0_5.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/dashboard.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/changelists.css"/>
+
+    <style type="text/css" media="screen">
+        tr {
+            background-color: #fff;
+        }
+
+        tr:hover {
+            background-color: #eee;
+        }
+
+        .inactive {
+            display: none;
+        }
+
+        .inline_edit {
+            vertical-align: middle;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        function switch_activity() {
+            $('.inactive').removeClass('inactive').addClass('active');
+        }
+
+        function add_car(id) {
+            $.post('/intranet/album/{{ item.id }}/', {'id': id, 'action': 'add_car'});
+            $('#car_' + id).remove();
+        }
+
+        function remove_car(id) {
+            $.post('/intranet/album/{{ item.id }}/', {'id': id, 'action': 'remove_car'});
+            $('#car_' + id).remove();
+        }
+
+        $(document).ready(function () {
+            $("#album_items").tableDnD({
+                // onDragClass: "myDragClass",
+                onDrop: function (table, row) {
+                    var order = new Array;
+                    for (var i = 0; i < row.length; i++) {
+                        order.push(row[i]);
+                    }
+                    $.post('/intranet/album/{{ item.id }}/', {
+                        'action': 'reorder',
+                        'id': 1,
+                        'value': $('#album_items').tableDnDSerialize()
+                    });
+                },
+            });
+        });
+
+    </script>
+
+{% endblock %}
+
+{% block content %}
+
+    <h1>Album {{ item.name }} {% if item.is_locked %}<span style="font-size: 10px; color: red;">(locked){% endif %}</h1>
+    <div id="content-main">
+
+        <div id="changelist" class="module">
+            <form method="get" action="{% url "intranet_merge" %}">
+                <div style="width: 25%; float: left;">
+                    <p>
+                        Producent:
+                        <select name="manuf">
+                            <option value="">---</option>
+                            {% for m in manufs %}
+                                <option value="{{ m }}"
+                                        {% ifequal m get.manuf %}selected="selected"{% endifequal %}>{{ m }}</option>
+                            {% endfor %}
+                        </select>
+                    </p>
+                    <p>Model: <input type="text" name="model" value="{{ get.model }}"/></p>
+
+                    <p>Silnik: <input type="text" name="engine" value="{{ get.engine }}"/></p>
+                </div>
+                <div style="width: 25%; float: left;">
+                    <p>BHP: <input type="text" name="bhp_from" value="{{ get.bhp_from }}" size="4"/> - <input
+                            type="text" name="bhp_to" value="{{ get.bhp_to }}" size="4"/></p>
+
+                    <p>Rok: <input type="text" name="year_from" value="{{ get.year_from }}" size="4"/> - <input
+                            type="text" name="year_to" value="{{ get.year_to }}" size="4"/></p>
+
+                    <p>Masa: <input type="text" name="weight_from" value="{{ get.weight_from }}" size="4"/> - <input
+                            type="text" name="weight_to" value="{{ get.weight_to }}" size="4"/></p>
+
+                    <p>P/W: <input type="text" name="pw_from" value="{{ get.pw_from }}" size="4"/> - <input type="text"
+                                                                                                            name="pw_to"
+                                                                                                            value="{{ get.pw_to }}"
+                                                                                                            size="4"/>
+                    </p>
+                </div>
+                <div style="width: 25%; float: left;">
+                    <p>Sprint: <input type="text" name="sprint_from" value="{{ get.sprint_from }}" size="4"/> - <input
+                            type="text" name="sprint_to" value="{{ get.sprint_to }}" size="4"/></p>
+
+                    <p>Max: <input type="text" name="max_from" value="{{ get.max_from }}" size="4"/> - <input
+                            type="text" name="max_to" value="{{ get.max_to }}" size="4"/></p>
+
+                    <p>Drive: <select name="drive">
+                        <option value="">---</option>
+                        <option value="AWD" {% ifequal get.drive 'AWD' %}selected="selected"{% endifequal %}>AWD
+                        </option>
+                        <option value="FWD" {% ifequal get.drive 'FWD' %}selected="selected"{% endifequal %}>FWD
+                        </option>
+                        <option value="RWD" {% ifequal get.drive 'RWD' %}selected="selected"{% endifequal %}>RWD
+                        </option>
+                    </select></p>
+                    <p>Drzwi: <select name="doors">
+                        <option value="">---</option>
+                        <option value="2" {% ifequal get.doors '2' %}selected="selected"{% endifequal %}>2</option>
+                        <option value="4" {% ifequal get.doors '4' %}selected="selected"{% endifequal %}>4</option>
+                        <option value="1" {% ifequal get.doors '1' %}selected="selected"{% endifequal %}>1</option>
+                        <option value="3" {% ifequal get.doors '3' %}selected="selected"{% endifequal %}>3</option>
+                        <option value="5" {% ifequal get.doors '5' %}selected="selected"{% endifequal %}>5</option>
+                    </select></p>
+                </div>
+
+                <br style="clear: both"/>
+
+                <p>
+                    <input type="hidden" name="search" value="1"/>
+                    <input type="submit" value="Szukaj"/>&nbsp;
+                    <a href="{% url "intranet_merge" %}">czyść</a>
+                </p>
+            </form>
+            <br style="clear: both"/>
+        </div>
+
+        {% if results %}
+            <h3>Wyniki ({{ results|length }})</h3>
+            <div style="width: 100%">
+                <div style="float: left;">
+                    <form method="post" action="{% url "intranet_merge" %}">
+                        <table cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>T</th>
+                                <th>Model</th>
+                                <th>Silnik</th>
+                                <th>Moc</th>
+                                <th>Max</th>
+                                <th>0-100</th>
+                                <th>Masa</th>
+                                <th>BHP/ton</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for car in results %}
+                                <tr id="car_{{ car.id }}" style="height: 20px;">
+                                    <th><input type="radio" name="left" value="{{ car.id }}"/></th>
+                                    <td>{{ car.tier }}</td>
+                                    <td {% if not car.is_confirmed %}style="color: red;"{% endif %}><a
+                                            href="{% url "encyclopedia_car" car.manuf|slugify car.name|slugify car.id %}"
+                                            target="_blank">{{ car.year }} {{ car.manuf }} {{ car.name }}</a></td>
+                                    <td>{{ car.engine_up }}</td>
+                                    <td>{% if car.power_bhp %}{{ car.power_bhp }}{% else %}-{% endif %}</td>
+                                    <td>{% if car.top_speed %}{{ car.top_speed }} {{ car.top_speed_unit }}{% else %}
+                                        -{% endif %}</td>
+                                    <td>{% if car.sprint_0_100 %}{{ car.sprint_0_100 }}{% else %}-{% endif %}</td>
+                                    <td>{% if car.weight %}{{ car.weight }} {{ car.weight_unit }}{% else %}
+                                        -{% endif %}</td>
+                                    <td>{% if car.power_to_weight %}{{ car.power_to_weight }}{% else %}-{% endif %}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                </div>
+
+                <div style="float: left; margin-left: 30px;">
+                    <table cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>T</th>
+                            <th>Model</th>
+                            <th>Silnik</th>
+                            <th>Moc</th>
+                            <th>Max</th>
+                            <th>0-100</th>
+                            <th>Masa</th>
+                            <th>BHP/ton</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for car in results %}
+                            <tr id="car_{{ car.id }}" style="height: 20px;">
+                                <th><input type="checkbox" name="right_{{ forloop.counter }}" value="{{ car.id }}"/>
+                                </th>
+                                <td>{{ car.tier }}</td>
+                                <td {% if not car.is_confirmed %}style="color: red;"{% endif %}><a
+                                        href="{% url "encyclopedia_car" car.manuf|slugify car.name|slugify car.id %}"
+                                        target="_blank">{{ car.year }} {{ car.manuf }} {{ car.name }}</a></td>
+                                <td>{{ car.engine_up }}</td>
+                                <td>{% if car.power_bhp %}{{ car.power_bhp }}{% else %}-{% endif %}</td>
+                                <td>{% if car.top_speed %}{{ car.top_speed }} {{ car.top_speed_unit }}{% else %}
+                                    -{% endif %}</td>
+                                <td>{% if car.sprint_0_100 %}{{ car.sprint_0_100 }}{% else %}-{% endif %}</td>
+                                <td>{% if car.weight %}{{ car.weight }} {{ car.weight_unit }}{% else %}-{% endif %}</td>
+                                <td>{% if car.power_to_weight %}{{ car.power_to_weight }}{% else %}-{% endif %}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <br style="clear: both;"/>
+                <span style="width: 100%; text-align: center; display: block; margin-top: 20px;"><input
+                        style="font-size: 20px;" type="submit" value="MERGE"/></span>
+                </form>
+            </div>
+
+            <br style="clear: both"/>
+            {{ results|length }} cars
+        {% else %}
+            {% if get.search %}
+                brak wyników
+            {% endif %}
+        {% endif %}
+
+    </div>
+
+
+{% endblock %}

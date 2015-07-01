@@ -1,0 +1,46 @@
+{% extends base %}
+{% load tips %}
+
+{% block title %}Battle against {{ defender_profile }}{% endblock %}
+
+{% block master_header %}{% endblock %}
+
+{% block breadcrumbs %}
+	<strong>Battles</strong>
+	<strong>Battle against {{ defender_profile }}</strong>
+	<span class="final">{% if battle.rounds == 1 %}One round battle{% else %}Round {{ battle.card }} {% if battle.card == battle.rounds %}<strong>(last)</strong>{% endif %}{% endif %}</span>
+{% endblock %}
+
+{% block content %}
+<br class="clear"/>
+{% show_how_to_play request %}
+
+{% if summary %}
+<br/>
+<div class="fbbox fbinfobox">
+	{{ summary|safe }}
+	
+	{% if last_step %}
+		{% if not last_card %}
+			<p><a class="readmore_140" href="{% url "battle_user" user_id %}?next=1">To next round &raquo;</a></p>
+		{% else %}
+			{% if tier_battle %}
+				<p><a class="readmore_140" href="{% url "jobs" %}">Finish fight</a></p>
+			{% else %}
+				<p><a class="readmore_140" href="{% url "battle" %}">Finish fight</a></p>
+			{% endif %}
+		{% endif %}
+	{% endif %}
+</div>
+{% endif %}
+
+<div class="box-4">
+	<div style="float: left; color: black; padding-top: 15px;">
+		{% card attacker %}
+	</div>
+	<div style="float: left; color: black; padding-top: 15px;">
+		{% card defender shown attacker 'Full' tier_battle %}
+	</div>
+</div>
+
+{% endblock %}

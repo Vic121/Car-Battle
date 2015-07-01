@@ -1,0 +1,69 @@
+{% extends base %}
+{% load i18n modules %}
+
+{% block title %}{% trans 'Selling item on auction' %}{% endblock %}
+{% block description %}Cars currently being sold on Car Battle. Auctions are great source of car you actually need for battles or albums, so check them regularly.{% endblock %}
+
+{% block breadcrumbs %}
+	<strong>Auctions</strong>
+	<span class="final">Sell an item</span>
+{% endblock %}
+
+{% block master_header %}{% endblock %}
+
+{% block content %}
+<br class="clear"/>
+<div class="battle">
+	<form action="{% url "auction_sell" item_type item_id %}" method="post">
+	<table style="width: 250px; margin-top: 15px;">
+	<tbody>
+		<tr>
+			<th class="name_heading">Manufacturer:</th>
+			<td>{{ item.manuf }}</td>
+		</tr>
+		<tr>
+			<th class="name_heading">Model:</th>
+			<td>{{ item.name }}</td>
+		</tr>
+		<tr>
+			<th class="name_heading">{% trans 'Duration' %}:</th>
+			<td>
+				{{ form.duration }}
+				{% if form.duration.errors %}
+					<em style="color: red;">{{ form.duration.errors|join:", " }}</em>
+				{% endif %}
+			</td>
+		</tr>
+		<tr>
+			<th class="name_heading">{% trans 'Start price' %}:</th>
+			<td>
+				${{ form.start_price }}
+				{% if form.start_price.errors %}
+					<em style="color: red;">{{ form.start_price.errors|join:", " }}</em>
+				{% endif %}
+			</td>
+		</tr>
+		<tr>
+			<th class="name_heading">BUY IT NOW price:</th>
+			<td>
+				${{ form.buy_it_now_price }}
+				{% if form.buy_it_now_price.errors %}
+					<em style="color: red;">{{ form.buy_it_now_price.errors|join:", " }}</em>
+				{% endif %}
+			</td>
+		</tr>
+		<tr>
+			<th class="name_heading" colspan="2">
+				<center><input type="submit" value="{% trans 'SELL' %}"/></center>
+			</th>
+		</tr>
+	</tbody>
+	</table>
+</div>
+{% if item.tier == 'P' or item.tier == 'U' or item.tier == 'N' or item.tier == 'X' %}
+	{% show_card item 'small' %}
+{% else %}
+	{% show_card item %}
+{% endif %}
+
+{% endblock %}

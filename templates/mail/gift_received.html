@@ -1,0 +1,12 @@
+{% extends "mail/base.html" %}
+
+{% block hello %}{{ receiver }}{% endblock %}
+
+{% block content %}
+    {{ sender }} sent you <b>{{ car.year }} {{ car.manuf }} {{ car.name }}</b>.<br/>
+    <img src="{{ car_img }}"/><br/>
+    <br/>
+    It'd be nice if you give something back to {{ sender }}. To send a gift, go to
+    <a href="{{ profile.domain }}garage/">your garage</a>, find a spare car and click on "Send a Friend" link. Then just
+    select a friend of your choice and click "SEND".
+{% endblock %}

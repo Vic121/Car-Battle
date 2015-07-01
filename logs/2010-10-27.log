@@ -1,0 +1,94 @@
+2010-10-27 01:25:54,893 | INFO   | sent message from yezooz to yezooz
+2010-10-27 01:25:54,893 | INFO   | sent message from yezooz to yezooz
+2010-10-27 21:37:45,877 | DEBUG  | Stat yezooz. garage, cars_add=1.
+2010-10-27 21:37:45,877 | DEBUG  | Stat yezooz. garage, cars_add=1.
+2010-10-27 21:37:45,932 | DEBUG  | Stat yezooz. garage, cars=36.
+2010-10-27 21:37:45,932 | DEBUG  | Stat yezooz. garage, cars=36.
+2010-10-27 21:44:25,114 | DEBUG  | Stat yezooz. garage, cars_add=2.
+2010-10-27 21:44:25,114 | DEBUG  | Stat yezooz. garage, cars_add=2.
+2010-10-27 21:44:41,813 | DEBUG  | Stat yezooz. garage, cars_add=3.
+2010-10-27 21:44:41,813 | DEBUG  | Stat yezooz. garage, cars_add=3.
+2010-10-27 21:44:41,934 | DEBUG  | Stat yezooz. garage, cars=37.
+2010-10-27 21:44:41,934 | DEBUG  | Stat yezooz. garage, cars=37.
+2010-10-27 21:44:41,978 | DEBUG  | Stat yezooz. car_manuf, Hyundai=3.
+2010-10-27 21:44:41,978 | DEBUG  | Stat yezooz. car_manuf, Hyundai=3.
+2010-10-27 21:48:01,605 | DEBUG  | Stat yezooz. garage, cars_add=4.
+2010-10-27 21:48:01,605 | DEBUG  | Stat yezooz. garage, cars_add=4.
+2010-10-27 21:48:01,770 | DEBUG  | Stat yezooz. garage, cars=38.
+2010-10-27 21:48:01,770 | DEBUG  | Stat yezooz. garage, cars=38.
+2010-10-27 21:48:01,781 | DEBUG  | Stat yezooz. car_manuf, Hyundai=4.
+2010-10-27 21:48:01,781 | DEBUG  | Stat yezooz. car_manuf, Hyundai=4.
+2010-10-27 21:48:01,791 | DEBUG  | Stat yezooz. car_country, South Korea=3.
+2010-10-27 21:48:01,791 | DEBUG  | Stat yezooz. car_country, South Korea=3.
+2010-10-27 21:48:01,832 | DEBUG  | Stat yezooz. car_tier, 1=9.
+2010-10-27 21:48:01,832 | DEBUG  | Stat yezooz. car_tier, 1=9.
+2010-10-27 21:48:01,842 | DEBUG  | Stat yezooz. car_manuf, Hyundai=5.
+2010-10-27 21:48:01,842 | DEBUG  | Stat yezooz. car_manuf, Hyundai=5.
+2010-10-27 21:48:01,851 | DEBUG  | Stat yezooz. car_country, South Korea=4.
+2010-10-27 21:48:01,851 | DEBUG  | Stat yezooz. car_country, South Korea=4.
+2010-10-27 21:48:01,867 | DEBUG  | Stat yezooz. car_tier, 1=10.
+2010-10-27 21:48:01,867 | DEBUG  | Stat yezooz. car_tier, 1=10.
+2010-10-27 21:48:01,878 | DEBUG  | Stat yezooz. car_year, 2000=4.
+2010-10-27 21:48:01,878 | DEBUG  | Stat yezooz. car_year, 2000=4.
+2010-10-27 21:48:01,912 | DEBUG  | Stat yezooz. car_bhp, 77=1.
+2010-10-27 21:48:01,912 | DEBUG  | Stat yezooz. car_bhp, 77=1.
+2010-10-27 21:48:01,922 | DEBUG  | Stat yezooz. car_speed, 160=3.
+2010-10-27 21:48:01,922 | DEBUG  | Stat yezooz. car_speed, 160=3.
+2010-10-27 21:48:01,932 | DEBUG  | Stat yezooz. car_weight, 1000=2.
+2010-10-27 21:48:01,932 | DEBUG  | Stat yezooz. car_weight, 1000=2.
+2010-10-27 21:48:01,934 | INFO   | yezooz just earned 1000 cash
+2010-10-27 21:48:01,934 | INFO   | yezooz just earned 1000 cash
+2010-10-27 21:48:01,942 | DEBUG  | Stat yezooz. cash, earn=1000.
+2010-10-27 21:48:01,942 | DEBUG  | Stat yezooz. cash, earn=1000.
+2010-10-27 21:48:01,951 | DEBUG  | Stat yezooz. cash, earn=4000.
+2010-10-27 21:48:01,951 | DEBUG  | Stat yezooz. cash, earn=4000.
+2010-10-27 21:48:01,952 | INFO   | yezooz just earned 10 exp
+2010-10-27 21:48:01,952 | INFO   | yezooz just earned 10 exp
+2010-10-27 21:48:01,959 | DEBUG  | Stat yezooz. exp, earn=10.
+2010-10-27 21:48:01,959 | DEBUG  | Stat yezooz. exp, earn=10.
+2010-10-27 21:48:01,967 | DEBUG  | Stat yezooz. exp, earn=40.
+2010-10-27 21:48:01,967 | DEBUG  | Stat yezooz. exp, earn=40.
+2010-10-27 21:48:01,985 | DEBUG  | Stat yezooz. job, done=1.
+2010-10-27 21:48:01,985 | DEBUG  | Stat yezooz. job, done=1.
+2010-10-27 21:48:01,995 | DEBUG  | Stat yezooz. job, done=4.
+2010-10-27 21:48:01,995 | DEBUG  | Stat yezooz. job, done=4.
+2010-10-27 21:48:09,678 | DEBUG  | Stat yezooz. garage, cars_add=5.
+2010-10-27 21:48:09,678 | DEBUG  | Stat yezooz. garage, cars_add=5.
+2010-10-27 21:48:09,689 | DEBUG  | Stat yezooz. garage, cars=39.
+2010-10-27 21:48:09,689 | DEBUG  | Stat yezooz. garage, cars=39.
+2010-10-27 21:48:09,700 | DEBUG  | Stat yezooz. car_manuf, Nissan=1.
+2010-10-27 21:48:09,700 | DEBUG  | Stat yezooz. car_manuf, Nissan=1.
+2010-10-27 21:48:09,710 | DEBUG  | Stat yezooz. car_country, Japan=1.
+2010-10-27 21:48:09,710 | DEBUG  | Stat yezooz. car_country, Japan=1.
+2010-10-27 21:48:09,725 | DEBUG  | Stat yezooz. car_tier, 1=11.
+2010-10-27 21:48:09,725 | DEBUG  | Stat yezooz. car_tier, 1=11.
+2010-10-27 21:48:09,736 | DEBUG  | Stat yezooz. car_manuf, Nissan=2.
+2010-10-27 21:48:09,736 | DEBUG  | Stat yezooz. car_manuf, Nissan=2.
+2010-10-27 21:48:09,746 | DEBUG  | Stat yezooz. car_country, Japan=2.
+2010-10-27 21:48:09,746 | DEBUG  | Stat yezooz. car_country, Japan=2.
+2010-10-27 21:48:09,761 | DEBUG  | Stat yezooz. car_tier, 1=12.
+2010-10-27 21:48:09,761 | DEBUG  | Stat yezooz. car_tier, 1=12.
+2010-10-27 21:48:09,773 | DEBUG  | Stat yezooz. car_year, 2000=5.
+2010-10-27 21:48:09,773 | DEBUG  | Stat yezooz. car_year, 2000=5.
+2010-10-27 21:48:09,782 | DEBUG  | Stat yezooz. car_bhp, 67=1.
+2010-10-27 21:48:09,782 | DEBUG  | Stat yezooz. car_bhp, 67=1.
+2010-10-27 21:48:09,792 | DEBUG  | Stat yezooz. car_speed, 150=2.
+2010-10-27 21:48:09,792 | DEBUG  | Stat yezooz. car_speed, 150=2.
+2010-10-27 21:48:09,804 | DEBUG  | Stat yezooz. car_weight, 900=3.
+2010-10-27 21:48:09,804 | DEBUG  | Stat yezooz. car_weight, 900=3.
+2010-10-27 21:48:09,806 | INFO   | yezooz just earned 1000 cash
+2010-10-27 21:48:09,806 | INFO   | yezooz just earned 1000 cash
+2010-10-27 21:48:09,814 | DEBUG  | Stat yezooz. cash, earn=2000.
+2010-10-27 21:48:09,814 | DEBUG  | Stat yezooz. cash, earn=2000.
+2010-10-27 21:48:09,821 | DEBUG  | Stat yezooz. cash, earn=5000.
+2010-10-27 21:48:09,821 | DEBUG  | Stat yezooz. cash, earn=5000.
+2010-10-27 21:48:09,822 | INFO   | yezooz just earned 10 exp
+2010-10-27 21:48:09,822 | INFO   | yezooz just earned 10 exp
+2010-10-27 21:48:09,830 | DEBUG  | Stat yezooz. exp, earn=20.
+2010-10-27 21:48:09,830 | DEBUG  | Stat yezooz. exp, earn=20.
+2010-10-27 21:48:09,839 | DEBUG  | Stat yezooz. exp, earn=50.
+2010-10-27 21:48:09,839 | DEBUG  | Stat yezooz. exp, earn=50.
+2010-10-27 21:48:09,856 | DEBUG  | Stat yezooz. job, done=2.
+2010-10-27 21:48:09,856 | DEBUG  | Stat yezooz. job, done=2.
+2010-10-27 21:48:09,866 | DEBUG  | Stat yezooz. job, done=5.
+2010-10-27 21:48:09,866 | DEBUG  | Stat yezooz. job, done=5.

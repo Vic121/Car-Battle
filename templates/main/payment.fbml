@@ -1,0 +1,149 @@
+{% extends base %}
+{% load tips %}
+
+{% block head %}
+<style type="text/css" media="screen">
+	.store_options {
+		border: 0;
+	}
+	.store_option {
+		height: 35px;
+	}
+	.store_option th {
+		width: 300px;
+		text-align: left;
+		padding-left: 10px;
+	}
+	.store_option td {
+		
+	}
+	.store_option_desc {
+		
+	}
+	.store_option_desc td {
+		border: 2px solid #616161;
+		background-color: #e8e8e8;
+		margin-top: -10px;
+		padding: 10px 10px 10px 10px;
+	}
+	.store_option_desc td span {
+		color: #616161;
+	}
+</style>
+{% endblock %}
+
+{% block title %}Buy cars & bonuses{% endblock %}
+
+{% block breadcrumbs %}
+	<strong>STORE</strong>
+{% endblock %}
+
+{% block master_header %}{% endblock %}
+
+{% block content %}
+<br class="clear"/>
+{% show_how_to_play request %}
+
+<p style="font-family: 'Arial'; font-size: 16px; color: #616161;">You have <b {% ifequal request.engine.user.profile.credit 0 %}style="color: red;"{% else %}style="color: green;"{% endifequal %}>{{ request.engine.user.profile.credit }}</b> credits (<a href="#offers">add more</a>)</p>
+<br class="clear"/>
+
+<table class="store_options">
+	{# <tr class="store_option"> #}
+	{# 	<th style="font-family: 'Arial'; font-size: 20px; color: #616161;"> #}
+	{# 	{% if request.engine.user.profile.is_premium %} #}
+	{# 		Extend your supporter's account for another 30 days #}
+	{# 	{% else %} #}
+	{# 		Supporter's account for 30 days #}
+	{# 	{% endif %} #}
+	{# 	</th> #}
+	{# 	<td><a href="{% url "store_buy" 'premium' %}" class="readmore_140">GET FOR {{ settings.PRICING|KEY:'premium' }} CREDITS</a></td> #}
+	{# </tr> #}
+	{# <tr class="store_option_desc"> #}
+	{# 	<td colspan="2"> #}
+	{# 		{% if request.engine.user.profile.is_premium %} #}
+	{# 			<span class="innerbanner_head" style="color: red;">Expires {{ request.engine.user.profile.is_premium_until|timestr }}</span><br style="clear: both"/> #}
+	{# 		{% endif %} #}
+	{# 		<span class="innerbanner_head">Get access to <b>Tier 6</b> cars</span><br style="clear: both"/> #}
+	{# 		<span class="innerbanner_head">Ad-free browsing</span> #}
+	{# 	</td> #}
+	{# </tr> #}
+	{# <tr class="store_option"> #}
+	{# 	<th>Extra round to play</th> #}
+	{# 	<td><a href="{% url "store_buy" 'extra_round' %}" class="readmore_140">GET FOR 10 CREDITS</a></td> #}
+	{# </tr> #}
+	<tr>
+		<td colspan="2"><hr/></td>
+	</tr>
+	<tr class="store_option">
+		<th style="font-family: 'Arial'; font-size: 20px; color: #616161; text-align: left; color: #C0C0C0;">Silver Car Pack - 3 cars</th>
+		<td><a href="{% url "store_buy" '3_cars' %}" class="readmore_140">GET FOR {{ settings.PRICING|KEY:'cars'|KEY:'3' }} CREDITS</a></td>
+	</tr>
+	<tr class="store_option_desc">
+		<td colspan="2">
+			<span class="innerbanner_head"><strong>10%</strong> chance for <strong>Tier 6</strong> car</span><br style="clear: both"/>
+			<span class="innerbanner_head"><strong>30%</strong> chance for <strong>Tier 5</strong> car</span><br style="clear: both"/>
+			<span class="innerbanner_head"><strong>60%</strong> chance for <strong>Tier 4</strong> car</span>
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan="2"><hr/></td>
+	</tr>
+	<tr class="store_option">
+		<th style="font-family: 'Arial'; font-size: 20px; color: #616161; text-align: left; color: #FFD700;">Gold Car Pack - 3 cars</th>
+		<td><a href="{% url "store_buy" '3_plus_cars' %}" class="readmore_140">GET FOR {{ settings.PRICING|KEY:'cars'|KEY:'3+' }} CREDITS</a></td>
+	</tr>
+	<tr class="store_option_desc">
+		<td colspan="2">
+			<span class="innerbanner_head"><strong>20%</strong> chance for <strong>Tier 6</strong> car</span><br style="clear: both"/>
+			<span class="innerbanner_head"><strong>40%</strong> chance for <strong>Tier 5</strong> car</span><br style="clear: both"/>
+			<span class="innerbanner_head"><strong>40%</strong> chance for <strong>Tier 4</strong> car</span>
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan="2"><hr/></td>
+	</tr>
+	<tr class="store_option">
+		<th style="font-family: 'Arial'; font-size: 20px; color: #616161; text-align: left; color: #C0C0C0;">Silver Car Pack - 5 cars</th>
+		<td><a href="{% url "store_buy" '5_cars' %}" class="readmore_140">GET FOR {{ settings.PRICING|KEY:'cars'|KEY:'5' }} CREDITS</a></td>
+	</tr>
+	<tr class="store_option_desc">
+		<td colspan="2">
+			<span class="innerbanner_head"><strong>10%</strong> chance for <strong>Tier 6</strong> car</span><br style="clear: both"/>
+			<span class="innerbanner_head"><strong>30%</strong> chance for <strong>Tier 5</strong> car</span><br style="clear: both"/>
+			<span class="innerbanner_head"><strong>60%</strong> chance for <strong>Tier 4</strong> car</span>
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan="2"><hr/></td>
+	</tr>
+	<tr class="store_option">
+		<th style="font-family: 'Arial'; font-size: 20px; color: #616161; text-align: left; color: #FFD700;">Gold Car Pack - 5 cars</th>
+		<td><a href="{% url "store_buy" '5_plus_cars' %}" class="readmore_140">GET FOR {{ settings.PRICING|KEY:'cars'|KEY:'5+' }} CREDITS</a></td>
+	</tr>
+	<tr class="store_option_desc">
+		<td colspan="2">
+			<span class="innerbanner_head"><strong>20%</strong> chance for <strong>Tier 6</strong> car</span><br style="clear: both"/>
+			<span class="innerbanner_head"><strong>40%</strong> chance for <strong>Tier 5</strong> car</span><br style="clear: both"/>
+			<span class="innerbanner_head"><strong>40%</strong> chance for <strong>Tier 4</strong> car</span>
+		</td>
+	</tr>
+</table>
+<a name="offers"></a>
+<hr/>
+	
+{% if request.engine.IS_FB %}
+<p style="color: #959595;">These offers are provided by third party service, not by Facebook or Car Battle. Please read all fine print associated with any offer, as some offers can take up to 2 days to credit points. If you are missing points from completing an offer, please click the green "View Offer Status" button below.</p>
+
+{# <fb:iframe frameborder='0' scrolling='no' marginheight='0' marginwidth='0' width='718' height='2200' src='http://super.kitnmedia.com/super/offers?h=lxfgigv.86856382233&uid={{ request.engine.user.profile.partner_login }}'></fb:iframe> #}
+
+{# <fb:iframe frameborder='0' scrolling='no' marginheight='0' marginwidth='0' width='718' height='2200' src='http://pub.myofferpal.com/4efb98abc135d97d16c9de8862efc716/showoffers.action?snuid={{ request.engine.user.profile.partner_login }}'></fb:iframe> #}
+
+<iframe src="http://www.superrewards-offers.com/super/offers?h=lxfgigv.86856382233&uid={{ request.engine.user.profile.partner_login }}" frameborder="0" width="728" height="2400" scrolling="no">
+{% else %}
+<iframe src="http://www.superrewards-offers.com/super/offers?h=pmfixgpmgt.862181104475&uid={{ request.engine.user.user.id }}" frameborder="0" width="728" height="2400" scrolling="no"></iframe>
+{% endif %}
+
+{% endblock %}

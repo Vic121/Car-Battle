@@ -1,0 +1,13 @@
+<h2>Job done!</h2>
+Bonus:<br/>
+<div style="width: 100%;">
+    <div style="width: 150px; float: left;">
+        <p>${{ items.0.cash|intcomma }}</p>
+
+        <p>{{ items.0.exp|intcomma }} EXP</p>
+    </div>
+    <div style="width: 370px; float: left;">
+        <p>{% show_card items.0.car 'small' %}</p>
+    </div>
+</div>
+<br class="clear"/>

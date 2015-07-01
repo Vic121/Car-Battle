@@ -1,0 +1,34 @@
+{% extends base_page %}
+{% load modules %}
+
+{% block title %}
+    {{ album.album.name }} of {{ profile }}
+{% endblock %}
+
+{% block description %}
+    What cars {{ profile }} has already in this album? Why don't you try collecting your own? Play now!
+{% endblock %}
+
+{% block breadcrumbs %}
+    <a href="{% url "profile" profile.username %}">{{ profile }}'s profile</a>
+    <span class="final">{{ album.album.name }}</span>
+{% endblock %}
+
+{% block head %}
+    <meta property="og:title" content="{{ profile.user }}'s {{ album.album.name }} album"/>
+    <meta property="og:site_name" content="Car Battle - must play if you love cars"/>
+    <meta property="og:image" content="{{ MEDIA_URL }}images/albums/{{ album.album.id }}_s.jpg"/>
+{% endblock %}
+
+{% block content %}
+    {% for car, status in album.elements %}
+        <div class="album_item narrow">
+            <h2>{{ car.display_short_name|truncate:30 }}</h2>
+
+            <div class="subtitle">&nbsp;</div>
+            <img src="{{ settings.BASE_MEDIA_URL }}{{ car.img|img_replace:'_m.jpg' }}"
+                 {% if status < 1 %}class="transparent"{% endif %}/>
+        </div>
+    {% endfor %}
+
+{% endblock %}

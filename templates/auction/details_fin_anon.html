@@ -1,0 +1,85 @@
+{% extends base_page %}
+
+{% block title %}Car Auction of {{ item.auction.title }}. Item sold for ${{ item.auction.current_price|intcomma }}
+    .{% endblock %}
+{% block description %}{{ item.auction.seller_name }} sold {{ item.auction.title }} for $
+    {{ item.auction.current_price|intcomma }}. Auctions are great source of cars you actually need for battles or
+    albums, so check them regularly.{% endblock %}
+
+{% block breadcrumbs %}
+    <strong>Auctions</strong>
+    <a href="{% url "auction" %}">Listing</a>
+    <span class="final">{{ item.auction.title }}</span>
+{% endblock %}
+
+{% block header %}Ended auction of {{ item.auction.title }}{% endblock %}
+
+{% block content %}
+    <div>
+        <div style="width: 70%; float: left;">
+            <div class="battle">
+                <table style="width: 250px; margin-top: 15px;">
+                    <tbody>
+                    <tr>
+                        <th class="name_heading">Ended:</th>
+                        <td>{{ item.auction.end_at|timestr }}</td>
+                    </tr>
+                    <tr>
+                        <th class="name_heading">Seller:</th>
+                        <td>
+                            {{ item.seller_name }}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            {% if item.details.tier == 'P' or item.details.tier == 'U' or item.details.tier == 'N' or item.details.tier == 'X' %}
+                {% show_card item.details 'small' %}
+            {% else %}
+                {% show_card item.details %}
+            {% endif %}
+        </div>
+
+        <div style="width: 25%; margin-top: 40px; float: right;">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                <tr>
+                    <td style="border-top: 1px solid rgb(119, 144, 182); border-bottom: 1px solid rgb(119, 144, 182); background: rgb(214, 224, 248) none repeat scroll 0% 0%; text-align: center; padding-top: 2px; padding-bottom: 2px; height: 18px; font-size: 10.5pt; font-weight: bold; white-space: nowrap; color: rgb(77, 77, 77);">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="border-bottom: 1px solid rgb(68, 112, 185); padding: 4px; background: rgb(242, 242, 242) none repeat scroll 0% 0%; text-align: center;">
+                        {% if item.bids %}
+                            <h3>Sold for ${{ item.auction.current_price|intcomma }}</h3>
+                        {% else %}
+                            <h3>Were no buy offers</h3>
+                        {% endif %}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br class="clear"/>
+    {% if item.bids %}
+        <div class="battle">
+            <table style="width: 500px;">
+                <thead>
+                <th colspan="3" style="font-size: 14px;">Bids</th>
+                </thead>
+                <tbody>
+                {% for bid in item.bids %}
+                    <tr class="{% cycle '' 'odd' %}">
+                        <th style="width: 30%" class="name_heading"><b>
+                            {{ bid.buyer }}
+                        </b></th>
+                        <td style="width: 30%" class="name">$<b>{{ bid.price|intcomma }}</b></td>
+                        <td>{{ bid.updated_at|timestr }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+{% endblock %}

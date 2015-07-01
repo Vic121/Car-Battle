@@ -1,0 +1,142 @@
+{% extends base %}
+
+{% block title %}Partner - Editing partner: {{ partner.name }}{% endblock %}
+
+{% block master_header %}{% endblock %}
+
+{% block breadcrumbs %}
+    <a href="{% url "partners" %}">Partners</a>
+    <strong class="final">Editing partner: {{ partner.name }}</strong>
+{% endblock %}
+
+{% block content %}
+    <br class="clear"/>
+
+    <div style="width: 400px; float: left;">
+
+        <form action="" method="post">
+            <table class="partner" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td>
+                        <label>Name</label><br/>
+                    </td>
+                    <td>
+                        {{ partner.name }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Secret Code</label><br/>
+                    </td>
+                    <td>
+                        {{ partner.secret_code }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Email *</label><br/>
+                        {% if form.contact.errors %}
+                            <span class="small"><em style="color: red;">{{ form.contact.errors|join:", " }}</em></span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ form.contact }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Website *</label><br/>
+                        {% if form.website.errors %}
+                            <span class="small"><em style="color: red;">{{ form.website.errors|join:", " }}</em></span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ form.website }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>First Name</label><br/>
+                        {% if form.first_name.errors %}
+                            <span class="small"><em style="color: red;">
+                                {{ form.first_name.errors|join:", " }}</em></span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ form.first_name }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Last Name</label><br/>
+                        {% if form.last_name.errors %}
+                            <span class="small"><em style="color: red;">
+                                {{ form.last_name.errors|join:", " }}</em></span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ form.last_name }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Address</label><br/>
+                        {% if form.address.errors %}
+                            <span class="small"><em style="color: red;">{{ form.address.errors|join:", " }}</em></span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ form.address }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Postcode</label><br/>
+                        {% if form.postcode.errors %}
+                            <span class="small"><em style="color: red;">{{ form.postcode.errors|join:", " }}</em></span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ form.postcode }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Country</label>
+                        {% if form.country.errors %}
+                            <span class="small"><em style="color: red;">{{ form.country.errors|join:", " }}</em></span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ form.country }}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;"><input type="submit" value="Save"/></td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+
+    </div>
+    <div style="float: left; width: 340px; padding-top: 10px;">
+
+        <p>To add Car Battle as quickly as possible just <b>add code below on your site</b> That's it. <u>Keep in mind
+            that it's 760 pixels wide</u>.</p>
+
+        <p style="padding-top: 5px;"><textarea id="double" onclick="selectall('double')" cols="45" rows="5"><iframe
+                border="0" frameborder="no" framespacing="0" scrolling="no"
+                style="width: 760px; height: 2500px; overflow: hidden;"
+                src="http://partner.car-battle.com/?partner={{ partner.name }}"></iframe></textarea></p>
+
+        <p>If your site requires authentication you can add additional parameters to this iframe to avoid
+            double-authentication.</p>
+
+        <p>This option requires basic programming skills. <a
+                href="{% url "partner_integration" %}#single">Details&nbsp;&raquo;</a></p>
+
+    </div>
+    <br class="clear"/>
+
+{% endblock %}

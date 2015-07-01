@@ -1,0 +1,8 @@
+<p class="title"><a href="{% url "achievement" item.type %}#{{ item.name|slugify }}">{{ item.name }}
+    {% if item.level > 0 %}(Level {{ item.level }}){% endif %}</a></p>
+<p class="content">{% percent_meter item.start_value current_value item.value %}% done, need <strong>
+    {{ item.start_value|PLUS:item.value|MINUS:current_value }}</strong> more <strong>{{ item_desc.currency }}</strong>
+</p>
+<span style="width: 90%; height: 15px; border: 1px solid grey; display: block; padding: 0pt; margin: 0pt;">
+	<span style="display: block; background-color: red; width: {% percent_meter item.start_value current_value item.value %}%; height: 15px; text-align: center;">&nbsp;</span>
+</span>

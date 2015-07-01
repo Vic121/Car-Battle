@@ -1,0 +1,130 @@
+{% extends base_page %}
+
+{% block title %}Tutorial - How to play Car Battle{% endblock %}
+
+{% block header %}
+    How to play Car Battle
+{% endblock %}
+
+{% block content %}
+
+    <div style="width: 760px;">
+
+        <div>Car Battle is about collecting cars. We have over 1000 of them. You'll find here the rarest expensive
+            exotic cars as well as cheap ones, cars with beautiful and controversial designs, the latest
+            state-of-the-art prototypes, and even some models that rolled off the production lines decades ago.
+        </div>
+        <br/>
+
+        <div id="intro">
+            <h1>Sections</h1>
+        </div>
+        <div style="text-align: justify; padding-top: 5px;">
+            <p><a href="#battles">&raquo; Battles</a></p>
+
+            <p><a href="#jobs">&raquo; Jobs</a></p>
+
+            <p><a href="#auctions">&raquo; Auctions</a></p>
+
+            <p><a href="#albums">&raquo; Albums</a></p>
+        </div>
+        <br/>
+
+        <div id="intro">
+            <a name="battles"></a>
+
+            <h1>Battles</h1>
+        </div>
+        <div>
+            <p>Is the most fun way of acquiring money and experiend, that let you have new cars.</p>
+
+            <div>
+                <ol style="padding-left: 25px;">
+                    <li>Select an opponent from lists and click FIGHT</li>
+                    <li>Now you see a battle screen that contains two cars. One on the left hand side is a randomly
+                        selected car of your garage, and on the right hand side, your opponent's car. As you see, the
+                        ladder has hidden name, photo and attributes at first.
+                    </li>
+                    <li>Click on opponent's attribute that you consider worse than yours. Select 3 attributes out of 6
+                        and see if you'll win.
+                    </li>
+                    <li>Each fight consists of 3 battles, win at least 2 of them to win whole fight and get a lot of
+                        experience and cash.
+                    </li>
+                </ol>
+            </div>
+            <br/>
+
+            <div style="text-align: center;">
+                <img src="{{ MEDIA_URL }}images/tutorial/battle-1.png"/>&nbsp;&nbsp;&nbsp;
+                <img src="{{ MEDIA_URL }}images/tutorial/battle-2.png"/>
+            </div>
+        </div>
+        <br/>
+
+        <div id="intro">
+            <a name="jobs"></a>
+
+            <h1>Jobs</h1>
+        </div>
+        <div>
+            <p>As you click on JOBS button, you'll see list of cars. One of then can be yours, Tier 1 car is even
+                already unlocked so you can grab it right away. But it only takes a while to unlock betters ones.</p>
+
+            <p>You can either win a battle to unlock next tier, or ask given number of friends to click on a link that
+                is provided in the box. As more people click and register, better cars become unlocked.</p>
+
+            <p>Each day 3 jobs can be made, you'll see how much time left to reset on the screen.</p>
+            <br/>
+
+            <div style="text-align: center">
+                <img src="{{ MEDIA_URL }}images/tutorial/jobs.jpg"/>
+            </div>
+        </div>
+        <br/>
+
+        <div id="intro">
+            <a name="auctions"></a>
+
+            <h1>Auctions</h1>
+        </div>
+        <div>
+            <p>It's like eBay, but stripped away features to let you start buying and selling easily. Just find a car
+                you need or want to own and bid out your competitors.</p>
+
+            <p>Auctions can genearate income of course as car can be sold out of your garage.</p>
+            <br/>
+
+            <div style="text-align: center;">
+                <img src="{{ MEDIA_URL }}images/tutorial/auction-1.jpg"/>&nbsp;&nbsp;&nbsp;
+                <img src="{{ MEDIA_URL }}images/tutorial/auction-2.jpg"/>
+            </div>
+        </div>
+        <br/>
+
+        <div id="intro">
+            <a name="albums"></a>
+
+            <h1>Albums</h1>
+        </div>
+        <div>
+            <p>So you already have some cars? Take a look at Albums. Albums are manually selected cars based on given
+                subjects, ie. 1980-2000 BMWs, History of Ferrari, etc.</p>
+
+            <p>If you have a car listed in an album, in your garage, you can "stick" it to this album. Keep in mind that
+                car once sticked to album is being removed from garage permanenty. But as albums can be seen on your
+                public profile page, everyone watching it can admire your extensive collection. It's also a good way to
+                learn about different manufacturers and models.</p>
+
+            <p>Only few albums are available at the beginning, most of them you'll unlock over time.</p>
+            <br/>
+
+            <div style="text-align: center;">
+                <img src="{{ MEDIA_URL }}images/tutorial/album-1.jpg"/>&nbsp;&nbsp;&nbsp;
+                <img src="{{ MEDIA_URL }}images/tutorial/album-2.jpg"/>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

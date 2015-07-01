@@ -1,0 +1,19 @@
+CRON
+
+auto_auctions
+recommended_auctions
+refresh_cars_carfolio
+refresh_cars_conceptcarz
+refresh_cars_data4car
+
+
+Co minute
+emails
+finish_auctions
+
+
+Dependencies
+Django
+PIL
+Pympler
+django-annoying

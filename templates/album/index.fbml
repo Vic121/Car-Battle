@@ -1,0 +1,122 @@
+{% extends base %}
+{% load tips %}
+
+{% block head %}
+<link type="text/css" rel="stylesheet" media="screen" href="http://static.ak.fbcdn.net/rsrc.php/v1/pkg/77/118975/css/common.css.pkg.php"/>
+<link href="{{ MEDIA_URL }}css/fb_flag_nav.css" rel="stylesheet" type="text/css" media="screen"/>
+<script>
+	var switch_tab = function(v) {
+		{% for tab in settings.ALBUM_TABS %}
+			$('#tab_{{ forloop.counter0 }}').css('display', 'none');
+			$('#{{ forloop.counter0 }}_li').removeClass('flag_nav_item_selected');
+		{% endfor %}
+		$('#tab_' + v).css('display', 'block');
+		$('#' + v + '_li').addClass('flag_nav_item_selected');
+	};
+</script>
+{% endblock %}
+
+{% block title %}My Albums{% endblock %}
+
+{% block breadcrumbs %}
+	<strong>My albums</strong>
+	<span class="final">All</span>
+{% endblock %}
+
+{% block master_header %}{% endblock %}
+
+{% block content %}
+<br class="clear"/>
+{% show_how_to_play request %}
+
+<div class="content_no_sidebar">
+	<div class="dev_applications clearfix">
+	<div class="flag_nav flag_nav_has_icon dev_app_list" id="dev_app_list">
+	<div class="flag_nav_container">
+		{% for v in items.iterkeys %}
+			<div class="flag_nav_item {% if active_tab == v %}flag_nav_item_selected{% endif %}" id="{{ forloop.counter0 }}_li">
+		    	<a href="#" onclick="switch_tab('{{ forloop.counter0 }}'); return false;" class="clearfix"> 
+		      		{# <div class="flag_nav_li_icon" style="background-image: url(http://www.facebook.com/images/icons/fbfile.gif);"></div> #}
+		      		<div class="flag_nav_li_title">{{ v }} ({% if items|KEY:v %}{{ items|KEY:v|length }}{% else %}0{% endif %})</div>
+		      		<div class="flag_nav_top_mask"></div>
+		     	</a>
+		    	<span class="flag_nav_border_hack"> </span>
+		    </div>
+		{% endfor %}
+	</div>
+	</div>
+	<div class="dev_app_infos_shadow">
+		<div class="dev_app_infos" id="dev_app_infos">
+		{% for name, albums in items.iteritems %}
+			<div id="tab_{{ forloop.counter0 }}" {% if name != active_tab %}style="display:none;"{% endif %}>
+				{% if name == 'Buy more' %}
+					{% if albums %}
+					{% for album in albums %}
+						<div class="dev_application app_show" id="{{ car.id }}_info" style="padding-bottom: 10px; border-bottom: 1px solid #D8DFEA;">
+						<div class="dev_application_header clearfix feature">
+							<a href="#" class="mask" style="margin-left: 20px; margin-top: 15px;"></a>
+							<img alt="{{ album.name }}" src="{{ MEDIA_URL }}images/albums/{{ album.id }}_s.jpg" class="avatar left">
+							<h3>{{ album.name }}</h3>
+							<div id="submit">
+								<div class="dev_app_submit">
+									<p>{{ album.desc }}</p>
+									<p><a href="{% url "album_buy" album.id %}" class="readmore_140">{% if album.price == 0 %}Take for free{% else %}Buy for ${{ album.price|intcomma }}{% endif %}</a></p>
+									{% if album.left > 0 %}<p style="color: grey;">Collect all cars to get +{{ album.exp|intcomma }} EXP</p>{% endif %}
+								</div>
+							</div>
+							</div>
+						</div>
+					{% endfor %}
+					{% else %}
+						<div class="dev_application app_show" style="padding-bottom: 10px; border-bottom: 1px solid #D8DFEA;">
+						<div class="dev_application_header clearfix">
+							<h3>Nothing to buy at the moment</h3>
+						</div>
+						</div>
+					{% endif %}
+				{% else %}
+				
+				{% if albums %}
+				{% for album in albums %}
+					<div class="dev_application app_show" id="{{ car.id }}_info" style="padding-bottom: 10px; border-bottom: 1px solid #D8DFEA;">
+					<div class="dev_application_header clearfix feature">
+						<a href="#" class="mask" style="margin-left: 20px; margin-top: 15px;"></a>
+						<img alt="{{ album.name }}" src="{{ MEDIA_URL }}images/albums/{{ album.album.id }}_s.jpg" class="avatar left">
+						<h3><a href="{% url "album" album.id %}" style="font-size: 18px !important;">{{ album.album.name }}</a></h3>
+							<div id="submit">
+								<div class="dev_app_submit">
+									<p>{{ album.album.desc }}</p>
+									<p>{{ album.total|MINUS:album.left|DIV:album.total|TIMES:100|INT }}% done ({{ album.total|MINUS:album.left }} of {{ album.total }})</p>
+									{% if album.left > 0 %}<p style="color: grey;">Collect all cars to get +{{ album.album.exp|intcomma }} EXP</p>{% endif %}
+									{# <h6>{{ album.desc }}</h6> #}
+									{# <p id="desc_{{ car.id }}">Engine {{ car.engine }} cm<sup>3</sup>, {{ car.power_bhp }} BHP, Top Speed: {{ car.top_speed }} km/h<a href="#" onclick="replace_desc('{{ car.id }}');" id="add_desc_more_btn_{{ car.id }}"> more </a></p><p style="display: none;" id="add_desc_{{ car.id }}">0-100 km/h: {{ car.sprint_0_100 }}, {{ car.weight }} kg, {{ car.power_to_weight }} BHP/Ton</p> #}
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+				{% else %}
+					<div class="dev_application app_show" style="padding-bottom: 10px; border-bottom: 1px solid #D8DFEA;">
+					<div class="dev_application_header clearfix">
+						<h3>No {{ name|lower }} albums</h3>
+					</div>
+					</div>
+				{% endif %}
+				
+				{% endif %}
+			</div>
+		{% endfor %}
+		
+		<div class="dev_app_footer">
+			{# <a href="www.facebook.com/">Action1</a> | <a href="www.facebook.com/">Action2</a> #}
+		</div>
+		</div>
+	    <!-- End Of Active Page. Other pages go here. -->
+	    </div>
+		</div>
+	</div>  
+	</div>
+</div>
+
+
+{% endblock %}

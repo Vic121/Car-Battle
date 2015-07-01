@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /intranet/
+Disallow: /admin/
+Allow: /
+
+User-agent: Yandex
+Disallow: *

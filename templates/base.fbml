@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+{% include 'partials/_head.html' %}
+<title>{% block title %}{% endblock %} - Car Battle</title>
+{% block head %}{% endblock %}
+</head>
+<body id="short">
+<div id="fb-root"></div>
+<div id="short_header">
+
+	{% include 'partials/_menu.html' %}
+
+	<div id="takeaway_short">
+
+		<a href="/" id="logo">Car Battle</a>
+		<div id="grab">
+			<a href="{% url "tutorial" %}" class="cta tutorial">Visit tutorial</a>
+			<a href="{% url "store" %}" class="cta shop">Visit shop</a>
+		</div>
+
+		<div class="rounded_top" id="feature">
+			{% include 'partials/user_box.html' %}
+		</div>
+	</div>
+
+	<div id="infobar">
+		<div class="ellipsis left" id="breadcrumbs">
+			{% block breadcrumbs %}{% endblock %}
+			{# <strong>You are here</strong> #}
+			{# <span class="final">Home</span> #}
+		</div>
+		
+		{# <div class="right" id="contactinfo"> #}
+		{# 	<a href="mailto:q@car-battle.com" class="email left"> #}
+		{# 		<span class="icon left">Email us:</span> #}
+		{# 		<span class="left">q@car-battle.com</span> #}
+		{# 	</a> #}
+		{# </div> #}
+	</div>
+</div>
+
+{% include 'partials/msg_box.html' %}
+
+<div class="clearfix nobase" id="content">
+	{% block master_header %}
+	<div class="heading clearfix full">
+
+	<h1 class="ellipsis ">
+		{% block header %}{% endblock %}
+	</h1>
+
+	{% block tools %}
+	<ul class="right" id="tools">
+		<li class="tool facebook left"><a href="http://www.facebook.com/apps/application.php?id={{ settings.FACEBOOK_APP_ID }}"></a><span class="tooltip rounded_bottom">Car Battle on Facebook</span></li>
+		<li class="tool twitter left"><a href="http://www.twitter.com/carbattle"></a><span class="tooltip rounded_bottom">Follow on Twitter</span></li>
+	</ul>
+	{% endblock %}
+	
+	{% block filters %}{% endblock %}
+	</div>
+	{% endblock %}
+
+{% if messages %}
+<br class="clear"/>
+<div class="fbinfobox">
+	{% for message in messages %}
+		<p>{{ message|safe }}</p>
+	{% endfor %}
+</div>
+{% endif %}
+{% if message %}
+<br class="clear"/>
+<div class="fbinfobox">
+	<p>{{ message|safe }}</p>
+</div>
+{% endif %}
+
+{% block content %}
+	
+{% endblock %}
+
+<br class="clear"/><br class="clear"/>
+
+<div id="calltoaction">
+	<p class="message serif">
+		{% block slogan %}
+		{# Like what you see? <a href="http://www.nuvographics.com/contact/">Let's work together.</a> #}
+		{# <a href="http://www.nuvographics.com/work/" class="cta design">View Selected Design Work</a> #}
+		{% endblock %}
+		{# <a href="{% url "auth_login" %}" class="cta notebook">Register now</a> #}
+	</p>
+</div>
+
+<<<<<<< HEAD/templates/base.fbml
+<div id="footer">
+	<hr class="highlight">
+	<div class="clearfix" id="overview">
+		<div class="footblock">
+			<h2>About Car Battle</h2>
+			<p>We're all about cars! You'll find here the rarest expensive exotic cars as well as cheap ones, cars with beautiful and controversial designs, the latest state-of-the-art prototypes, and even some models that rolled off the production lines decades ago.</p>
+		</div>
+
+		<div class="footblock">
+			<h2>Sitemap</h2>
+			<a href="{% fb_url tutorial %}">Tutorial</a>
+			<a href="/partner.html">Affiliate Program</a>
+			<a href="{% fb_url leaderboard %}">Leaderboard</a>
+			<a href="{% fb_url encyclopedia %}">Encyclopedia</a>
+			<a href="{% fb_url auth_login %}">Register</a>
+			<a href="{% fb_url contact %}">Contact Us</a>
+		</div>
+
+		<div class="footblock">
+			<h2>Top Manufacturers</h2>
+			{% for manuf in top_manufs %}
+				<a href="{% fb_url encyclopedia_cars manuf.manuf|slugify %}">{{ manuf.manuf }}<span class="count">{{ manuf.rows|intcomma }} cars</span></a>
+			{% endfor %}
+			<a href="{% fb_url encyclopedia %}"><span class="count">total of {{ all_cars }}</span></a>
+		</div>
+
+		<div class="footblock">
+			<h2>Top Players</h2>
+			{% for player in top_players %}
+				<a href="{% fb_url profile player.username|slugify %}">{{ forloop.counter }}. {{ player }}<span class="count">{{ player.exp|intcomma }} exp</span></a>
+			{% endfor %}
+			<a href="{% fb_url leaderboard %}"><span class="counter">more &raquo;</span></a>
+		</div>
+
+	</div>
+
+	<div class="clearfix" id="copyright">
+		<hr class="highlight">
+		<p class="left">Copyright &copy; 2010 Car Battle</p>
+	</div>
+</div>
+
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+	FB.init({appId: {{ settings.FACEBOOK_APP_ID }}, status: true, cookie: true, xfbml: true});	
+	FB.Event.subscribe('xfbml.render', function(response) {
+		FB.Canvas.setAutoResize();
+	});
+	FB.Event.subscribe('auth.sessionChange', function(response) {
+		if(response.session) {
+			{% if request.engine.IS_FB %}
+				document.location = 'http://fb.car-battle.com/'
+			{% else %}
+				document.location = 'http://www.car-battle.com/'
+			{% endif %}
+		} else {
+			// out
+		}
+	});
+
+	//stream publish method
+	function streamPublish(name, description, hrefTitle, hrefLink, userPrompt) {
+	    FB.ui({
+	        method: 'stream.publish',
+	        message: '',
+	        attachment: {
+	            name: name,
+	            caption: '',
+	            description: (description),
+	            href: hrefLink
+	        },
+	        action_links: [
+	            { text: hrefTitle, href: hrefLink }
+	        ],
+	        user_prompt_message: userPrompt
+	    },
+	    function(response) {
+
+	    });
+	}
+
+	function showStream(){
+	    FB.api('/me', function(response) {
+	        //console.log(response.id);
+	        streamPublish(response.name, 'Car Battle contains geeky stuff', 'hrefTitle', 'http://car-battle.com', "Share car-battle.com");
+	    });
+	}
+
+	function share(){
+	    var share = {
+	        method: 'stream.share',
+	        u: 'http://car-battle.com/'
+	    };
+
+	    FB.ui(share, function(response) { console.log(response); });
+	}
+
+	function graphStreamPublish(){
+	    var body = 'Reading New Graph api & Javascript Base FBConnect Tutorial';
+	    FB.api('/me/feed', 'post', { message: body }, function(response) {
+	        if (!response || response.error) {
+	            alert('Error occured');
+	        } else {
+	            alert('Post ID: ' + response.id);
+	        }
+	    });
+	}
+
+	function fqlQuery(){
+	    FB.api('/me', function(response) {
+	         var query = FB.Data.query('select name, hometown_location, sex, pic_square from user where uid={0}', response.id);
+	         query.wait(function(rows) {
+
+	           document.getElementById('name').innerHTML =
+	             'Your name: ' + rows[0].name + "<br />" +
+	             '<img src="' + rows[0].pic_square + '" alt="" />' + "<br />";
+	         });
+	    });
+	}
+
+	function setStatus() {
+	    status1 = document.getElementById('status').value;
+	    FB.api(
+	      {
+	        method: 'status.set',
+	        status: status1
+	      },
+	      function(response) {
+	        if (response == 0){
+	            alert('Your facebook status not updated. Give Status Update Permission.');
+	        }
+	        else{
+	            alert('Your facebook status updated');
+	        }
+	      }
+	    );
+	}
+</script>
+
+{% if not settings.LOCAL %}
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-317705-16']);
+  _gaq.push(['_setDomainName', '.car-battle.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script type="text/javascript">
+{% if request.engine.user %}
+var clicky_custom = {};
+clicky_custom.session = {
+	username: "{{ request.engine.user.profile }}",
+	group: "users"
+};
+{% endif %}
+
+var clicky = { log: function(){ return; }, goal: function(){ return; }};
+var clicky_site_id = 254344;
+(function() {
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+  ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+})();
+</script>
+<a title="Web Analytics" href="http://getclicky.com/254344"></a>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/254344ns.gif" /></p></noscript>
+
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" charset="utf-8">
+	var feedback_widget_options = {};
+
+	feedback_widget_options.display = "overlay";  
+	feedback_widget_options.company = "car_battle";
+	feedback_widget_options.placement = "right";
+	feedback_widget_options.color = "#222";
+	feedback_widget_options.style = "idea";
+
+	var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
+
+{% endif %}
+{% if settings.SQL_DEBUG %}
+<br style="clear: both;"/>
+<div id="debug">
+<p>
+  {{ sqldebug.queries.count }} Quer{{ sqldebug.queries|pluralize:"y,ies" }}, {{ sqldebug.time }} seconds
+  {% ifnotequal sql_queries|length 0 %}
+  (<span style="cursor: pointer;" onclick="var s=document.getElementById('debugQueryTable').style;s.display=s.display=='none'?'':'none';this.innerHTML=this.innerHTML=='Show'?'Hide':'Show';">Show</span>)
+  {% endifnotequal %}
+</p>
+
+<table id="debugQueryTable" style="display: none;">
+  <col width="1"></col>
+  <col></col>
+  <col width="1"></col>
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">SQL</th>
+    <th scope="col">Time</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for query in sqldebug.queries %}<tr class="{% cycle odd,even %}">
+    <td>{{ forloop.counter }}</td>
+    <td>{{ query }}</td>
+    <td>{{ query.time }}</td>
+  </tr>{% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+=======
+{% include 'partials/_foot.html' %}
+>>>>>>> 32882924b3bfc3e80f04309469f800cd28f13d25/templates/base.fbml
+</body>
+</html>

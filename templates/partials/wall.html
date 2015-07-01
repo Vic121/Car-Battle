@@ -1,0 +1,32 @@
+<ul class="wall">
+    {% for item in wall %}
+        <li class="feature left">
+            <a class="mask" href="{% url "profile" item.user %}"></a>
+            <img class="avatar left" src="{{ MEDIA_URL }}{{ item.user_id|avatar }}" alt="{{ item.user }}">
+
+            <p class="title"><a href="{% url "profile" item.user %}">{{ item.user }}</a></p>
+
+            {% captureas txt %}{% include item.template_name %}{% endcaptureas %}
+
+            <p class="content">
+                {{ txt }}
+            </p>
+
+            <p class="time">{{ item.created_at|timestr }}</p>
+
+            <p class="actions">
+                {% if item.user != request.engine.user.user or settings.DEBUG %}
+                    <a href="javascript:void(0);"
+                       onclick="Engine.msg_box_toggle('{{ item.user }}'); return false;"><span class="right btn_msg">&nbsp;</span></a>
+                {% endif %}
+                {% if item.user == request.engine.user.user %}
+                    {% if request.engine.IS_FB or request.engine.IS_FBC or settings.DEBUG %}
+                        <a href="javascript:void(0);"
+                           onclick="shareWallItem('{{ txt|escapejs }}', '{{ settings.SITE_ROOT_URL }}..{{ item.contents.0 }}', '{{ settings.BASE_MEDIA_URL }}cars/{{ item.contents.0|fb_img_from_url }}'); return false;"><span
+                                class="right btn_share">&nbsp;</span></a>
+                    {% endif %}
+                {% endif %}
+            </p>
+        </li>
+    {% endfor %}
+</ul>

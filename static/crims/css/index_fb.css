@@ -1,0 +1,450 @@
+div.body {
+    background: url(http://static.crimecorp.com/images/city-back.png) no-repeat;
+    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+    font-size: 11px;
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+div.body h1,
+div.body h2,
+div.body h3,
+div.body h4,
+div.body h5,
+div.body h6 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+div.message {
+    width: 600px;
+    margin: 20px 20px 20px 20px;
+    border: 3px darkgrey solid;
+    background-color: lightgrey;
+    padding: 5px 5px 5px 5px;
+}
+
+div.message p {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+div.header {
+    height: 112px;
+    /*	background: red;*/
+    width: 700px;
+}
+
+div.header div.right_box {
+    float: right;
+}
+
+div.container {
+
+}
+
+div.header div.logo {
+    float: left;
+}
+
+div.header div.right_box {
+    float: right;
+    margin-right: 20px;
+    width: 400px;
+    height: 112px;
+    max-height: 112px;
+    /*	background: url(http://static.crimecorp.com/images/half_white.png) repeat;*/
+    background-color: #FFFFFF;
+}
+
+div.header span.right_box span {
+    float: left;
+    font-size: 12px;
+}
+
+h3.description {
+    border: 3px #A9A9A9 solid;
+    background: #D3D3D3 none repeat scroll 0 0;
+    padding: 10px 7px 10px 10px;
+}
+
+h3.warning {
+    border: 3px #CC3300 solid;
+    background: #F9B3A6 none repeat scroll 0 0;
+    padding: 10px 7px 10px 10px;
+}
+
+h3.info {
+    background: #FFF9D7 none repeat scroll 0 0;
+    border: 3px #E2C822 solid;
+    padding: 10px 7px 10px 10px;
+}
+
+div.footer {
+    margin-left: -50px;
+    height: 110px;
+    width: 758px;
+    background: url(http://static.crimecorp.com/images/city-low-3.png) no-repeat;
+    background-position: top left;
+    clear: both;
+}
+
+div.city_mood {
+    width: 400px;
+    background: transparent url(http://static.crimecorp.com/images/city_mood_stripe_back.png) no-repeat;
+    padding-left: 30px;
+    margin-bottom: 30px;
+}
+
+div.city_mood_outer {
+    border: 1px solid darkgrey;
+    width: 300px;
+    height: 20px;
+    margin-top: 5px;
+}
+
+div.city_mood_inner {
+    margin: 0pt;
+    padding: 0pt;
+    height: 20px;
+    overflow: visible;
+    vertical-align: middle;
+    font-size: 8px;
+    font-weight: bold;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+div.mini_city_mood {
+    width: 112px;
+}
+
+div.mini_city_mood_outer {
+    border: 1px solid darkgrey;
+    width: 100%;
+    height: 10px;
+}
+
+div.mini_city_mood_inner {
+    margin: 0pt;
+    padding: 0pt;
+    height: 10px;
+    overflow: visible;
+    vertical-align: middle;
+    font-size: 8px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+ul.horizontal, ul.horizontal li {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+}
+
+ul.horizontal {
+    text-align: center;
+    border-bottom: 1px solid #888;
+    padding-bottom: 5px;
+}
+
+ul.horizontal li {
+    display: inline;
+    white-space: nowrap;
+    margin-right: 5px;
+}
+
+ul.horizontal a:link, ul.horizontal a:visited {
+    text-decoration: none;
+    background-color: #ccc;
+    color: #000;
+    border: 1px solid #888;
+    padding: 5px;
+}
+
+ul.horizontal a:hover {
+    background-color: #fff;
+    border-bottom-color: #fff;
+}
+
+span.help {
+    border-bottom: 1px dotted black;
+}
+
+/* ICONS */
+span.info {
+    background: transparent url(http://static.crimecorp.com/images/icons/info.gif) no-repeat scroll 3px 1px;
+    padding-left: 16px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+span.heat {
+    background: transparent url(http://static.crimecorp.com/images/icons/heat.gif) no-repeat scroll 0 -1px;
+    padding-left: 16px;
+}
+
+span.respect {
+    background: transparent url(http://static.crimecorp.com/images/icons/respect.gif) no-repeat scroll 0 -1px;
+    padding-left: 16px;
+}
+
+span.attack {
+    background: transparent url(http://static.crimecorp.com/images/icons/gun.gif) no-repeat scroll 0 -1px;
+    padding-left: 16px;
+}
+
+span.defense {
+    background: transparent url(http://static.crimecorp.com/images/icons/shield.gif) no-repeat scroll 0 -1px;
+    padding-left: 16px;
+}
+
+span.credit {
+    background: transparent url(http://static.crimecorp.com/images/icons/credit.gif) no-repeat scroll 0 0px;
+    padding-left: 16px;
+}
+
+span.cash {
+    background: transparent url(http://static.crimecorp.com/images/icons/cash.gif) no-repeat scroll 0 1px;
+    padding-left: 16px;
+}
+
+span.city {
+    background: transparent url(http://static.crimecorp.com/images/icons/city.gif) no-repeat scroll 0 -1px;
+    padding-left: 16px;
+}
+
+span.family {
+    background: transparent url(http://static.crimecorp.com/images/icons/gang.gif) no-repeat scroll 0 -1px;
+    padding-left: 16px;
+}
+
+span.gun {
+    background: transparent url(http://static.crimecorp.com/images/icons/gun.gif) no-repeat scroll 0 0px;
+    padding-left: 16px;
+}
+
+span.exit {
+    background: transparent url(http://static.crimecorp.com/images/icons/exit.gif) no-repeat scroll 0 0px;
+    padding-left: 16px;
+}
+
+span.happy {
+    background: transparent url(http://static.crimecorp.com/images/icons/happy.gif) no-repeat scroll 0 -1px;
+    padding-left: 16px;
+}
+
+/* M E N U */
+.menu {
+    border-right: 1px solid #000000;
+    font-family: arial, sans-serif;
+    height: 32px;
+    position: relative;
+    width: 672px;
+    z-index: 100;
+    clear: both;
+}
+
+/** html .menu {
+width:745px;
+}*/
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul ul {
+    width: 112px;
+}
+
+.menu li {
+    float: left;
+    position: relative;
+    width: 112px;
+}
+
+.menu a, .menu a:visited {
+    background: #000000 none repeat scroll 0 0;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 1px 0 1px 1px;
+    color: #FFFFFF;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 29px;
+    padding-left: 10px;
+    text-decoration: none;
+    width: 112px;
+}
+
+/** html .menu a, * html .menu a:visited {
+width:112px;
+}*/
+.menu ul ul a.drop, .menu ul ul a.drop:visited {
+    background: #000000 url(http://static.crimecorp.com/images/grey-arrow.gif) no-repeat scroll 130px center;
+}
+
+.menu ul ul a.drop:hover {
+    background: #000000 url(http://static.crimecorp.com/images/blue-arrow.gif) no-repeat scroll 130px center;
+}
+
+.menu ul ul :hover > a.drop {
+    background: #000000 url(http://static.crimecorp.com/images/blue-arrow.gif) no-repeat scroll 130px center;
+}
+
+.menu ul ul ul a, .menu ul ul ul a:visited {
+    background: #000000 none repeat scroll 0 0;
+}
+
+.menu ul ul ul a:hover {
+    background: #000000 none repeat scroll 0 0;
+}
+
+.menu ul ul {
+    border-top: 1px solid #000000;
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 31px;
+    visibility: hidden;
+    width: 112px;
+}
+
+/** html .menu ul ul {
+top:31px;
+}*/
+.menu ul ul ul {
+    left: 112px;
+    top: -1px;
+    width: 112px;
+}
+
+.menu ul ul ul.left {
+    left: -112px;
+}
+
+.menu table {
+    border-collapse: collapse;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.menu ul ul a, .menu ul ul a:visited {
+    background: #000000 none repeat scroll 0 0;
+    border-width: 0 1px 1px;
+    color: #ffffff;
+    height: auto;
+    line-height: 1em;
+    padding: 5px 10px;
+    width: 112px;
+}
+
+/** html .menu ul ul a, * html .menu ul ul a:visited {
+width:112px;
+}*/
+.menu a:hover, .menu ul ul a:hover {
+    background: #ffffff none repeat scroll 0 0;
+    color: #000000;
+}
+
+.menu :hover > a, .menu ul ul :hover > a {
+    background: #ffffff none repeat scroll 0 0;
+    color: #000000;
+}
+
+.menu ul li:hover ul, .menu ul a:hover ul {
+    visibility: visible;
+}
+
+.menu ul :hover ul ul {
+    visibility: hidden;
+}
+
+.menu ul :hover ul :hover ul {
+    visibility: visible;
+}
+
+/* T A B L E S */
+table.data {
+    /*	color: #7F7F7F;*/
+    border-collapse: collapse
+}
+
+/*table.data,caption.data {*/
+/*	margin: 0 auto;*/
+/*	border-right: 1px solid #CCC;*/
+/*	border-left: 1px solid #CCC*/
+/*}*/
+
+table.data caption, table.data th, table.data td {
+    border-left: 0;
+    padding: 10px
+}
+
+table.data caption, table.data thead th, table.data tfoot th, table.data tfoot td {
+    background-color: #E63C1E;
+    color: #FFF;
+    font-weight: bold;
+    text-transform: uppercase
+}
+
+table.data thead th {
+    background-color: #C30;
+    color: #FFB3A6;
+    text-align: center
+}
+
+table.data tbody th {
+    padding: 20px 10px;
+    background-color: #DDD;
+    font-size: 16px;
+    font-weight: bold;
+    border-top: 3px solid grey;
+}
+
+table.data tbody tr.odd {
+    background-color: #F7F7F7;
+    /*	color: #666*/
+}
+
+table.data tbody a {
+    padding: 1px 2px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px dotted #E63C1E
+}
+
+table.data tbody td.name {
+    font-size: 13px;
+}
+
+table.data tbody a:active, table.data tbody a:hover, table.data tbody a:focus, table.data tbody a:visited {
+    color: #666
+}
+
+table.data tbody tr:hover {
+    background-color: #EEE;
+    color: #333
+}
+
+table.data tbody tr:hover a {
+    background-color: #FFF
+}
+
+table.data tbody td + td + td + td a {
+    color: #C30;
+    font-weight: bold;
+    border-bottom: 0
+}
+
+table.data tbody td + td + td + td a:active, table.data tbody td + td + td + td a:hover, table.data tbody td + td + td + td a:focus, table.data tbody td + td + td + td a:visited {
+    color: #E63C1E
+}
